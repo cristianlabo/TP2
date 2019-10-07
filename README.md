@@ -73,12 +73,22 @@ Prefix.c, Prefix.h, PrefixRequired.h y sc_types.h)
 
 Se pueden visualizar en la siguiente figura las funciones:
 
+
 | Nombre | Descripción |
 | ------ | ----------- |
-|  |  |
-||  |
-||  |
-| |  |
+|      |     |
+|      |     |
+|      |     |
+|      |     |
+|      |     |
+|      |     |
+|      |     |
+|      |     |
+|      |     |
+|      |     |
+|      |     |
+|      |     |
+
 
 ![1.b.funciones.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/1.b.funciones.jpg)
 
@@ -88,20 +98,10 @@ Se pueden visualizar en la siguiente figura las constantes:
 
 | Nombre | Descripción |
 | ------ | ----------- |
-| GPIO0 | pin correspondiente a GPIO0 |
-| GPIO_INPUT | estado de entrada de un pin GPIO |
-| GPIO1 | pin correspondiente a GPIO0 |
-| GPIO_OUTPUT | estado de salida de un pin GPIO |
-| TEC1 | primer pulsador |
-| LEDB | pin correspondiente a LED azul |
-| valor | variable booleana que se utiliza para el valor de estado de cada pulsador |
-| TEC2 | segundo pulsador |
-| LED1 | pin correspondiente a LED amarillo|
-| TEC3 | tercer pulsador |
-| LED2 | pin correspondiente a LED rojo |
-| TEC4 | cuarto pulsador |
-| LED3 | pin correspondiente a LED verde |
-
+|    |     |
+|    |     |
+|    |     |
+|    |     |
 
 
 ![1.c.constantes.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/1.c.constantes.jpg)
