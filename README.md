@@ -47,14 +47,20 @@ archivos:
 a. prefix.sct Yakindu SCT Statechart Model file.Se copio y pego Blinky.-sct y  se renombro como: prefix.sct
 b. pregix.sgen Yakindu SCT Code Generator Model file
 
-5. Para Simular el modelo: Clic derecho sobre prefix.sct -> Run Us -> 1 Satechart Simulation luego se probo cambiando de estado con el evento etick.
+Estos cambios se pueden visualizar en la siguiente figura:
 
-7. Para Generar el código del modelo: se hizo Clic derecho sobre pregix.sgen -> Generate Code Artifacts (Artifacts =>
+
+
+4. Para Simular el modelo: Clic derecho sobre prefix.sct -> Run Us -> 1 Satechart Simulation luego se probo cambiando de estado con el evento etick como se puede ver en la siguiente figura:
+
+
+
+5. Para Generar el código del modelo: se hizo Clic derecho sobre pregix.sgen -> Generate Code Artifacts (Artifacts =>
 Prefix.c, Prefix.h, PrefixRequired.h y sc_types.h)
 
-8. Luego se Compilo y debugeo firmware_v2 cambiando la ruta de debug por C:\Users\cmg-8\firmware_v2\out\lpc4337_m4\statecharts_bare_metal.axf
+6. Luego se Compilo y debugeo firmware_v2 cambiando la ruta de debug por C:\Users\cmg-8\firmware_v2\out\lpc4337_m4\statecharts_bare_metal.axf
 
-9. Para probar el debug se puso un breakpoint en la funcion que cambia de estado el led para ver el cambio de estado debido a que la frecuencia de interrupcion seteada en el programa es demasiado rapida para ver el cambio a simple vista:
+7. Para probar el debug se puso un breakpoint en la funcion que cambia de estado el led para ver el cambio de estado debido a que la frecuencia de interrupcion seteada en el programa es demasiado rapida para ver el cambio a simple vista:
 
 
 
