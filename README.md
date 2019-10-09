@@ -78,15 +78,16 @@ Se pueden visualizar en la siguiente figura las funciones:
 | ------ | ----------- |
 |  boardConfig(); | configura los pines de entrada y salida    |
 |  tickConfig( TICKRATE_MS );  | configurar la frecuencia de la interrupciones    |
-|  tickCallbackSet( myTickHook, (void*)NULL );  | consigura la funcion que se ejecutara con cada interrupcion    |
-|  InitTimerTicks(ticks, NOF_TIMERS); |     |
-|  prefix_init(&statechart);  |     |
-|  prefix_enter(&statechart);   |     |
-|  pdateTimers(ticks, NOF_TIMERS);  |     |
-|  IsPendEvent(ticks, NOF_TIMERS, ticks[i].evid)       |     |
-|  prefix_raiseTimeEvent(&statechart, ticks[i].evid);   |     |
-|  MarkAsAttEvent(ticks, NOF_TIMERS, ticks[i].evid);   |     |
-|  prefix_runCycle(&statechart);   |     |
+|  tickCallbackSet( myTickHook, (void*)NULL );  | configura la funcion que se ejecutara con cada interrupcion    |
+|  InitTimerTicks(ticks, NOF_TIMERS); | incializa la frecuencia del timer   |
+|  prefix_init(&statechart);  | inicializa la maquina de estados    |
+|  prefix_enter(&statechart);   |  cambia el estado de la maquina de estados   |
+|  UpdateTimers(ticks, NOF_TIMERS);  | actualiza la frecuencia del timer    |
+|  prefixIface_raise_evTick(&statechart);| activa el evento etick |
+|  IsPendEvent(ticks, NOF_TIMERS, ticks[i].evid)       | devuelve true si se cumplio el tiempo de eventos dado por NOF_TIMERS|
+|  prefix_raiseTimeEvent(&statechart, ticks[i].evid);   |  activa el evento etick   |
+|  MarkAsAttEvent(ticks, NOF_TIMERS, ticks[i].evid);   |  setea el evento pendiente en false  |
+|  prefix_runCycle(&statechart);   | cambia el estado de la maquina de estados  |
 
 
 ![1.b.funciones.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/1.b.funciones.jpg)
@@ -97,10 +98,10 @@ Se pueden visualizar en la siguiente figura las constantes:
 
 | Nombre | Descripción |
 | ------ | ----------- |
-|  TICKRATE_MS   |     |
-|  USE_TIME_EVENTS  |     |
-|  NOF_TIMERS  |     |
-|  SysTick_Time_Flag  |     |
+|  TICKRATE_MS   |  setea la frecuencia de interrupciones   |
+|  USE_TIME_EVENTS  | flag utilizado para decididir si se ejecutan eventos por tiempo o no    |
+|  NOF_TIMERS  |  constante utilizada para definir el tiempo de cada evento  |
+|  SysTick_Time_Flag  |  flag utilizado para saber si se produjo una interrupcion  |
 
 
 ![1.c.constantes.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/1.c.constantes.jpg)
