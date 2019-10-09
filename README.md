@@ -76,18 +76,17 @@ Se pueden visualizar en la siguiente figura las funciones:
 
 | Nombre | Descripción |
 | ------ | ----------- |
-|      |     |
-|      |     |
-|      |     |
-|      |     |
-|      |     |
-|      |     |
-|      |     |
-|      |     |
-|      |     |
-|      |     |
-|      |     |
-|      |     |
+|  boardConfig(); | configura los pines de entrada y salida    |
+|  tickConfig( TICKRATE_MS );  | configurar la frecuencia de la interrupciones    |
+|  tickCallbackSet( myTickHook, (void*)NULL );  | consigura la funcion que se ejecutara con cada interrupcion    |
+|  InitTimerTicks(ticks, NOF_TIMERS); |     |
+|  prefix_init(&statechart);  |     |
+|  prefix_enter(&statechart);   |     |
+|  pdateTimers(ticks, NOF_TIMERS);  |     |
+|  IsPendEvent(ticks, NOF_TIMERS, ticks[i].evid)       |     |
+|  prefix_raiseTimeEvent(&statechart, ticks[i].evid);   |     |
+|  MarkAsAttEvent(ticks, NOF_TIMERS, ticks[i].evid);   |     |
+|  prefix_runCycle(&statechart);   |     |
 
 
 ![1.b.funciones.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/1.b.funciones.jpg)
@@ -98,10 +97,10 @@ Se pueden visualizar en la siguiente figura las constantes:
 
 | Nombre | Descripción |
 | ------ | ----------- |
-|    |     |
-|    |     |
-|    |     |
-|    |     |
+|  TICKRATE_MS   |     |
+|  USE_TIME_EVENTS  |     |
+|  NOF_TIMERS  |     |
+|  SysTick_Time_Flag  |     |
 
 
 ![1.c.constantes.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/1.c.constantes.jpg)
