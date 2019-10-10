@@ -108,14 +108,18 @@ Se pueden visualizar en la siguiente figura las constantes:
 
 # 2 Uso del IDE (Integrated Development Environment) LPCXpresso & plug-in Yakindu SCT
 
-# 3 panel de control de un generador de señales
+![2a_prefix_sgen.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/2a_prefix_sgen.png)
 
-# 4 puerta corrediza
+![2b_arbol.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/2b_arbol.png)
 
-# 5 portón de cochera
+# 3 Panel de control de un generador de señales
 
-# 6 escalera mecánica 
+# 4 Puerta corrediza
 
-# 7 horno microondas
+# 5 Portón de cochera
+
+# 6 Escalera mecánica 
+
+# 7 Horno microondas
 
 # 8 Hoja de ruta
