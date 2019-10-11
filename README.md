@@ -108,9 +108,13 @@ Se pueden visualizar en la siguiente figura las constantes:
 
 # 2 Uso del IDE (Integrated Development Environment) LPCXpresso & plug-in Yakindu SCT
 
-![2a_prefix_sgen.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/2a_prefix_sgen.png)
+Para migrar el proyecto a projects/tp2 se copiaron los archivos correspondientes a esta carpeta dentro del proyecto firmware_v2 como se puede ver en la siguiente figura:
 
 ![2b_arbol.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/2b_arbol.png)
+
+Luego se configuraron el archivo prefix_sgen  de la siguiente forma:
+
+![2a_prefix_sgen.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/2a_prefix_sgen.png)
 
 # 3 Panel de control de un generador de señales
 
