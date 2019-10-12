@@ -170,6 +170,8 @@ generador de señales
 
 # 4 Puerta corrediza
 
+puerta corrediza
+
 # 5 Portón de cochera
 
 # 6 Escalera mecánica 
