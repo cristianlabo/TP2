@@ -108,7 +108,7 @@ Se pueden visualizar en la siguiente figura las constantes:
 
 # 2 Uso del IDE (Integrated Development Environment) LPCXpresso & plug-in Yakindu SCT
 
-## migrar proyecto
+## a) migrar proyecto
 Para migrar el proyecto a projects/tp2 se copiaron los archivos correspondientes a esta carpeta dentro del proyecto firmware_v2 como se puede ver en la siguiente figura:
 
 ![2b_arbol.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/2b_arbol.png)
@@ -117,23 +117,52 @@ Luego se configuraron el archivo prefix_sgen  de la siguiente forma:
 
 ![2a_prefix_sgen.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/2a_prefix_sgen.png)
 
-## generacion de codigos con statecharts
+## b)generacion de codigos con statecharts
+
+Para generar los codigos fuentes correspondientes de cada maquina de estado haciendo prrefix.sgen -> generate code artifacts.
+
 ### SCT_1
+Para este caso se copio los archivos Blinky.-sct y BlinkyTimeEvent.-sct y se los renombro como prefix.sct cada uno por separado.Luego se genero el codigo de cada uno por separado.
+
+### SCT_2
+Para este caso se copio los archivos Button.-sct y ldelBlinky.-sct y se los renombro como prefix.sct cada uno por separado.Luego se genero el codigo de cada uno por separado.
+
 ### SCT_3
-### SCT_4
+Para este caso se copio los archivos Application.-sct y Porton.-sct y se los renombro como prefix.sct cada uno por separado.Luego se genero el codigo de cada uno por separado.
 
-## prueba de simulaciones
+### c)prueba de simulaciones
 
-## casos de prueba con TIME EVENTS
+Con los codigos generados en el punto anterior se modifico el #define TEST (SCT_?) con ? ={1,2,3} en el main.c para seleccionar entre los diferentes casos de las maquinas de estado.
 
-## compilacion
+## d)casos de prueba con TIME EVENTS
 
-## configuracion de DEBUG
+on los codigos generados en el punto anterior se modifico el #define _USE_TIME_EVENTS (?) con ? ={true,false} en el main.c para seleccionar entre usar time events o no.
 
-## prueba de DEBUG
 
-## creacion del repositorio
+## e)compilacion
 
+Se realizaron las acciones clear ->refresh -> build sobre el proyecto:
+
+## f)configuracion DEBUG
+
+Se configuro el DEBUG teniendo en cuenta que el proyecto apunte a out/lpc4337_m4/TP2.axf como se puede ver en la figura:
+
+
+## g)prueba DEBUG
+
+Se realizaron las pruebas de DEBUG para los casos SCT_1,SCT_2 y SCT_3 para los diferentes casos con Time Events.
+
+## h)repositorio
+
+Se creó un repositorio en GitHub, y se sincronizó la carpeta *TP2* del proyecto *firmware_v2* utilizando los siguientes comandos
+```sh
+$ git init
+$ git remote add origin https://github.com/cristianlabo/TP2.git
+$ git status
+$ git add .
+$ git commit -m "Primer commit. Archivos .c .h y make"
+$ git push -u origin master
+```
 
 # 3 Panel de control de un generador de señales
 
