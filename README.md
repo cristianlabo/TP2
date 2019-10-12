@@ -166,6 +166,8 @@ $ git push -u origin master
 
 # 3 Panel de control de un generador de señales
 
+generador de señales
+
 # 4 Puerta corrediza
 
 # 5 Portón de cochera
