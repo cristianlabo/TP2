@@ -40,14 +40,20 @@ PROJECT_MODULES := modules/$(TARGET)/sapi \
 
 # source files folder
 PROJECT_SRC_FOLDERS := $(PROJECT)/src \
-                       $(PROJECT)/gen
+                       $(PROJECT)/gen \
+                      $(PROJECT)/SCT_2
+#                      $(PROJECT)/SCT_2
 
 # header files folder
 PROJECT_INC_FOLDERS := $(PROJECT)/inc \
-                       $(PROJECT)/gen
+                       $(PROJECT)/gen \
+	                    $(PROJECT)/SCT_2
+#                      $(PROJECT)/SCT_2
 
 # source files
 PROJECT_C_FILES := $(wildcard $(PROJECT)/src/*.c) \
-                   $(wildcard $(PROJECT)/gen/*.c)
-
+                   $(wildcard $(PROJECT)/gen/*.c) \
+				   $(wildcard $(PROJECT)/SCT_2/*.c)
+#				   $(wildcard $(PROJECT)/SCT_2/*.c) 
+				   
 PROJECT_ASM_FILES := $(wildcard $(PROJECT)/src/*.S)
