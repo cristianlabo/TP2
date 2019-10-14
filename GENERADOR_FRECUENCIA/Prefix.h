@@ -24,15 +24,15 @@ typedef enum
 	Prefix_eForma_triangular,
 	Prefix_eMagn_FRECUENCIA,
 	Prefix_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL,
-	Prefix_eMagn_FRECUENCIA_r1_AUMENTA,
-	Prefix_eMagn_FRECUENCIA_r1_DELAY,
 	Prefix_eMagn_FRECUENCIA_r1_DISMINUYE,
+	Prefix_eMagn_FRECUENCIA_r1_DELAY,
+	Prefix_eMagn_FRECUENCIA_r1_AUMENTA,
 	Prefix_eMagn_FRECUENCIA_r1_ESPERA,
 	Prefix_eMagn_TENSION,
 	Prefix_eMagn_TENSION_r1_TENSION_ACTUAL,
-	Prefix_eMagn_TENSION_r1_AUMENTA,
-	Prefix_eMagn_TENSION_r1_DELAY,
 	Prefix_eMagn_TENSION_r1_DISMINUYE,
+	Prefix_eMagn_TENSION_r1_DELAY,
+	Prefix_eMagn_TENSION_r1_AUMENTA,
 	Prefix_eMagn_TENSION_r1_ESPERA,
 	Prefix_last_state
 } PrefixStates;
@@ -65,6 +65,8 @@ typedef struct
 	sc_boolean siTECXOK_raised;
 	sc_boolean eForma_raised;
 	sc_boolean eMagn_raised;
+	sc_boolean eUp_raised;
+	sc_boolean eDown_raised;
 	sc_integer viTecla;
 } PrefixInternal;
 
@@ -72,13 +74,13 @@ typedef struct
 typedef struct
 {
 	sc_boolean prefix_TECX_DEBOUNCE_tev0_raised;
-	sc_boolean prefix_eMagn_FRECUENCIA_r1_AUMENTA_tev0_raised;
-	sc_boolean prefix_eMagn_FRECUENCIA_r1_DELAY_tev0_raised;
 	sc_boolean prefix_eMagn_FRECUENCIA_r1_DISMINUYE_tev0_raised;
+	sc_boolean prefix_eMagn_FRECUENCIA_r1_DELAY_tev0_raised;
+	sc_boolean prefix_eMagn_FRECUENCIA_r1_AUMENTA_tev0_raised;
 	sc_boolean prefix_eMagn_FRECUENCIA_r1_ESPERA_tev0_raised;
-	sc_boolean prefix_eMagn_TENSION_r1_AUMENTA_tev0_raised;
-	sc_boolean prefix_eMagn_TENSION_r1_DELAY_tev0_raised;
 	sc_boolean prefix_eMagn_TENSION_r1_DISMINUYE_tev0_raised;
+	sc_boolean prefix_eMagn_TENSION_r1_DELAY_tev0_raised;
+	sc_boolean prefix_eMagn_TENSION_r1_AUMENTA_tev0_raised;
 	sc_boolean prefix_eMagn_TENSION_r1_ESPERA_tev0_raised;
 } PrefixTimeEvents;
 

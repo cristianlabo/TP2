@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0">
-  <sgraph:Statechart xmi:id="_IPEiAI_CEeaE_NItBGtDFQ" specification="/* Application EDU-CIA-NXP */&#xD;&#xA;&#xD;&#xA;interface:&#xD;&#xA;&#xD;&#xA;in event evTECXNoOprimido&#xD;&#xA;in event evTECXOprimido: integer&#xD;&#xA;&#xD;&#xA;operation opLED(LEDNumber:integer,&#xD;&#xA;&#x9;State:boolean): void&#xD;&#xA;&#xD;&#xA;const LEDR: integer = 0&#xD;&#xA;const LEDG: integer = 1&#xD;&#xA;const LEDB: integer = 2&#xD;&#xA;const LED1: integer = 3&#xD;&#xA;const LED2: integer = 4&#xD;&#xA;const LED3: integer = 5&#xD;&#xA;&#xD;&#xA;const LED_ON: boolean = true&#xD;&#xA;const LED_OFF: boolean = false&#xD;&#xA;&#xD;&#xA;const TEC1: integer = 1 &lt;&lt; 0&#xD;&#xA;const TEC2: integer = 1 &lt;&lt; 1&#xD;&#xA;const TEC3: integer = 1 &lt;&lt; 2&#xD;&#xA;const TEC4: integer = 1 &lt;&lt; 3&#xD;&#xA;&#xD;&#xA;internal:&#xD;&#xA;&#xD;&#xA;event siTECXOK&#xD;&#xA;event eForma&#xD;&#xA;event eMagn&#xD;&#xA;&#xD;&#xA;var viTecla: integer&#xD;&#xA;" name="prefix">
+  <sgraph:Statechart xmi:id="_IPEiAI_CEeaE_NItBGtDFQ" specification="/* Application EDU-CIA-NXP */&#xD;&#xA;&#xD;&#xA;interface:&#xD;&#xA;&#xD;&#xA;in event evTECXNoOprimido&#xD;&#xA;in event evTECXOprimido: integer&#xD;&#xA;&#xD;&#xA;operation opLED(LEDNumber:integer,&#xD;&#xA;&#x9;State:boolean): void&#xD;&#xA;&#xD;&#xA;const LEDR: integer = 0&#xD;&#xA;const LEDG: integer = 1&#xD;&#xA;const LEDB: integer = 2&#xD;&#xA;const LED1: integer = 3&#xD;&#xA;const LED2: integer = 4&#xD;&#xA;const LED3: integer = 5&#xD;&#xA;&#xD;&#xA;const LED_ON: boolean = true&#xD;&#xA;const LED_OFF: boolean = false&#xD;&#xA;&#xD;&#xA;const TEC1: integer = 1 &lt;&lt; 0&#xD;&#xA;const TEC2: integer = 1 &lt;&lt; 1&#xD;&#xA;const TEC3: integer = 1 &lt;&lt; 2&#xD;&#xA;const TEC4: integer = 1 &lt;&lt; 3&#xD;&#xA;&#xD;&#xA;internal:&#xD;&#xA;&#xD;&#xA;event siTECXOK&#xD;&#xA;event eForma&#xD;&#xA;event eMagn&#xD;&#xA;event eUp&#xD;&#xA;event eDown&#xD;&#xA;&#xD;&#xA;var viTecla: integer&#xD;&#xA;" name="prefix">
     <regions xmi:id="_3DHfo0opEee0ZsqKOimupA" name="TECX">
       <vertices xsi:type="sgraph:State" xmi:id="_3DHfpEopEee0ZsqKOimupA" specification="" name="DEBOUNCE" incomingTransitions="_3DHfrUopEee0ZsqKOimupA">
         <outgoingTransitions xmi:id="_3DHfpkopEee0ZsqKOimupA" specification="after 50 ms" target="_3DNmE0opEee0ZsqKOimupA"/>
@@ -20,9 +20,11 @@
       </vertices>
     </regions>
     <regions xmi:id="_xLA6IJF6EeaIxNsxuRXV9Q" name="Application">
-      <vertices xsi:type="sgraph:State" xmi:id="_93AEkJF6EeaIxNsxuRXV9Q" specification="" name="ESPERA" incomingTransitions="_I0gT8JF7EeaIxNsxuRXV9Q _fV3TYMuXEeaJzKf0Ssal0Q _1pRrEMuXEeaJzKf0Ssal0Q">
+      <vertices xsi:type="sgraph:State" xmi:id="_93AEkJF6EeaIxNsxuRXV9Q" specification="" name="ESPERA" incomingTransitions="_I0gT8JF7EeaIxNsxuRXV9Q _fV3TYMuXEeaJzKf0Ssal0Q _1pRrEMuXEeaJzKf0Ssal0Q _rTlEkO66Eemx6eDhJN8WJA _u9mfQO66Eemx6eDhJN8WJA">
         <outgoingTransitions xmi:id="_1pRrEMuXEeaJzKf0Ssal0Q" specification="siTECXOK [viTecla == TEC2]&#xD;&#xA;/ raise eMagn" target="_93AEkJF6EeaIxNsxuRXV9Q"/>
         <outgoingTransitions xmi:id="_fV3TYMuXEeaJzKf0Ssal0Q" specification="siTECXOK [viTecla == TEC1]&#xD;&#xA;/ raise eForma" target="_93AEkJF6EeaIxNsxuRXV9Q"/>
+        <outgoingTransitions xmi:id="_rTlEkO66Eemx6eDhJN8WJA" specification="siTECXOK [viTecla == TEC3]&#xD;&#xA;/ raise eDown" target="_93AEkJF6EeaIxNsxuRXV9Q"/>
+        <outgoingTransitions xmi:id="_u9mfQO66Eemx6eDhJN8WJA" specification="siTECXOK [viTecla == TEC4]&#xD;&#xA;/ raise eUp" target="_93AEkJF6EeaIxNsxuRXV9Q"/>
       </vertices>
       <vertices xsi:type="sgraph:Entry" xmi:id="_F3S78JF7EeaIxNsxuRXV9Q">
         <outgoingTransitions xmi:id="_I0gT8JF7EeaIxNsxuRXV9Q" specification="" target="_93AEkJF6EeaIxNsxuRXV9Q"/>
@@ -50,19 +52,19 @@
         <outgoingTransitions xmi:id="_u4kScO6zEemx6eDhJN8WJA" specification="eMagn" target="_nJ4v2-6zEemx6eDhJN8WJA"/>
         <regions xmi:id="_B1fzWO6wEemx6eDhJN8WJA" name="r1">
           <vertices xsi:type="sgraph:State" xmi:id="_B1pkZe6wEemx6eDhJN8WJA" specification="entry/ opLED(LED1, LED_ON)" name="FRECUENCIA ACTUAL" incomingTransitions="_B1pkUO6wEemx6eDhJN8WJA _c4yIkO6yEemx6eDhJN8WJA _LlltAO6zEemx6eDhJN8WJA">
-            <outgoingTransitions xmi:id="_XrpnQO6wEemx6eDhJN8WJA" specification="siTECXOK [viTecla == TEC3]" target="_GuCPkO6wEemx6eDhJN8WJA"/>
-            <outgoingTransitions xmi:id="_JloAYO6zEemx6eDhJN8WJA" specification="siTECXOK [viTecla == TEC4]&#xD;&#xA;" target="_Edea3e6zEemx6eDhJN8WJA"/>
+            <outgoingTransitions xmi:id="_XrpnQO6wEemx6eDhJN8WJA" specification="eDown" target="_GuCPkO6wEemx6eDhJN8WJA"/>
+            <outgoingTransitions xmi:id="_JloAYO6zEemx6eDhJN8WJA" specification="eUp" target="_Edea3e6zEemx6eDhJN8WJA"/>
           </vertices>
           <vertices xsi:type="sgraph:Entry" xmi:id="_B1fzY-6wEemx6eDhJN8WJA">
             <outgoingTransitions xmi:id="_B1pkUO6wEemx6eDhJN8WJA" specification="" target="_B1pkZe6wEemx6eDhJN8WJA"/>
           </vertices>
-          <vertices xsi:type="sgraph:State" xmi:id="_GuCPkO6wEemx6eDhJN8WJA" specification="entry / opLED(LED2, LED_ON)" name="AUMENTA" incomingTransitions="_XrpnQO6wEemx6eDhJN8WJA">
+          <vertices xsi:type="sgraph:State" xmi:id="_GuCPkO6wEemx6eDhJN8WJA" specification="entry / opLED(LED2, LED_ON)" name="DISMINUYE" incomingTransitions="_XrpnQO6wEemx6eDhJN8WJA">
             <outgoingTransitions xmi:id="_GtNeQO6yEemx6eDhJN8WJA" specification="after 1000 ms" target="_BKXgwO6yEemx6eDhJN8WJA"/>
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_BKXgwO6yEemx6eDhJN8WJA" specification="entry / opLED(LED2, LED_OFF)" name="DELAY" incomingTransitions="_GtNeQO6yEemx6eDhJN8WJA">
             <outgoingTransitions xmi:id="_c4yIkO6yEemx6eDhJN8WJA" specification="after 50 ms&#xD;&#xA;" target="_B1pkZe6wEemx6eDhJN8WJA"/>
           </vertices>
-          <vertices xsi:type="sgraph:State" xmi:id="_Edea3e6zEemx6eDhJN8WJA" specification="entry / opLED(LED3, LED_ON)" name="DISMINUYE" incomingTransitions="_JloAYO6zEemx6eDhJN8WJA">
+          <vertices xsi:type="sgraph:State" xmi:id="_Edea3e6zEemx6eDhJN8WJA" specification="entry / opLED(LED3, LED_ON)" name="AUMENTA" incomingTransitions="_JloAYO6zEemx6eDhJN8WJA">
             <outgoingTransitions xmi:id="_Ki6vEO6zEemx6eDhJN8WJA" specification="after 1000 ms&#xD;&#xA;" target="_Ft9LTe6zEemx6eDhJN8WJA"/>
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_Ft9LTe6zEemx6eDhJN8WJA" specification="entry / opLED(LED3, LED_OFF)" name="ESPERA" incomingTransitions="_Ki6vEO6zEemx6eDhJN8WJA">
@@ -74,19 +76,19 @@
         <outgoingTransitions xmi:id="_wPmW0O6zEemx6eDhJN8WJA" specification="eMagn" target="_eyBYkO6mEemx6eDhJN8WJA"/>
         <regions xmi:id="_nJ4v3u6zEemx6eDhJN8WJA" name="r1">
           <vertices xsi:type="sgraph:State" xmi:id="_nJ4v3-6zEemx6eDhJN8WJA" specification="entry /opLED(LED1, LED_OFF)" name="TENSION ACTUAL" incomingTransitions="_nJ7y6u6zEemx6eDhJN8WJA _nJ7zAu6zEemx6eDhJN8WJA _nJ7zGu6zEemx6eDhJN8WJA">
-            <outgoingTransitions xmi:id="_nJ7y0e6zEemx6eDhJN8WJA" specification="siTECXOK [viTecla == TEC3]" target="_nJ7y6-6zEemx6eDhJN8WJA"/>
-            <outgoingTransitions xmi:id="_nJ7y3e6zEemx6eDhJN8WJA" specification="siTECXOK [viTecla == TEC4]&#xD;&#xA;" target="_nJ7zA-6zEemx6eDhJN8WJA"/>
+            <outgoingTransitions xmi:id="_nJ7y0e6zEemx6eDhJN8WJA" specification="eDown" target="_nJ7y6-6zEemx6eDhJN8WJA"/>
+            <outgoingTransitions xmi:id="_nJ7y3e6zEemx6eDhJN8WJA" specification="eUp" target="_nJ7zA-6zEemx6eDhJN8WJA"/>
           </vertices>
           <vertices xsi:type="sgraph:Entry" xmi:id="_nJ7y6e6zEemx6eDhJN8WJA">
             <outgoingTransitions xmi:id="_nJ7y6u6zEemx6eDhJN8WJA" specification="" target="_nJ4v3-6zEemx6eDhJN8WJA"/>
           </vertices>
-          <vertices xsi:type="sgraph:State" xmi:id="_nJ7y6-6zEemx6eDhJN8WJA" specification="entry / opLED(LED2, LED_ON)" name="AUMENTA" incomingTransitions="_nJ7y0e6zEemx6eDhJN8WJA">
+          <vertices xsi:type="sgraph:State" xmi:id="_nJ7y6-6zEemx6eDhJN8WJA" specification="entry / opLED(LED2, LED_ON)" name="DISMINUYE" incomingTransitions="_nJ7y0e6zEemx6eDhJN8WJA">
             <outgoingTransitions xmi:id="_nJ7y9O6zEemx6eDhJN8WJA" specification="after 1000 ms&#xD;&#xA;" target="_nJ7y-e6zEemx6eDhJN8WJA"/>
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_nJ7y-e6zEemx6eDhJN8WJA" specification="entry / opLED(LED2, LED_OFF)" name="DELAY" incomingTransitions="_nJ7y9O6zEemx6eDhJN8WJA">
             <outgoingTransitions xmi:id="_nJ7zAu6zEemx6eDhJN8WJA" specification=" after 50 ms" target="_nJ4v3-6zEemx6eDhJN8WJA"/>
           </vertices>
-          <vertices xsi:type="sgraph:State" xmi:id="_nJ7zA-6zEemx6eDhJN8WJA" specification="entry / opLED(LED3, LED_ON)" name="DISMINUYE" incomingTransitions="_nJ7y3e6zEemx6eDhJN8WJA">
+          <vertices xsi:type="sgraph:State" xmi:id="_nJ7zA-6zEemx6eDhJN8WJA" specification="entry / opLED(LED3, LED_ON)" name="AUMENTA" incomingTransitions="_nJ7y3e6zEemx6eDhJN8WJA">
             <outgoingTransitions xmi:id="_nJ7zDO6zEemx6eDhJN8WJA" specification="after 1000 ms&#xD;&#xA;" target="_nJ7zEe6zEemx6eDhJN8WJA"/>
           </vertices>
           <vertices xsi:type="sgraph:State" xmi:id="_nJ7zEe6zEemx6eDhJN8WJA" specification="entry / opLED(LED3, LED_OFF)" name="ESPERA" incomingTransitions="_nJ7zDO6zEemx6eDhJN8WJA">
@@ -145,7 +147,7 @@
         <layoutConstraint xsi:type="notation:Bounds" xmi:id="_xLHAxJF6EeaIxNsxuRXV9Q"/>
       </children>
       <styles xsi:type="notation:ShapeStyle" xmi:id="_xLA6IpF6EeaIxNsxuRXV9Q" fontName="Verdana" fillColor="15790320" lineColor="12632256"/>
-      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_xLA6I5F6EeaIxNsxuRXV9Q" x="342" y="342" width="463" height="301"/>
+      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_xLA6I5F6EeaIxNsxuRXV9Q" x="342" y="336" width="463" height="301"/>
     </children>
     <children xmi:id="_3DHfYUopEee0ZsqKOimupA" type="Region" element="_3DHfo0opEee0ZsqKOimupA">
       <children xsi:type="notation:DecorationNode" xmi:id="_3DHfYkopEee0ZsqKOimupA" type="RegionName">
@@ -305,7 +307,7 @@
         <layoutConstraint xsi:type="notation:Bounds" xmi:id="_wqJoRO3zEemJ9fLUqyZmbA"/>
       </children>
       <styles xsi:type="notation:ShapeStyle" xmi:id="_wqJoRe3zEemJ9fLUqyZmbA" fontName="Verdana" fillColor="15790320" lineColor="12632256"/>
-      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_wqJoRu3zEemJ9fLUqyZmbA" x="834" y="700" width="523" height="415"/>
+      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_wqJoRu3zEemJ9fLUqyZmbA" x="321" y="654" width="523" height="415"/>
     </children>
     <children xmi:id="_sKcAoe6lEemx6eDhJN8WJA" type="Region" element="_sKcA1-6lEemx6eDhJN8WJA">
       <children xsi:type="notation:DecorationNode" xmi:id="_sKcAou6lEemx6eDhJN8WJA" type="RegionName">
@@ -897,6 +899,28 @@
       <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_wPozEu6zEemx6eDhJN8WJA" points="[9, -5, 4, 44]$[9, -45, 4, 4]"/>
       <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_wPrPUO6zEemx6eDhJN8WJA" id="(0.6821120689655172,0.018808777429467086)"/>
       <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_wPrPUe6zEemx6eDhJN8WJA" id="(0.6875,0.987460815047022)"/>
+    </edges>
+    <edges xmi:id="_rTm5wO66Eemx6eDhJN8WJA" type="Transition" element="_rTlEkO66Eemx6eDhJN8WJA" source="_93GLMpF6EeaIxNsxuRXV9Q" target="_93GLMpF6EeaIxNsxuRXV9Q">
+      <children xsi:type="notation:DecorationNode" xmi:id="_rTm5xO66Eemx6eDhJN8WJA" type="TransitionExpression">
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_rTm5xe66Eemx6eDhJN8WJA"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_rTm5xu66Eemx6eDhJN8WJA" x="1" y="-113"/>
+      </children>
+      <styles xsi:type="notation:ConnectorStyle" xmi:id="_rTm5we66Eemx6eDhJN8WJA" routing="Rectilinear" lineColor="4210752"/>
+      <styles xsi:type="notation:FontStyle" xmi:id="_rTm5w-66Eemx6eDhJN8WJA" fontName="Verdana"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_rTm5wu66Eemx6eDhJN8WJA" points="[4, -1, 15, -56]$[28, -1, 39, -56]$[28, 23, 39, -32]$[4, 23, 15, -32]"/>
+      <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_rToH4O66Eemx6eDhJN8WJA" id="(0.9529411764705882,0.6460176991150443)"/>
+      <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_rToH4e66Eemx6eDhJN8WJA" id="(0.8235294117647058,0.8938053097345132)"/>
+    </edges>
+    <edges xmi:id="_u9ntYO66Eemx6eDhJN8WJA" type="Transition" element="_u9mfQO66Eemx6eDhJN8WJA" source="_93GLMpF6EeaIxNsxuRXV9Q" target="_93GLMpF6EeaIxNsxuRXV9Q">
+      <children xsi:type="notation:DecorationNode" xmi:id="_u9ntZO66Eemx6eDhJN8WJA" type="TransitionExpression">
+        <styles xsi:type="notation:ShapeStyle" xmi:id="_u9ntZe66Eemx6eDhJN8WJA"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="_u9ntZu66Eemx6eDhJN8WJA" x="4" y="-113"/>
+      </children>
+      <styles xsi:type="notation:ConnectorStyle" xmi:id="_u9ntYe66Eemx6eDhJN8WJA" routing="Rectilinear" lineColor="4210752"/>
+      <styles xsi:type="notation:FontStyle" xmi:id="_u9ntY-66Eemx6eDhJN8WJA" fontName="Verdana"/>
+      <bendpoints xsi:type="notation:RelativeBendpoints" xmi:id="_u9ntYu66Eemx6eDhJN8WJA" points="[8, 11, 10, -15]$[32, 11, 34, -15]$[32, 29, 34, 3]$[8, 29, 10, 3]"/>
+      <sourceAnchor xsi:type="notation:IdentityAnchor" xmi:id="_u9o7gO66Eemx6eDhJN8WJA" id="(0.9058823529411765,0.8097345132743363)"/>
+      <targetAnchor xsi:type="notation:IdentityAnchor" xmi:id="_u9o7ge66Eemx6eDhJN8WJA" id="(0.8823529411764706,0.9247787610619469)"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>
