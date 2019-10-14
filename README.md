@@ -109,34 +109,46 @@ Se pueden visualizar en la siguiente figura las constantes:
 # 2 Uso del IDE (Integrated Development Environment) LPCXpresso & plug-in Yakindu SCT
 
 ## a) migrar proyecto
-Para migrar el proyecto a projects/tp2 se copiaron los archivos correspondientes a esta carpeta dentro del proyecto firmware_v2 como se puede ver en la siguiente figura:
-
-![2b_arbol.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/2b_arbol.png)
-
-Luego se configuraron el archivo prefix_sgen  de la siguiente forma:
-
-![2a_prefix_sgen.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/2a_prefix_sgen.png)
+Para migrar el proyecto a projects/tp2 se copiaron los archivos correspondientes a esta carpeta dentro del proyecto firmware_v2:
 
 ## b)generacion de codigos con statecharts
 
 Para cada caso se copio los archivos Blinky.-sct,BlinkyTimeEvent.-sct,Button.-sct,ldelBlinky.-sct, Application.-sct,Porton.-sct y se los renombro como prefix.sct cada uno por separado en las carpetas SCT_1_1,SCT_1_2,SCT_2_1,SCT_2_2,SCT_3_1 y SCT_3_2 correspondientemente.Luego se genero el codigo de cada uno por separado.
 Para generar los codigos fuentes correspondientes de cada maquina de estado se usaron los archivos de prefix.sgen -> generate code artifacts.Como se puede visualizar en la siguiente figura:
 
+![2b_codigo_generado.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/2b_codigo_generado.png)
+
+
+![2b_makefile1.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/2b_makefile1.png)
+![2b_makefile2.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/2b_makefile2.png)
+![2b_makefile3.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/2b_makefile3.png)
+
 ### c)prueba de simulaciones
 
 Con los codigos generados en el punto anterior se modifico el #define TEST (SCT_?) con ? ={1,2,3} en el main.c para seleccionar entre los diferentes casos de las maquinas de estado como se puede visualizar en la siguiente figura:
+
+![2c_simulaciones.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/2c_simulaciones.png)
+
 
 ## d)casos de prueba con TIME EVENTS
 
 Con los codigos generados en el punto anterior se modifico el #define _USE_TIME_EVENTS (?) con ? ={true,false} en el main.c para seleccionar entre usar time events o no.
 
+![2d_timeevents.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/2d_timeevents.png)
+
+
 ## e)compilacion
 
 Se realizaron las acciones clear ->refresh -> build sobre el proyecto para cada caso y luego se ejecutaron los diferentes casos de prueba.
 
+![2e_compilacion.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/2e_compilacion.png)
+
 ## f)configuracion DEBUG
 
 Se configuro el DEBUG teniendo en cuenta que el proyecto apunte a out/lpc4337_m4/TP2.axf como se puede ver en la figura:
+
+![2f_debug.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/2f_debug.png)
+
 
 ## g)prueba DEBUG
 
@@ -158,10 +170,18 @@ $ git push -u origin master
 
 Para la implementacion de la maquina de estados para cada uno de los casos propuestos se separaron en carpetas,se realizaron los diagramas de estado,se  generaron los codigos fuente(prefix.sgen -> generate code artifacts) en las carpetas correspondientes y se modifico el archivo makefile como se puede ver en la siguiente figura:
 
+![implementacion_maquinas_estados.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/implementacion_maquinas_estados.png)
+
+![makefile_implementaciones1.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/makefile_implementaciones1.png)
+![makefile_implementaciones2.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/makefile_implementaciones2.png)
 
 ## Panel de control de un generador de señales
 
 Para este caso se puede ver el diagrama de estados  en la siguiente figura:
+
+![generador_frecuencia1.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/generador_frecuencia1.png)
+![generador_frecuencia2.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/generador_frecuencia2.png)
+![generador_frecuencia3.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/generador_frecuencia3.png)
 
 ## Puerta corrediza
 
