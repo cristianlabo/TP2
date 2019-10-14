@@ -13,10 +13,6 @@ static sc_boolean prefix_check_TECX_DEBOUNCE_tr0_tr0(const Prefix* handle);
 static sc_boolean prefix_check_TECX_VALIDATION_tr0_tr0(const Prefix* handle);
 static sc_boolean prefix_check_TECX_VALIDATION_tr1_tr1(const Prefix* handle);
 static sc_boolean prefix_check_TECX_OPRIMIDO_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_LED3_REPOSO_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_LED3_TITILAR_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_LED3_TITILAR_r1_APAGADO_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_LED3_TITILAR_r1_ENCENDIDO_tr0_tr0(const Prefix* handle);
 static sc_boolean prefix_check_IDLE_ESPERA_tr0_tr0(const Prefix* handle);
 static sc_boolean prefix_check_IDLE_ESPERA_tr1_tr1(const Prefix* handle);
 static sc_boolean prefix_check_PORTON_CERRADO_tr0_tr0(const Prefix* handle);
@@ -25,15 +21,15 @@ static sc_boolean prefix_check_PORTON_CERRANDO_tr1_tr1(const Prefix* handle);
 static sc_boolean prefix_check_PORTON_ABRIENDO_tr0_tr0(const Prefix* handle);
 static sc_boolean prefix_check_PORTON_ABRIENDO_tr1_tr1(const Prefix* handle);
 static sc_boolean prefix_check_PORTON_ABIERTO_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_LED3_REPOSO_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_LED3_TITILAR_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_LED3_TITILAR_r1_APAGADO_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_LED3_TITILAR_r1_ENCENDIDO_tr0_tr0(const Prefix* handle);
 static void prefix_effect_TECX_NO_OPRIMIDO_tr0(Prefix* handle);
 static void prefix_effect_TECX_DEBOUNCE_tr0(Prefix* handle);
 static void prefix_effect_TECX_VALIDATION_tr0(Prefix* handle);
 static void prefix_effect_TECX_VALIDATION_tr1(Prefix* handle);
 static void prefix_effect_TECX_OPRIMIDO_tr0(Prefix* handle);
-static void prefix_effect_LED3_REPOSO_tr0(Prefix* handle);
-static void prefix_effect_LED3_TITILAR_tr0(Prefix* handle);
-static void prefix_effect_LED3_TITILAR_r1_APAGADO_tr0(Prefix* handle);
-static void prefix_effect_LED3_TITILAR_r1_ENCENDIDO_tr0(Prefix* handle);
 static void prefix_effect_IDLE_ESPERA_tr0(Prefix* handle);
 static void prefix_effect_IDLE_ESPERA_tr1(Prefix* handle);
 static void prefix_effect_PORTON_CERRADO_tr0(Prefix* handle);
@@ -42,78 +38,85 @@ static void prefix_effect_PORTON_CERRANDO_tr1(Prefix* handle);
 static void prefix_effect_PORTON_ABRIENDO_tr0(Prefix* handle);
 static void prefix_effect_PORTON_ABRIENDO_tr1(Prefix* handle);
 static void prefix_effect_PORTON_ABIERTO_tr0(Prefix* handle);
+static void prefix_effect_LED3_REPOSO_tr0(Prefix* handle);
+static void prefix_effect_LED3_TITILAR_tr0(Prefix* handle);
+static void prefix_effect_LED3_TITILAR_r1_APAGADO_tr0(Prefix* handle);
+static void prefix_effect_LED3_TITILAR_r1_ENCENDIDO_tr0(Prefix* handle);
 static void prefix_enact_TECX_DEBOUNCE(Prefix* handle);
 static void prefix_enact_TECX_OPRIMIDO(Prefix* handle);
-static void prefix_enact_LED3_REPOSO(Prefix* handle);
-static void prefix_enact_LED3_TITILAR_r1_APAGADO(Prefix* handle);
-static void prefix_enact_LED3_TITILAR_r1_ENCENDIDO(Prefix* handle);
+static void prefix_enact_PORTON_CERRADO(Prefix* handle);
 static void prefix_enact_PORTON_CERRANDO(Prefix* handle);
 static void prefix_enact_PORTON_ABRIENDO(Prefix* handle);
 static void prefix_enact_PORTON_ABIERTO(Prefix* handle);
+static void prefix_enact_LED3_REPOSO(Prefix* handle);
+static void prefix_enact_LED3_TITILAR_r1_APAGADO(Prefix* handle);
+static void prefix_enact_LED3_TITILAR_r1_ENCENDIDO(Prefix* handle);
 static void prefix_exact_TECX_DEBOUNCE(Prefix* handle);
-static void prefix_exact_LED3_TITILAR_r1_APAGADO(Prefix* handle);
-static void prefix_exact_LED3_TITILAR_r1_ENCENDIDO(Prefix* handle);
 static void prefix_exact_PORTON_CERRANDO(Prefix* handle);
 static void prefix_exact_PORTON_ABRIENDO(Prefix* handle);
+static void prefix_exact_LED3_TITILAR_r1_APAGADO(Prefix* handle);
+static void prefix_exact_LED3_TITILAR_r1_ENCENDIDO(Prefix* handle);
 static void prefix_enseq_TECX_NO_OPRIMIDO_default(Prefix* handle);
 static void prefix_enseq_TECX_DEBOUNCE_default(Prefix* handle);
 static void prefix_enseq_TECX_VALIDATION_default(Prefix* handle);
 static void prefix_enseq_TECX_OPRIMIDO_default(Prefix* handle);
-static void prefix_enseq_LED3_REPOSO_default(Prefix* handle);
-static void prefix_enseq_LED3_TITILAR_default(Prefix* handle);
-static void prefix_enseq_LED3_TITILAR_r1_APAGADO_default(Prefix* handle);
-static void prefix_enseq_LED3_TITILAR_r1_ENCENDIDO_default(Prefix* handle);
 static void prefix_enseq_IDLE_ESPERA_default(Prefix* handle);
 static void prefix_enseq_PORTON_CERRADO_default(Prefix* handle);
 static void prefix_enseq_PORTON_CERRANDO_default(Prefix* handle);
 static void prefix_enseq_PORTON_ABRIENDO_default(Prefix* handle);
 static void prefix_enseq_PORTON_ABIERTO_default(Prefix* handle);
+static void prefix_enseq_LED3_REPOSO_default(Prefix* handle);
+static void prefix_enseq_LED3_TITILAR_default(Prefix* handle);
+static void prefix_enseq_LED3_TITILAR_r1_APAGADO_default(Prefix* handle);
+static void prefix_enseq_LED3_TITILAR_r1_ENCENDIDO_default(Prefix* handle);
 static void prefix_enseq_TECX_default(Prefix* handle);
-static void prefix_enseq_LED3_default(Prefix* handle);
-static void prefix_enseq_LED3_TITILAR_r1_default(Prefix* handle);
 static void prefix_enseq_IDLE_default(Prefix* handle);
 static void prefix_enseq_PORTON_default(Prefix* handle);
+static void prefix_enseq_LED3_default(Prefix* handle);
+static void prefix_enseq_LED3_TITILAR_r1_default(Prefix* handle);
 static void prefix_exseq_TECX_NO_OPRIMIDO(Prefix* handle);
 static void prefix_exseq_TECX_DEBOUNCE(Prefix* handle);
 static void prefix_exseq_TECX_VALIDATION(Prefix* handle);
 static void prefix_exseq_TECX_OPRIMIDO(Prefix* handle);
-static void prefix_exseq_LED3_REPOSO(Prefix* handle);
-static void prefix_exseq_LED3_TITILAR(Prefix* handle);
-static void prefix_exseq_LED3_TITILAR_r1_APAGADO(Prefix* handle);
-static void prefix_exseq_LED3_TITILAR_r1_ENCENDIDO(Prefix* handle);
 static void prefix_exseq_IDLE_ESPERA(Prefix* handle);
 static void prefix_exseq_PORTON_CERRADO(Prefix* handle);
 static void prefix_exseq_PORTON_CERRANDO(Prefix* handle);
 static void prefix_exseq_PORTON_ABRIENDO(Prefix* handle);
 static void prefix_exseq_PORTON_ABIERTO(Prefix* handle);
+static void prefix_exseq_LED3_REPOSO(Prefix* handle);
+static void prefix_exseq_LED3_TITILAR(Prefix* handle);
+static void prefix_exseq_LED3_TITILAR_r1_APAGADO(Prefix* handle);
+static void prefix_exseq_LED3_TITILAR_r1_ENCENDIDO(Prefix* handle);
 static void prefix_exseq_TECX(Prefix* handle);
-static void prefix_exseq_LED3(Prefix* handle);
-static void prefix_exseq_LED3_TITILAR_r1(Prefix* handle);
 static void prefix_exseq_IDLE(Prefix* handle);
 static void prefix_exseq_PORTON(Prefix* handle);
+static void prefix_exseq_LED3(Prefix* handle);
+static void prefix_exseq_LED3_TITILAR_r1(Prefix* handle);
 static void prefix_react_TECX_NO_OPRIMIDO(Prefix* handle);
 static void prefix_react_TECX_DEBOUNCE(Prefix* handle);
 static void prefix_react_TECX_VALIDATION(Prefix* handle);
 static void prefix_react_TECX_OPRIMIDO(Prefix* handle);
-static void prefix_react_LED3_REPOSO(Prefix* handle);
-static void prefix_react_LED3_TITILAR_r1_APAGADO(Prefix* handle);
-static void prefix_react_LED3_TITILAR_r1_ENCENDIDO(Prefix* handle);
 static void prefix_react_IDLE_ESPERA(Prefix* handle);
 static void prefix_react_PORTON_CERRADO(Prefix* handle);
 static void prefix_react_PORTON_CERRANDO(Prefix* handle);
 static void prefix_react_PORTON_ABRIENDO(Prefix* handle);
 static void prefix_react_PORTON_ABIERTO(Prefix* handle);
+static void prefix_react_LED3_REPOSO(Prefix* handle);
+static void prefix_react_LED3_TITILAR_r1_APAGADO(Prefix* handle);
+static void prefix_react_LED3_TITILAR_r1_ENCENDIDO(Prefix* handle);
 static void prefix_react_TECX__entry_Default(Prefix* handle);
-static void prefix_react_LED3_TITILAR_r1__entry_Default(Prefix* handle);
-static void prefix_react_LED3__entry_Default(Prefix* handle);
 static void prefix_react_IDLE__entry_Default(Prefix* handle);
 static void prefix_react_PORTON__entry_Default(Prefix* handle);
+static void prefix_react_LED3_TITILAR_r1__entry_Default(Prefix* handle);
+static void prefix_react_LED3__entry_Default(Prefix* handle);
 static void prefix_clearInEvents(Prefix* handle);
 static void prefix_clearOutEvents(Prefix* handle);
 
+const sc_integer PREFIX_PREFIXIFACE_LEDB = 2;
+const sc_integer PREFIX_PREFIXIFACE_LED2 = 4;
 const sc_integer PREFIX_PREFIXIFACE_LED3 = 5;
-const sc_boolean PREFIX_PREFIXIFACE_LED_ON = bool_false;
-const sc_boolean PREFIX_PREFIXIFACE_LED_OFF = bool_true;
+const sc_boolean PREFIX_PREFIXIFACE_LED_ON = bool_true;
+const sc_boolean PREFIX_PREFIXIFACE_LED_OFF = bool_false;
 const sc_integer PREFIX_PREFIXIFACE_TEC1 = 1;
 const sc_integer PREFIX_PREFIXIFACE_TEC2 = 2;
 
@@ -141,18 +144,18 @@ void prefix_enter(Prefix* handle)
 {
 	/* Default enter sequence for statechart prefix */
 	prefix_enseq_TECX_default(handle);
-	prefix_enseq_LED3_default(handle);
 	prefix_enseq_IDLE_default(handle);
 	prefix_enseq_PORTON_default(handle);
+	prefix_enseq_LED3_default(handle);
 }
 
 void prefix_exit(Prefix* handle)
 {
 	/* Default exit sequence for statechart prefix */
 	prefix_exseq_TECX(handle);
-	prefix_exseq_LED3(handle);
 	prefix_exseq_IDLE(handle);
 	prefix_exseq_PORTON(handle);
+	prefix_exseq_LED3(handle);
 }
 
 sc_boolean prefix_isActive(const Prefix* handle)
@@ -187,10 +190,10 @@ static void prefix_clearInEvents(Prefix* handle)
 	handle->internal.siLED_raised = bool_false;
 	handle->internal.siNoLED_raised = bool_false;
 	handle->timeEvents.prefix_TECX_DEBOUNCE_tev0_raised = bool_false;
-	handle->timeEvents.prefix_LED3_TITILAR_r1_APAGADO_tev0_raised = bool_false;
-	handle->timeEvents.prefix_LED3_TITILAR_r1_ENCENDIDO_tev0_raised = bool_false;
 	handle->timeEvents.prefix_PORTON_CERRANDO_tev0_raised = bool_false;
 	handle->timeEvents.prefix_PORTON_ABRIENDO_tev0_raised = bool_false;
+	handle->timeEvents.prefix_LED3_TITILAR_r1_APAGADO_tev0_raised = bool_false;
+	handle->timeEvents.prefix_LED3_TITILAR_r1_ENCENDIDO_tev0_raised = bool_false;
 }
 
 static void prefix_clearOutEvents(Prefix* handle)
@@ -229,21 +232,6 @@ void prefix_runCycle(Prefix* handle)
 			prefix_react_TECX_OPRIMIDO(handle);
 			break;
 		}
-		case Prefix_LED3_REPOSO :
-		{
-			prefix_react_LED3_REPOSO(handle);
-			break;
-		}
-		case Prefix_LED3_TITILAR_r1_APAGADO :
-		{
-			prefix_react_LED3_TITILAR_r1_APAGADO(handle);
-			break;
-		}
-		case Prefix_LED3_TITILAR_r1_ENCENDIDO :
-		{
-			prefix_react_LED3_TITILAR_r1_ENCENDIDO(handle);
-			break;
-		}
 		case Prefix_IDLE_ESPERA :
 		{
 			prefix_react_IDLE_ESPERA(handle);
@@ -267,6 +255,21 @@ void prefix_runCycle(Prefix* handle)
 		case Prefix_PORTON_ABIERTO :
 		{
 			prefix_react_PORTON_ABIERTO(handle);
+			break;
+		}
+		case Prefix_LED3_REPOSO :
+		{
+			prefix_react_LED3_REPOSO(handle);
+			break;
+		}
+		case Prefix_LED3_TITILAR_r1_APAGADO :
+		{
+			prefix_react_LED3_TITILAR_r1_APAGADO(handle);
+			break;
+		}
+		case Prefix_LED3_TITILAR_r1_ENCENDIDO :
+		{
+			prefix_react_LED3_TITILAR_r1_ENCENDIDO(handle);
 			break;
 		}
 		default:
@@ -307,40 +310,40 @@ sc_boolean prefix_isStateActive(const Prefix* handle, PrefixStates state)
 			result = (sc_boolean) (handle->stateConfVector[0] == Prefix_TECX_OPRIMIDO
 			);
 			break;
-		case Prefix_LED3_REPOSO :
-			result = (sc_boolean) (handle->stateConfVector[1] == Prefix_LED3_REPOSO
-			);
-			break;
-		case Prefix_LED3_TITILAR :
-			result = (sc_boolean) (handle->stateConfVector[1] >= Prefix_LED3_TITILAR
-				&& handle->stateConfVector[1] <= Prefix_LED3_TITILAR_r1_ENCENDIDO);
-			break;
-		case Prefix_LED3_TITILAR_r1_APAGADO :
-			result = (sc_boolean) (handle->stateConfVector[1] == Prefix_LED3_TITILAR_r1_APAGADO
-			);
-			break;
-		case Prefix_LED3_TITILAR_r1_ENCENDIDO :
-			result = (sc_boolean) (handle->stateConfVector[1] == Prefix_LED3_TITILAR_r1_ENCENDIDO
-			);
-			break;
 		case Prefix_IDLE_ESPERA :
-			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_IDLE_ESPERA
+			result = (sc_boolean) (handle->stateConfVector[1] == Prefix_IDLE_ESPERA
 			);
 			break;
 		case Prefix_PORTON_CERRADO :
-			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_PORTON_CERRADO
+			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_PORTON_CERRADO
 			);
 			break;
 		case Prefix_PORTON_CERRANDO :
-			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_PORTON_CERRANDO
+			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_PORTON_CERRANDO
 			);
 			break;
 		case Prefix_PORTON_ABRIENDO :
-			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_PORTON_ABRIENDO
+			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_PORTON_ABRIENDO
 			);
 			break;
 		case Prefix_PORTON_ABIERTO :
-			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_PORTON_ABIERTO
+			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_PORTON_ABIERTO
+			);
+			break;
+		case Prefix_LED3_REPOSO :
+			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_LED3_REPOSO
+			);
+			break;
+		case Prefix_LED3_TITILAR :
+			result = (sc_boolean) (handle->stateConfVector[3] >= Prefix_LED3_TITILAR
+				&& handle->stateConfVector[3] <= Prefix_LED3_TITILAR_r1_ENCENDIDO);
+			break;
+		case Prefix_LED3_TITILAR_r1_APAGADO :
+			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_LED3_TITILAR_r1_APAGADO
+			);
+			break;
+		case Prefix_LED3_TITILAR_r1_ENCENDIDO :
+			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_LED3_TITILAR_r1_ENCENDIDO
 			);
 			break;
 		default:
@@ -361,6 +364,14 @@ void prefixIface_raise_evTECXNoOprimido(Prefix* handle)
 }
 
 
+const sc_integer prefixIface_get_lEDB(const Prefix* handle)
+{
+	return PREFIX_PREFIXIFACE_LEDB;
+}
+const sc_integer prefixIface_get_lED2(const Prefix* handle)
+{
+	return PREFIX_PREFIXIFACE_LED2;
+}
 const sc_integer prefixIface_get_lED3(const Prefix* handle)
 {
 	return PREFIX_PREFIXIFACE_LED3;
@@ -409,26 +420,6 @@ static sc_boolean prefix_check_TECX_OPRIMIDO_tr0_tr0(const Prefix* handle)
 	return handle->iface.evTECXNoOprimido_raised;
 }
 
-static sc_boolean prefix_check_LED3_REPOSO_tr0_tr0(const Prefix* handle)
-{
-	return handle->internal.siLED_raised;
-}
-
-static sc_boolean prefix_check_LED3_TITILAR_tr0_tr0(const Prefix* handle)
-{
-	return handle->internal.siNoLED_raised;
-}
-
-static sc_boolean prefix_check_LED3_TITILAR_r1_APAGADO_tr0_tr0(const Prefix* handle)
-{
-	return handle->timeEvents.prefix_LED3_TITILAR_r1_APAGADO_tev0_raised;
-}
-
-static sc_boolean prefix_check_LED3_TITILAR_r1_ENCENDIDO_tr0_tr0(const Prefix* handle)
-{
-	return handle->timeEvents.prefix_LED3_TITILAR_r1_ENCENDIDO_tev0_raised;
-}
-
 static sc_boolean prefix_check_IDLE_ESPERA_tr0_tr0(const Prefix* handle)
 {
 	return ((handle->internal.siTECXOK_raised) && (handle->internal.viTecla == PREFIX_PREFIXIFACE_TEC1)) ? bool_true : bool_false;
@@ -469,6 +460,26 @@ static sc_boolean prefix_check_PORTON_ABIERTO_tr0_tr0(const Prefix* handle)
 	return handle->internal.siCerrar_raised;
 }
 
+static sc_boolean prefix_check_LED3_REPOSO_tr0_tr0(const Prefix* handle)
+{
+	return handle->internal.siLED_raised;
+}
+
+static sc_boolean prefix_check_LED3_TITILAR_tr0_tr0(const Prefix* handle)
+{
+	return handle->internal.siNoLED_raised;
+}
+
+static sc_boolean prefix_check_LED3_TITILAR_r1_APAGADO_tr0_tr0(const Prefix* handle)
+{
+	return handle->timeEvents.prefix_LED3_TITILAR_r1_APAGADO_tev0_raised;
+}
+
+static sc_boolean prefix_check_LED3_TITILAR_r1_ENCENDIDO_tr0_tr0(const Prefix* handle)
+{
+	return handle->timeEvents.prefix_LED3_TITILAR_r1_ENCENDIDO_tev0_raised;
+}
+
 static void prefix_effect_TECX_NO_OPRIMIDO_tr0(Prefix* handle)
 {
 	prefix_exseq_TECX_NO_OPRIMIDO(handle);
@@ -497,30 +508,6 @@ static void prefix_effect_TECX_OPRIMIDO_tr0(Prefix* handle)
 {
 	prefix_exseq_TECX_OPRIMIDO(handle);
 	prefix_enseq_TECX_NO_OPRIMIDO_default(handle);
-}
-
-static void prefix_effect_LED3_REPOSO_tr0(Prefix* handle)
-{
-	prefix_exseq_LED3_REPOSO(handle);
-	prefix_enseq_LED3_TITILAR_default(handle);
-}
-
-static void prefix_effect_LED3_TITILAR_tr0(Prefix* handle)
-{
-	prefix_exseq_LED3_TITILAR(handle);
-	prefix_enseq_LED3_REPOSO_default(handle);
-}
-
-static void prefix_effect_LED3_TITILAR_r1_APAGADO_tr0(Prefix* handle)
-{
-	prefix_exseq_LED3_TITILAR_r1_APAGADO(handle);
-	prefix_enseq_LED3_TITILAR_r1_ENCENDIDO_default(handle);
-}
-
-static void prefix_effect_LED3_TITILAR_r1_ENCENDIDO_tr0(Prefix* handle)
-{
-	prefix_exseq_LED3_TITILAR_r1_ENCENDIDO(handle);
-	prefix_enseq_LED3_TITILAR_r1_APAGADO_default(handle);
 }
 
 static void prefix_effect_IDLE_ESPERA_tr0(Prefix* handle)
@@ -573,6 +560,30 @@ static void prefix_effect_PORTON_ABIERTO_tr0(Prefix* handle)
 	prefix_enseq_PORTON_CERRANDO_default(handle);
 }
 
+static void prefix_effect_LED3_REPOSO_tr0(Prefix* handle)
+{
+	prefix_exseq_LED3_REPOSO(handle);
+	prefix_enseq_LED3_TITILAR_default(handle);
+}
+
+static void prefix_effect_LED3_TITILAR_tr0(Prefix* handle)
+{
+	prefix_exseq_LED3_TITILAR(handle);
+	prefix_enseq_LED3_REPOSO_default(handle);
+}
+
+static void prefix_effect_LED3_TITILAR_r1_APAGADO_tr0(Prefix* handle)
+{
+	prefix_exseq_LED3_TITILAR_r1_APAGADO(handle);
+	prefix_enseq_LED3_TITILAR_r1_ENCENDIDO_default(handle);
+}
+
+static void prefix_effect_LED3_TITILAR_r1_ENCENDIDO_tr0(Prefix* handle)
+{
+	prefix_exseq_LED3_TITILAR_r1_ENCENDIDO(handle);
+	prefix_enseq_LED3_TITILAR_r1_APAGADO_default(handle);
+}
+
 /* Entry action for state 'DEBOUNCE'. */
 static void prefix_enact_TECX_DEBOUNCE(Prefix* handle)
 {
@@ -586,6 +597,40 @@ static void prefix_enact_TECX_OPRIMIDO(Prefix* handle)
 	/* Entry action for state 'OPRIMIDO'. */
 	handle->internal.siTECXOK_raised = bool_true;
 	handle->internal.viTecla = handle->iface.evTECXOprimido_value;
+}
+
+/* Entry action for state 'CERRADO'. */
+static void prefix_enact_PORTON_CERRADO(Prefix* handle)
+{
+	/* Entry action for state 'CERRADO'. */
+	handle->internal.siNoLED_raised = bool_true;
+	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED2, PREFIX_PREFIXIFACE_LED_ON);
+}
+
+/* Entry action for state 'CERRANDO'. */
+static void prefix_enact_PORTON_CERRANDO(Prefix* handle)
+{
+	/* Entry action for state 'CERRANDO'. */
+	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_PORTON_CERRANDO_tev0_raised) , 1500, bool_false);
+	handle->internal.siLED_raised = bool_true;
+	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LEDB, PREFIX_PREFIXIFACE_LED_OFF);
+}
+
+/* Entry action for state 'ABRIENDO'. */
+static void prefix_enact_PORTON_ABRIENDO(Prefix* handle)
+{
+	/* Entry action for state 'ABRIENDO'. */
+	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_PORTON_ABRIENDO_tev0_raised) , 1500, bool_false);
+	handle->internal.siLED_raised = bool_true;
+	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED2, PREFIX_PREFIXIFACE_LED_OFF);
+}
+
+/* Entry action for state 'ABIERTO'. */
+static void prefix_enact_PORTON_ABIERTO(Prefix* handle)
+{
+	/* Entry action for state 'ABIERTO'. */
+	handle->internal.siNoLED_raised = bool_true;
+	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LEDB, PREFIX_PREFIXIFACE_LED_ON);
 }
 
 /* Entry action for state 'REPOSO'. */
@@ -611,48 +656,11 @@ static void prefix_enact_LED3_TITILAR_r1_ENCENDIDO(Prefix* handle)
 	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED3, PREFIX_PREFIXIFACE_LED_ON);
 }
 
-/* Entry action for state 'CERRANDO'. */
-static void prefix_enact_PORTON_CERRANDO(Prefix* handle)
-{
-	/* Entry action for state 'CERRANDO'. */
-	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_PORTON_CERRANDO_tev0_raised) , 1500, bool_false);
-	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED3, PREFIX_PREFIXIFACE_LED_OFF);
-}
-
-/* Entry action for state 'ABRIENDO'. */
-static void prefix_enact_PORTON_ABRIENDO(Prefix* handle)
-{
-	/* Entry action for state 'ABRIENDO'. */
-	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_PORTON_ABRIENDO_tev0_raised) , 1500, bool_false);
-	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED3, PREFIX_PREFIXIFACE_LED_ON);
-}
-
-/* Entry action for state 'ABIERTO'. */
-static void prefix_enact_PORTON_ABIERTO(Prefix* handle)
-{
-	/* Entry action for state 'ABIERTO'. */
-	handle->internal.siLED_raised = bool_true;
-}
-
 /* Exit action for state 'DEBOUNCE'. */
 static void prefix_exact_TECX_DEBOUNCE(Prefix* handle)
 {
 	/* Exit action for state 'DEBOUNCE'. */
 	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_TECX_DEBOUNCE_tev0_raised) );		
-}
-
-/* Exit action for state 'APAGADO'. */
-static void prefix_exact_LED3_TITILAR_r1_APAGADO(Prefix* handle)
-{
-	/* Exit action for state 'APAGADO'. */
-	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_LED3_TITILAR_r1_APAGADO_tev0_raised) );		
-}
-
-/* Exit action for state 'ENCENDIDO'. */
-static void prefix_exact_LED3_TITILAR_r1_ENCENDIDO(Prefix* handle)
-{
-	/* Exit action for state 'ENCENDIDO'. */
-	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_LED3_TITILAR_r1_ENCENDIDO_tev0_raised) );		
 }
 
 /* Exit action for state 'CERRANDO'. */
@@ -667,6 +675,20 @@ static void prefix_exact_PORTON_ABRIENDO(Prefix* handle)
 {
 	/* Exit action for state 'ABRIENDO'. */
 	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_PORTON_ABRIENDO_tev0_raised) );		
+}
+
+/* Exit action for state 'APAGADO'. */
+static void prefix_exact_LED3_TITILAR_r1_APAGADO(Prefix* handle)
+{
+	/* Exit action for state 'APAGADO'. */
+	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_LED3_TITILAR_r1_APAGADO_tev0_raised) );		
+}
+
+/* Exit action for state 'ENCENDIDO'. */
+static void prefix_exact_LED3_TITILAR_r1_ENCENDIDO(Prefix* handle)
+{
+	/* Exit action for state 'ENCENDIDO'. */
+	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_LED3_TITILAR_r1_ENCENDIDO_tev0_raised) );		
 }
 
 /* 'default' enter sequence for state NO_OPRIMIDO */
@@ -703,13 +725,57 @@ static void prefix_enseq_TECX_OPRIMIDO_default(Prefix* handle)
 	handle->stateConfVectorPosition = 0;
 }
 
+/* 'default' enter sequence for state ESPERA */
+static void prefix_enseq_IDLE_ESPERA_default(Prefix* handle)
+{
+	/* 'default' enter sequence for state ESPERA */
+	handle->stateConfVector[1] = Prefix_IDLE_ESPERA;
+	handle->stateConfVectorPosition = 1;
+}
+
+/* 'default' enter sequence for state CERRADO */
+static void prefix_enseq_PORTON_CERRADO_default(Prefix* handle)
+{
+	/* 'default' enter sequence for state CERRADO */
+	prefix_enact_PORTON_CERRADO(handle);
+	handle->stateConfVector[2] = Prefix_PORTON_CERRADO;
+	handle->stateConfVectorPosition = 2;
+}
+
+/* 'default' enter sequence for state CERRANDO */
+static void prefix_enseq_PORTON_CERRANDO_default(Prefix* handle)
+{
+	/* 'default' enter sequence for state CERRANDO */
+	prefix_enact_PORTON_CERRANDO(handle);
+	handle->stateConfVector[2] = Prefix_PORTON_CERRANDO;
+	handle->stateConfVectorPosition = 2;
+}
+
+/* 'default' enter sequence for state ABRIENDO */
+static void prefix_enseq_PORTON_ABRIENDO_default(Prefix* handle)
+{
+	/* 'default' enter sequence for state ABRIENDO */
+	prefix_enact_PORTON_ABRIENDO(handle);
+	handle->stateConfVector[2] = Prefix_PORTON_ABRIENDO;
+	handle->stateConfVectorPosition = 2;
+}
+
+/* 'default' enter sequence for state ABIERTO */
+static void prefix_enseq_PORTON_ABIERTO_default(Prefix* handle)
+{
+	/* 'default' enter sequence for state ABIERTO */
+	prefix_enact_PORTON_ABIERTO(handle);
+	handle->stateConfVector[2] = Prefix_PORTON_ABIERTO;
+	handle->stateConfVectorPosition = 2;
+}
+
 /* 'default' enter sequence for state REPOSO */
 static void prefix_enseq_LED3_REPOSO_default(Prefix* handle)
 {
 	/* 'default' enter sequence for state REPOSO */
 	prefix_enact_LED3_REPOSO(handle);
-	handle->stateConfVector[1] = Prefix_LED3_REPOSO;
-	handle->stateConfVectorPosition = 1;
+	handle->stateConfVector[3] = Prefix_LED3_REPOSO;
+	handle->stateConfVectorPosition = 3;
 }
 
 /* 'default' enter sequence for state TITILAR */
@@ -724,8 +790,8 @@ static void prefix_enseq_LED3_TITILAR_r1_APAGADO_default(Prefix* handle)
 {
 	/* 'default' enter sequence for state APAGADO */
 	prefix_enact_LED3_TITILAR_r1_APAGADO(handle);
-	handle->stateConfVector[1] = Prefix_LED3_TITILAR_r1_APAGADO;
-	handle->stateConfVectorPosition = 1;
+	handle->stateConfVector[3] = Prefix_LED3_TITILAR_r1_APAGADO;
+	handle->stateConfVectorPosition = 3;
 }
 
 /* 'default' enter sequence for state ENCENDIDO */
@@ -733,50 +799,7 @@ static void prefix_enseq_LED3_TITILAR_r1_ENCENDIDO_default(Prefix* handle)
 {
 	/* 'default' enter sequence for state ENCENDIDO */
 	prefix_enact_LED3_TITILAR_r1_ENCENDIDO(handle);
-	handle->stateConfVector[1] = Prefix_LED3_TITILAR_r1_ENCENDIDO;
-	handle->stateConfVectorPosition = 1;
-}
-
-/* 'default' enter sequence for state ESPERA */
-static void prefix_enseq_IDLE_ESPERA_default(Prefix* handle)
-{
-	/* 'default' enter sequence for state ESPERA */
-	handle->stateConfVector[2] = Prefix_IDLE_ESPERA;
-	handle->stateConfVectorPosition = 2;
-}
-
-/* 'default' enter sequence for state CERRADO */
-static void prefix_enseq_PORTON_CERRADO_default(Prefix* handle)
-{
-	/* 'default' enter sequence for state CERRADO */
-	handle->stateConfVector[3] = Prefix_PORTON_CERRADO;
-	handle->stateConfVectorPosition = 3;
-}
-
-/* 'default' enter sequence for state CERRANDO */
-static void prefix_enseq_PORTON_CERRANDO_default(Prefix* handle)
-{
-	/* 'default' enter sequence for state CERRANDO */
-	prefix_enact_PORTON_CERRANDO(handle);
-	handle->stateConfVector[3] = Prefix_PORTON_CERRANDO;
-	handle->stateConfVectorPosition = 3;
-}
-
-/* 'default' enter sequence for state ABRIENDO */
-static void prefix_enseq_PORTON_ABRIENDO_default(Prefix* handle)
-{
-	/* 'default' enter sequence for state ABRIENDO */
-	prefix_enact_PORTON_ABRIENDO(handle);
-	handle->stateConfVector[3] = Prefix_PORTON_ABRIENDO;
-	handle->stateConfVectorPosition = 3;
-}
-
-/* 'default' enter sequence for state ABIERTO */
-static void prefix_enseq_PORTON_ABIERTO_default(Prefix* handle)
-{
-	/* 'default' enter sequence for state ABIERTO */
-	prefix_enact_PORTON_ABIERTO(handle);
-	handle->stateConfVector[3] = Prefix_PORTON_ABIERTO;
+	handle->stateConfVector[3] = Prefix_LED3_TITILAR_r1_ENCENDIDO;
 	handle->stateConfVectorPosition = 3;
 }
 
@@ -785,20 +808,6 @@ static void prefix_enseq_TECX_default(Prefix* handle)
 {
 	/* 'default' enter sequence for region TECX */
 	prefix_react_TECX__entry_Default(handle);
-}
-
-/* 'default' enter sequence for region LED3 */
-static void prefix_enseq_LED3_default(Prefix* handle)
-{
-	/* 'default' enter sequence for region LED3 */
-	prefix_react_LED3__entry_Default(handle);
-}
-
-/* 'default' enter sequence for region r1 */
-static void prefix_enseq_LED3_TITILAR_r1_default(Prefix* handle)
-{
-	/* 'default' enter sequence for region r1 */
-	prefix_react_LED3_TITILAR_r1__entry_Default(handle);
 }
 
 /* 'default' enter sequence for region IDLE */
@@ -813,6 +822,20 @@ static void prefix_enseq_PORTON_default(Prefix* handle)
 {
 	/* 'default' enter sequence for region PORTON */
 	prefix_react_PORTON__entry_Default(handle);
+}
+
+/* 'default' enter sequence for region LED3 */
+static void prefix_enseq_LED3_default(Prefix* handle)
+{
+	/* 'default' enter sequence for region LED3 */
+	prefix_react_LED3__entry_Default(handle);
+}
+
+/* 'default' enter sequence for region r1 */
+static void prefix_enseq_LED3_TITILAR_r1_default(Prefix* handle)
+{
+	/* 'default' enter sequence for region r1 */
+	prefix_react_LED3_TITILAR_r1__entry_Default(handle);
 }
 
 /* Default exit sequence for state NO_OPRIMIDO */
@@ -848,12 +871,54 @@ static void prefix_exseq_TECX_OPRIMIDO(Prefix* handle)
 	handle->stateConfVectorPosition = 0;
 }
 
+/* Default exit sequence for state ESPERA */
+static void prefix_exseq_IDLE_ESPERA(Prefix* handle)
+{
+	/* Default exit sequence for state ESPERA */
+	handle->stateConfVector[1] = Prefix_last_state;
+	handle->stateConfVectorPosition = 1;
+}
+
+/* Default exit sequence for state CERRADO */
+static void prefix_exseq_PORTON_CERRADO(Prefix* handle)
+{
+	/* Default exit sequence for state CERRADO */
+	handle->stateConfVector[2] = Prefix_last_state;
+	handle->stateConfVectorPosition = 2;
+}
+
+/* Default exit sequence for state CERRANDO */
+static void prefix_exseq_PORTON_CERRANDO(Prefix* handle)
+{
+	/* Default exit sequence for state CERRANDO */
+	handle->stateConfVector[2] = Prefix_last_state;
+	handle->stateConfVectorPosition = 2;
+	prefix_exact_PORTON_CERRANDO(handle);
+}
+
+/* Default exit sequence for state ABRIENDO */
+static void prefix_exseq_PORTON_ABRIENDO(Prefix* handle)
+{
+	/* Default exit sequence for state ABRIENDO */
+	handle->stateConfVector[2] = Prefix_last_state;
+	handle->stateConfVectorPosition = 2;
+	prefix_exact_PORTON_ABRIENDO(handle);
+}
+
+/* Default exit sequence for state ABIERTO */
+static void prefix_exseq_PORTON_ABIERTO(Prefix* handle)
+{
+	/* Default exit sequence for state ABIERTO */
+	handle->stateConfVector[2] = Prefix_last_state;
+	handle->stateConfVectorPosition = 2;
+}
+
 /* Default exit sequence for state REPOSO */
 static void prefix_exseq_LED3_REPOSO(Prefix* handle)
 {
 	/* Default exit sequence for state REPOSO */
-	handle->stateConfVector[1] = Prefix_last_state;
-	handle->stateConfVectorPosition = 1;
+	handle->stateConfVector[3] = Prefix_last_state;
+	handle->stateConfVectorPosition = 3;
 }
 
 /* Default exit sequence for state TITILAR */
@@ -867,8 +932,8 @@ static void prefix_exseq_LED3_TITILAR(Prefix* handle)
 static void prefix_exseq_LED3_TITILAR_r1_APAGADO(Prefix* handle)
 {
 	/* Default exit sequence for state APAGADO */
-	handle->stateConfVector[1] = Prefix_last_state;
-	handle->stateConfVectorPosition = 1;
+	handle->stateConfVector[3] = Prefix_last_state;
+	handle->stateConfVectorPosition = 3;
 	prefix_exact_LED3_TITILAR_r1_APAGADO(handle);
 }
 
@@ -876,51 +941,9 @@ static void prefix_exseq_LED3_TITILAR_r1_APAGADO(Prefix* handle)
 static void prefix_exseq_LED3_TITILAR_r1_ENCENDIDO(Prefix* handle)
 {
 	/* Default exit sequence for state ENCENDIDO */
-	handle->stateConfVector[1] = Prefix_last_state;
-	handle->stateConfVectorPosition = 1;
+	handle->stateConfVector[3] = Prefix_last_state;
+	handle->stateConfVectorPosition = 3;
 	prefix_exact_LED3_TITILAR_r1_ENCENDIDO(handle);
-}
-
-/* Default exit sequence for state ESPERA */
-static void prefix_exseq_IDLE_ESPERA(Prefix* handle)
-{
-	/* Default exit sequence for state ESPERA */
-	handle->stateConfVector[2] = Prefix_last_state;
-	handle->stateConfVectorPosition = 2;
-}
-
-/* Default exit sequence for state CERRADO */
-static void prefix_exseq_PORTON_CERRADO(Prefix* handle)
-{
-	/* Default exit sequence for state CERRADO */
-	handle->stateConfVector[3] = Prefix_last_state;
-	handle->stateConfVectorPosition = 3;
-}
-
-/* Default exit sequence for state CERRANDO */
-static void prefix_exseq_PORTON_CERRANDO(Prefix* handle)
-{
-	/* Default exit sequence for state CERRANDO */
-	handle->stateConfVector[3] = Prefix_last_state;
-	handle->stateConfVectorPosition = 3;
-	prefix_exact_PORTON_CERRANDO(handle);
-}
-
-/* Default exit sequence for state ABRIENDO */
-static void prefix_exseq_PORTON_ABRIENDO(Prefix* handle)
-{
-	/* Default exit sequence for state ABRIENDO */
-	handle->stateConfVector[3] = Prefix_last_state;
-	handle->stateConfVectorPosition = 3;
-	prefix_exact_PORTON_ABRIENDO(handle);
-}
-
-/* Default exit sequence for state ABIERTO */
-static void prefix_exseq_PORTON_ABIERTO(Prefix* handle)
-{
-	/* Default exit sequence for state ABIERTO */
-	handle->stateConfVector[3] = Prefix_last_state;
-	handle->stateConfVectorPosition = 3;
 }
 
 /* Default exit sequence for region TECX */
@@ -954,12 +977,59 @@ static void prefix_exseq_TECX(Prefix* handle)
 	}
 }
 
+/* Default exit sequence for region IDLE */
+static void prefix_exseq_IDLE(Prefix* handle)
+{
+	/* Default exit sequence for region IDLE */
+	/* Handle exit of all possible states (of prefix.IDLE) at position 1... */
+	switch(handle->stateConfVector[ 1 ])
+	{
+		case Prefix_IDLE_ESPERA :
+		{
+			prefix_exseq_IDLE_ESPERA(handle);
+			break;
+		}
+		default: break;
+	}
+}
+
+/* Default exit sequence for region PORTON */
+static void prefix_exseq_PORTON(Prefix* handle)
+{
+	/* Default exit sequence for region PORTON */
+	/* Handle exit of all possible states (of prefix.PORTON) at position 2... */
+	switch(handle->stateConfVector[ 2 ])
+	{
+		case Prefix_PORTON_CERRADO :
+		{
+			prefix_exseq_PORTON_CERRADO(handle);
+			break;
+		}
+		case Prefix_PORTON_CERRANDO :
+		{
+			prefix_exseq_PORTON_CERRANDO(handle);
+			break;
+		}
+		case Prefix_PORTON_ABRIENDO :
+		{
+			prefix_exseq_PORTON_ABRIENDO(handle);
+			break;
+		}
+		case Prefix_PORTON_ABIERTO :
+		{
+			prefix_exseq_PORTON_ABIERTO(handle);
+			break;
+		}
+		default: break;
+	}
+}
+
 /* Default exit sequence for region LED3 */
 static void prefix_exseq_LED3(Prefix* handle)
 {
 	/* Default exit sequence for region LED3 */
-	/* Handle exit of all possible states (of prefix.LED3) at position 1... */
-	switch(handle->stateConfVector[ 1 ])
+	/* Handle exit of all possible states (of prefix.LED3) at position 3... */
+	switch(handle->stateConfVector[ 3 ])
 	{
 		case Prefix_LED3_REPOSO :
 		{
@@ -984,8 +1054,8 @@ static void prefix_exseq_LED3(Prefix* handle)
 static void prefix_exseq_LED3_TITILAR_r1(Prefix* handle)
 {
 	/* Default exit sequence for region r1 */
-	/* Handle exit of all possible states (of prefix.LED3.TITILAR.r1) at position 1... */
-	switch(handle->stateConfVector[ 1 ])
+	/* Handle exit of all possible states (of prefix.LED3.TITILAR.r1) at position 3... */
+	switch(handle->stateConfVector[ 3 ])
 	{
 		case Prefix_LED3_TITILAR_r1_APAGADO :
 		{
@@ -995,53 +1065,6 @@ static void prefix_exseq_LED3_TITILAR_r1(Prefix* handle)
 		case Prefix_LED3_TITILAR_r1_ENCENDIDO :
 		{
 			prefix_exseq_LED3_TITILAR_r1_ENCENDIDO(handle);
-			break;
-		}
-		default: break;
-	}
-}
-
-/* Default exit sequence for region IDLE */
-static void prefix_exseq_IDLE(Prefix* handle)
-{
-	/* Default exit sequence for region IDLE */
-	/* Handle exit of all possible states (of prefix.IDLE) at position 2... */
-	switch(handle->stateConfVector[ 2 ])
-	{
-		case Prefix_IDLE_ESPERA :
-		{
-			prefix_exseq_IDLE_ESPERA(handle);
-			break;
-		}
-		default: break;
-	}
-}
-
-/* Default exit sequence for region PORTON */
-static void prefix_exseq_PORTON(Prefix* handle)
-{
-	/* Default exit sequence for region PORTON */
-	/* Handle exit of all possible states (of prefix.PORTON) at position 3... */
-	switch(handle->stateConfVector[ 3 ])
-	{
-		case Prefix_PORTON_CERRADO :
-		{
-			prefix_exseq_PORTON_CERRADO(handle);
-			break;
-		}
-		case Prefix_PORTON_CERRANDO :
-		{
-			prefix_exseq_PORTON_CERRANDO(handle);
-			break;
-		}
-		case Prefix_PORTON_ABRIENDO :
-		{
-			prefix_exseq_PORTON_ABRIENDO(handle);
-			break;
-		}
-		case Prefix_PORTON_ABIERTO :
-		{
-			prefix_exseq_PORTON_ABIERTO(handle);
 			break;
 		}
 		default: break;
@@ -1092,48 +1115,6 @@ static void prefix_react_TECX_OPRIMIDO(Prefix* handle)
 	{ 
 		prefix_effect_TECX_OPRIMIDO_tr0(handle);
 	} 
-}
-
-/* The reactions of state REPOSO. */
-static void prefix_react_LED3_REPOSO(Prefix* handle)
-{
-	/* The reactions of state REPOSO. */
-	if (prefix_check_LED3_REPOSO_tr0_tr0(handle) == bool_true)
-	{ 
-		prefix_effect_LED3_REPOSO_tr0(handle);
-	} 
-}
-
-/* The reactions of state APAGADO. */
-static void prefix_react_LED3_TITILAR_r1_APAGADO(Prefix* handle)
-{
-	/* The reactions of state APAGADO. */
-	if (prefix_check_LED3_TITILAR_tr0_tr0(handle) == bool_true)
-	{ 
-		prefix_effect_LED3_TITILAR_tr0(handle);
-	}  else
-	{
-		if (prefix_check_LED3_TITILAR_r1_APAGADO_tr0_tr0(handle) == bool_true)
-		{ 
-			prefix_effect_LED3_TITILAR_r1_APAGADO_tr0(handle);
-		} 
-	}
-}
-
-/* The reactions of state ENCENDIDO. */
-static void prefix_react_LED3_TITILAR_r1_ENCENDIDO(Prefix* handle)
-{
-	/* The reactions of state ENCENDIDO. */
-	if (prefix_check_LED3_TITILAR_tr0_tr0(handle) == bool_true)
-	{ 
-		prefix_effect_LED3_TITILAR_tr0(handle);
-	}  else
-	{
-		if (prefix_check_LED3_TITILAR_r1_ENCENDIDO_tr0_tr0(handle) == bool_true)
-		{ 
-			prefix_effect_LED3_TITILAR_r1_ENCENDIDO_tr0(handle);
-		} 
-	}
 }
 
 /* The reactions of state ESPERA. */
@@ -1204,25 +1185,53 @@ static void prefix_react_PORTON_ABIERTO(Prefix* handle)
 	} 
 }
 
+/* The reactions of state REPOSO. */
+static void prefix_react_LED3_REPOSO(Prefix* handle)
+{
+	/* The reactions of state REPOSO. */
+	if (prefix_check_LED3_REPOSO_tr0_tr0(handle) == bool_true)
+	{ 
+		prefix_effect_LED3_REPOSO_tr0(handle);
+	} 
+}
+
+/* The reactions of state APAGADO. */
+static void prefix_react_LED3_TITILAR_r1_APAGADO(Prefix* handle)
+{
+	/* The reactions of state APAGADO. */
+	if (prefix_check_LED3_TITILAR_tr0_tr0(handle) == bool_true)
+	{ 
+		prefix_effect_LED3_TITILAR_tr0(handle);
+	}  else
+	{
+		if (prefix_check_LED3_TITILAR_r1_APAGADO_tr0_tr0(handle) == bool_true)
+		{ 
+			prefix_effect_LED3_TITILAR_r1_APAGADO_tr0(handle);
+		} 
+	}
+}
+
+/* The reactions of state ENCENDIDO. */
+static void prefix_react_LED3_TITILAR_r1_ENCENDIDO(Prefix* handle)
+{
+	/* The reactions of state ENCENDIDO. */
+	if (prefix_check_LED3_TITILAR_tr0_tr0(handle) == bool_true)
+	{ 
+		prefix_effect_LED3_TITILAR_tr0(handle);
+	}  else
+	{
+		if (prefix_check_LED3_TITILAR_r1_ENCENDIDO_tr0_tr0(handle) == bool_true)
+		{ 
+			prefix_effect_LED3_TITILAR_r1_ENCENDIDO_tr0(handle);
+		} 
+	}
+}
+
 /* Default react sequence for initial entry  */
 static void prefix_react_TECX__entry_Default(Prefix* handle)
 {
 	/* Default react sequence for initial entry  */
 	prefix_enseq_TECX_NO_OPRIMIDO_default(handle);
-}
-
-/* Default react sequence for initial entry  */
-static void prefix_react_LED3_TITILAR_r1__entry_Default(Prefix* handle)
-{
-	/* Default react sequence for initial entry  */
-	prefix_enseq_LED3_TITILAR_r1_APAGADO_default(handle);
-}
-
-/* Default react sequence for initial entry  */
-static void prefix_react_LED3__entry_Default(Prefix* handle)
-{
-	/* Default react sequence for initial entry  */
-	prefix_enseq_LED3_REPOSO_default(handle);
 }
 
 /* Default react sequence for initial entry  */
@@ -1237,6 +1246,20 @@ static void prefix_react_PORTON__entry_Default(Prefix* handle)
 {
 	/* Default react sequence for initial entry  */
 	prefix_enseq_PORTON_CERRADO_default(handle);
+}
+
+/* Default react sequence for initial entry  */
+static void prefix_react_LED3_TITILAR_r1__entry_Default(Prefix* handle)
+{
+	/* Default react sequence for initial entry  */
+	prefix_enseq_LED3_TITILAR_r1_APAGADO_default(handle);
+}
+
+/* Default react sequence for initial entry  */
+static void prefix_react_LED3__entry_Default(Prefix* handle)
+{
+	/* Default react sequence for initial entry  */
+	prefix_enseq_LED3_REPOSO_default(handle);
 }
 
 

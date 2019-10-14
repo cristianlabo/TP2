@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:sgraph="http://www.yakindu.org/sct/sgraph/2.0.0">
-  <sgraph:Statechart xmi:id="_SVVUsLaZEeef4KXvt0hZZQ" specification="interface:&#xA;// Define events and&#xA;// and variables here&#xA;in event evTECXOprimido: integer&#xA;in event evTECXNoOprimido&#xA;&#xA;operation opLED(LEDNumber:integer, State:boolean):void&#xA;&#xA;const LED3:integer = 5&#xA;&#xA;const LED_ON: boolean = false&#xA;const LED_OFF: boolean = true&#xA;&#xA;const TEC1:integer = 1&#xA;const TEC2:integer = 2&#xA;&#xA;internal:&#xA;&#xA;event siTECXOK&#xA;event siAbrir&#xA;event siCerrar&#xA;event siLED&#xA;event siNoLED&#xA;&#xA;var viTecla:integer&#xA;" name="prefix">
+  <sgraph:Statechart xmi:id="_SVVUsLaZEeef4KXvt0hZZQ" specification="interface:&#xA;// Define events and&#xA;// and variables here&#xA;in event evTECXOprimido: integer&#xA;in event evTECXNoOprimido&#xA;&#xA;operation opLED(LEDNumber:integer, State:boolean):void&#xA;&#xA;const LEDB:integer = 2&#xA;const LED2:integer = 4&#xA;const LED3:integer = 5&#xA;&#xA;const LED_ON: boolean = true&#xA;const LED_OFF: boolean = false&#xA;&#xA;const TEC1:integer = 1&#xA;const TEC2:integer = 2&#xA;&#xA;internal:&#xA;&#xA;event siTECXOK&#xA;event siAbrir&#xA;event siCerrar&#xA;event siLED&#xA;event siNoLED&#xA;&#xA;var viTecla:integer&#xA;" name="prefix">
     <regions xmi:id="_SVY_EraZEeef4KXvt0hZZQ" name="TECX">
       <vertices xsi:type="sgraph:State" xmi:id="_SVa0RLaZEeef4KXvt0hZZQ" name="NO_OPRIMIDO" incomingTransitions="_4ICPcLaaEeef4KXvt0hZZQ _-mBmkLaaEeef4KXvt0hZZQ _NuHqQLafEeef4KXvt0hZZQ">
         <outgoingTransitions xmi:id="_yAd0QLaaEeef4KXvt0hZZQ" specification="evTECXOprimido" target="_aQZRULaaEeef4KXvt0hZZQ"/>
@@ -17,6 +17,34 @@
       </vertices>
       <vertices xsi:type="sgraph:Entry" xmi:id="_NP3A8LafEeef4KXvt0hZZQ">
         <outgoingTransitions xmi:id="_NuHqQLafEeef4KXvt0hZZQ" specification="" target="_SVa0RLaZEeef4KXvt0hZZQ"/>
+      </vertices>
+    </regions>
+    <regions xmi:id="_RRoUoLacEeef4KXvt0hZZQ" name="IDLE">
+      <vertices xsi:type="sgraph:State" xmi:id="_TVPLILacEeef4KXvt0hZZQ" name="ESPERA" incomingTransitions="_WhuVQLacEeef4KXvt0hZZQ _YvU1QLacEeef4KXvt0hZZQ _kyaMoLacEeef4KXvt0hZZQ">
+        <outgoingTransitions xmi:id="_YvU1QLacEeef4KXvt0hZZQ" specification="siTECXOK[viTecla == TEC1] / raise siAbrir" target="_TVPLILacEeef4KXvt0hZZQ"/>
+        <outgoingTransitions xmi:id="_kyaMoLacEeef4KXvt0hZZQ" specification="siTECXOK[viTecla == TEC2] / raise siCerrar" target="_TVPLILacEeef4KXvt0hZZQ"/>
+      </vertices>
+      <vertices xsi:type="sgraph:Entry" xmi:id="_V21lMLacEeef4KXvt0hZZQ">
+        <outgoingTransitions xmi:id="_WhuVQLacEeef4KXvt0hZZQ" specification="" target="_TVPLILacEeef4KXvt0hZZQ"/>
+      </vertices>
+    </regions>
+    <regions xmi:id="_zBLYcLacEeef4KXvt0hZZQ" name="PORTON">
+      <vertices xsi:type="sgraph:State" xmi:id="_0mV_cLacEeef4KXvt0hZZQ" specification="entry / raise siNoLED;&#xD;&#xA;opLED(LED2,LED_ON)&#xD;&#xA;" name="CERRADO" incomingTransitions="_EvLrQLadEeef4KXvt0hZZQ _tMMFkLadEeef4KXvt0hZZQ">
+        <outgoingTransitions xmi:id="_Hg6zELadEeef4KXvt0hZZQ" specification="siAbrir" target="_3gjGwLacEeef4KXvt0hZZQ"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_2UgxcLacEeef4KXvt0hZZQ" specification="entry / raise siLED;&#xD;&#xA;opLED(LEDB,LED_OFF)" name="CERRANDO" incomingTransitions="_CJ0ykLadEeef4KXvt0hZZQ _VQ8NYLadEeef4KXvt0hZZQ">
+        <outgoingTransitions xmi:id="_EvLrQLadEeef4KXvt0hZZQ" specification="after 1500 ms" target="_0mV_cLacEeef4KXvt0hZZQ"/>
+        <outgoingTransitions xmi:id="_Tdf50LadEeef4KXvt0hZZQ" specification="siAbrir" target="_3gjGwLacEeef4KXvt0hZZQ"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_3gjGwLacEeef4KXvt0hZZQ" specification="entry / raise siLED;&#xD;&#xA;opLED(LED2,LED_OFF)" name="ABRIENDO" incomingTransitions="_Hg6zELadEeef4KXvt0hZZQ _Tdf50LadEeef4KXvt0hZZQ">
+        <outgoingTransitions xmi:id="_MpG04LadEeef4KXvt0hZZQ" specification="after 1500 ms" target="_4vY4cLacEeef4KXvt0hZZQ"/>
+        <outgoingTransitions xmi:id="_VQ8NYLadEeef4KXvt0hZZQ" specification="siCerrar" target="_2UgxcLacEeef4KXvt0hZZQ"/>
+      </vertices>
+      <vertices xsi:type="sgraph:State" xmi:id="_4vY4cLacEeef4KXvt0hZZQ" specification="entry / raise siNoLED;&#xD;&#xA;opLED(LEDB,LED_ON)&#xD;&#xA;" name="ABIERTO" incomingTransitions="_MpG04LadEeef4KXvt0hZZQ">
+        <outgoingTransitions xmi:id="_CJ0ykLadEeef4KXvt0hZZQ" specification="siCerrar" target="_2UgxcLacEeef4KXvt0hZZQ"/>
+      </vertices>
+      <vertices xsi:type="sgraph:Entry" xmi:id="_rvooALadEeef4KXvt0hZZQ">
+        <outgoingTransitions xmi:id="_tMMFkLadEeef4KXvt0hZZQ" specification="" target="_0mV_cLacEeef4KXvt0hZZQ"/>
       </vertices>
     </regions>
     <regions xmi:id="_Kw4Z4LabEeef4KXvt0hZZQ" name="LED3">
@@ -39,34 +67,6 @@
       </vertices>
       <vertices xsi:type="sgraph:Entry" xmi:id="_Wbii0LaeEeef4KXvt0hZZQ">
         <outgoingTransitions xmi:id="_XmprELaeEeef4KXvt0hZZQ" specification="" target="_M8Vk0LabEeef4KXvt0hZZQ"/>
-      </vertices>
-    </regions>
-    <regions xmi:id="_RRoUoLacEeef4KXvt0hZZQ" name="IDLE">
-      <vertices xsi:type="sgraph:State" xmi:id="_TVPLILacEeef4KXvt0hZZQ" name="ESPERA" incomingTransitions="_WhuVQLacEeef4KXvt0hZZQ _YvU1QLacEeef4KXvt0hZZQ _kyaMoLacEeef4KXvt0hZZQ">
-        <outgoingTransitions xmi:id="_YvU1QLacEeef4KXvt0hZZQ" specification="siTECXOK[viTecla == TEC1] / raise siAbrir" target="_TVPLILacEeef4KXvt0hZZQ"/>
-        <outgoingTransitions xmi:id="_kyaMoLacEeef4KXvt0hZZQ" specification="siTECXOK[viTecla == TEC2] / raise siCerrar" target="_TVPLILacEeef4KXvt0hZZQ"/>
-      </vertices>
-      <vertices xsi:type="sgraph:Entry" xmi:id="_V21lMLacEeef4KXvt0hZZQ">
-        <outgoingTransitions xmi:id="_WhuVQLacEeef4KXvt0hZZQ" specification="" target="_TVPLILacEeef4KXvt0hZZQ"/>
-      </vertices>
-    </regions>
-    <regions xmi:id="_zBLYcLacEeef4KXvt0hZZQ" name="PORTON">
-      <vertices xsi:type="sgraph:State" xmi:id="_0mV_cLacEeef4KXvt0hZZQ" name="CERRADO" incomingTransitions="_EvLrQLadEeef4KXvt0hZZQ _tMMFkLadEeef4KXvt0hZZQ">
-        <outgoingTransitions xmi:id="_Hg6zELadEeef4KXvt0hZZQ" specification="siAbrir" target="_3gjGwLacEeef4KXvt0hZZQ"/>
-      </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_2UgxcLacEeef4KXvt0hZZQ" specification="entry / opLED(LED3, LED_OFF)" name="CERRANDO" incomingTransitions="_CJ0ykLadEeef4KXvt0hZZQ _VQ8NYLadEeef4KXvt0hZZQ">
-        <outgoingTransitions xmi:id="_EvLrQLadEeef4KXvt0hZZQ" specification="after 1500 ms" target="_0mV_cLacEeef4KXvt0hZZQ"/>
-        <outgoingTransitions xmi:id="_Tdf50LadEeef4KXvt0hZZQ" specification="siAbrir" target="_3gjGwLacEeef4KXvt0hZZQ"/>
-      </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_3gjGwLacEeef4KXvt0hZZQ" specification="entry / opLED(LED3, LED_ON)" name="ABRIENDO" incomingTransitions="_Hg6zELadEeef4KXvt0hZZQ _Tdf50LadEeef4KXvt0hZZQ">
-        <outgoingTransitions xmi:id="_MpG04LadEeef4KXvt0hZZQ" specification="after 1500 ms" target="_4vY4cLacEeef4KXvt0hZZQ"/>
-        <outgoingTransitions xmi:id="_VQ8NYLadEeef4KXvt0hZZQ" specification="siCerrar" target="_2UgxcLacEeef4KXvt0hZZQ"/>
-      </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_4vY4cLacEeef4KXvt0hZZQ" specification="entry / raise siLED" name="ABIERTO" incomingTransitions="_MpG04LadEeef4KXvt0hZZQ">
-        <outgoingTransitions xmi:id="_CJ0ykLadEeef4KXvt0hZZQ" specification="siCerrar" target="_2UgxcLacEeef4KXvt0hZZQ"/>
-      </vertices>
-      <vertices xsi:type="sgraph:Entry" xmi:id="_rvooALadEeef4KXvt0hZZQ">
-        <outgoingTransitions xmi:id="_tMMFkLadEeef4KXvt0hZZQ" specification="" target="_0mV_cLacEeef4KXvt0hZZQ"/>
       </vertices>
     </regions>
   </sgraph:Statechart>

@@ -18,15 +18,15 @@ typedef enum
 	Prefix_TECX_DEBOUNCE,
 	Prefix_TECX_VALIDATION,
 	Prefix_TECX_OPRIMIDO,
-	Prefix_LED3_REPOSO,
-	Prefix_LED3_TITILAR,
-	Prefix_LED3_TITILAR_r1_APAGADO,
-	Prefix_LED3_TITILAR_r1_ENCENDIDO,
 	Prefix_IDLE_ESPERA,
 	Prefix_PORTON_CERRADO,
 	Prefix_PORTON_CERRANDO,
 	Prefix_PORTON_ABRIENDO,
 	Prefix_PORTON_ABIERTO,
+	Prefix_LED3_REPOSO,
+	Prefix_LED3_TITILAR,
+	Prefix_LED3_TITILAR_r1_APAGADO,
+	Prefix_LED3_TITILAR_r1_ENCENDIDO,
 	Prefix_last_state
 } PrefixStates;
 
@@ -39,6 +39,8 @@ typedef struct
 } PrefixIface;
 
 /* Declaration of constants for scope PrefixIface. */
+extern const sc_integer PREFIX_PREFIXIFACE_LEDB;
+extern const sc_integer PREFIX_PREFIXIFACE_LED2;
 extern const sc_integer PREFIX_PREFIXIFACE_LED3;
 extern const sc_boolean PREFIX_PREFIXIFACE_LED_ON;
 extern const sc_boolean PREFIX_PREFIXIFACE_LED_OFF;
@@ -60,10 +62,10 @@ typedef struct
 typedef struct
 {
 	sc_boolean prefix_TECX_DEBOUNCE_tev0_raised;
-	sc_boolean prefix_LED3_TITILAR_r1_APAGADO_tev0_raised;
-	sc_boolean prefix_LED3_TITILAR_r1_ENCENDIDO_tev0_raised;
 	sc_boolean prefix_PORTON_CERRANDO_tev0_raised;
 	sc_boolean prefix_PORTON_ABRIENDO_tev0_raised;
+	sc_boolean prefix_LED3_TITILAR_r1_APAGADO_tev0_raised;
+	sc_boolean prefix_LED3_TITILAR_r1_ENCENDIDO_tev0_raised;
 } PrefixTimeEvents;
 
 
@@ -105,6 +107,10 @@ extern void prefixIface_raise_evTECXOprimido(Prefix* handle, sc_integer value);
 /*! Raises the in event 'evTECXNoOprimido' that is defined in the default interface scope. */ 
 extern void prefixIface_raise_evTECXNoOprimido(Prefix* handle);
 
+/*! Gets the value of the variable 'LEDB' that is defined in the default interface scope. */ 
+extern const sc_integer prefixIface_get_lEDB(const Prefix* handle);
+/*! Gets the value of the variable 'LED2' that is defined in the default interface scope. */ 
+extern const sc_integer prefixIface_get_lED2(const Prefix* handle);
 /*! Gets the value of the variable 'LED3' that is defined in the default interface scope. */ 
 extern const sc_integer prefixIface_get_lED3(const Prefix* handle);
 /*! Gets the value of the variable 'LED_ON' that is defined in the default interface scope. */ 
