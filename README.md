@@ -119,38 +119,28 @@ Luego se configuraron el archivo prefix_sgen  de la siguiente forma:
 
 ## b)generacion de codigos con statecharts
 
-Para generar los codigos fuentes correspondientes de cada maquina de estado haciendo prrefix.sgen -> generate code artifacts.
-
-### SCT_1
-Para este caso se copio los archivos Blinky.-sct y BlinkyTimeEvent.-sct y se los renombro como prefix.sct cada uno por separado.Luego se genero el codigo de cada uno por separado.
-
-### SCT_2
-Para este caso se copio los archivos Button.-sct y ldelBlinky.-sct y se los renombro como prefix.sct cada uno por separado.Luego se genero el codigo de cada uno por separado.
-
-### SCT_3
-Para este caso se copio los archivos Application.-sct y Porton.-sct y se los renombro como prefix.sct cada uno por separado.Luego se genero el codigo de cada uno por separado.
+Para cada caso se copio los archivos Blinky.-sct,BlinkyTimeEvent.-sct,Button.-sct,ldelBlinky.-sct, Application.-sct,Porton.-sct y se los renombro como prefix.sct cada uno por separado en las carpetas SCT_1_1,SCT_1_2,SCT_2_1,SCT_2_2,SCT_3_1 y SCT_3_2 correspondientemente.Luego se genero el codigo de cada uno por separado.
+Para generar los codigos fuentes correspondientes de cada maquina de estado se usaron los archivos de prefix.sgen -> generate code artifacts.Como se puede visualizar en la siguiente figura:
 
 ### c)prueba de simulaciones
 
-Con los codigos generados en el punto anterior se modifico el #define TEST (SCT_?) con ? ={1,2,3} en el main.c para seleccionar entre los diferentes casos de las maquinas de estado.
+Con los codigos generados en el punto anterior se modifico el #define TEST (SCT_?) con ? ={1,2,3} en el main.c para seleccionar entre los diferentes casos de las maquinas de estado como se puede visualizar en la siguiente figura:
 
 ## d)casos de prueba con TIME EVENTS
 
-on los codigos generados en el punto anterior se modifico el #define _USE_TIME_EVENTS (?) con ? ={true,false} en el main.c para seleccionar entre usar time events o no.
-
+Con los codigos generados en el punto anterior se modifico el #define _USE_TIME_EVENTS (?) con ? ={true,false} en el main.c para seleccionar entre usar time events o no.
 
 ## e)compilacion
 
-Se realizaron las acciones clear ->refresh -> build sobre el proyecto:
+Se realizaron las acciones clear ->refresh -> build sobre el proyecto para cada caso y luego se ejecutaron los diferentes casos de prueba.
 
 ## f)configuracion DEBUG
 
 Se configuro el DEBUG teniendo en cuenta que el proyecto apunte a out/lpc4337_m4/TP2.axf como se puede ver en la figura:
 
-
 ## g)prueba DEBUG
 
-Se realizaron las pruebas de DEBUG para los casos SCT_1,SCT_2 y SCT_3 para los diferentes casos con Time Events.
+Se realizaron las pruebas de DEBUG para los casos SCT_1_1,SCT_1_2,SCT_2_1,SCT_2_2,SCT_3_1 y SCT_3_2 para los diferentes casos con Time Events.
 
 ## h)repositorio
 
@@ -164,18 +154,29 @@ $ git commit -m "Primer commit. Archivos .c .h y make"
 $ git push -u origin master
 ```
 
-# 3 Panel de control de un generador de señales
+# 3,4,5,6,7 - Implementacion de maquinas de estado
 
-generador de señales
+Para la implementacion de la maquina de estados para cada uno de los casos propuestos se separaron en carpetas,se realizaron los diagramas de estado,se  generaron los codigos fuente(prefix.sgen -> generate code artifacts) en las carpetas correspondientes y se modifico el archivo makefile como se puede ver en la siguiente figura:
 
-# 4 Puerta corrediza
 
-puerta corrediza
+## Panel de control de un generador de señales
 
-# 5 Portón de cochera
+Para este caso se puede ver el diagrama de estados  en la siguiente figura:
 
-# 6 Escalera mecánica 
+## Puerta corrediza
 
-# 7 Horno microondas
+Para este caso se puede ver el diagrama de estados  en la siguiente figura:
+
+## Portón de cochera
+
+Para este caso se puede ver el diagrama de estados  en la siguiente figura:
+
+## Escalera mecánica 
+
+Para este caso se puede ver el diagrama de estados  en la siguiente figura:
+
+## Horno microondas
+
+Para este caso se puede ver el diagrama de estados  en la siguiente figura:
 
 # 8 Hoja de ruta
