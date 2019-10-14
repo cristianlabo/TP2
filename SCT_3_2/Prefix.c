@@ -184,8 +184,8 @@ static void prefix_clearInEvents(Prefix* handle)
 	handle->internal.siTECXOK_raised = bool_false;
 	handle->internal.siAbrir_raised = bool_false;
 	handle->internal.siCerrar_raised = bool_false;
-	handle->internal.siTitilarLED_raised = bool_false;
-	handle->internal.siNoTitilarLED_raised = bool_false;
+	handle->internal.siLED_raised = bool_false;
+	handle->internal.siNoLED_raised = bool_false;
 	handle->timeEvents.prefix_TECX_DEBOUNCE_tev0_raised = bool_false;
 	handle->timeEvents.prefix_LED3_TITILAR_r1_APAGADO_tev0_raised = bool_false;
 	handle->timeEvents.prefix_LED3_TITILAR_r1_ENCENDIDO_tev0_raised = bool_false;
@@ -411,12 +411,12 @@ static sc_boolean prefix_check_TECX_OPRIMIDO_tr0_tr0(const Prefix* handle)
 
 static sc_boolean prefix_check_LED3_REPOSO_tr0_tr0(const Prefix* handle)
 {
-	return handle->internal.siTitilarLED_raised;
+	return handle->internal.siLED_raised;
 }
 
 static sc_boolean prefix_check_LED3_TITILAR_tr0_tr0(const Prefix* handle)
 {
-	return handle->internal.siNoTitilarLED_raised;
+	return handle->internal.siNoLED_raised;
 }
 
 static sc_boolean prefix_check_LED3_TITILAR_r1_APAGADO_tr0_tr0(const Prefix* handle)
@@ -616,6 +616,7 @@ static void prefix_enact_PORTON_CERRANDO(Prefix* handle)
 {
 	/* Entry action for state 'CERRANDO'. */
 	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_PORTON_CERRANDO_tev0_raised) , 1500, bool_false);
+	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED3, PREFIX_PREFIXIFACE_LED_OFF);
 }
 
 /* Entry action for state 'ABRIENDO'. */
@@ -623,13 +624,14 @@ static void prefix_enact_PORTON_ABRIENDO(Prefix* handle)
 {
 	/* Entry action for state 'ABRIENDO'. */
 	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_PORTON_ABRIENDO_tev0_raised) , 1500, bool_false);
+	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED3, PREFIX_PREFIXIFACE_LED_ON);
 }
 
 /* Entry action for state 'ABIERTO'. */
 static void prefix_enact_PORTON_ABIERTO(Prefix* handle)
 {
 	/* Entry action for state 'ABIERTO'. */
-	handle->internal.siTitilarLED_raised = bool_true;
+	handle->internal.siLED_raised = bool_true;
 }
 
 /* Exit action for state 'DEBOUNCE'. */

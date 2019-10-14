@@ -51,8 +51,8 @@ typedef struct
 	sc_boolean siTECXOK_raised;
 	sc_boolean siAbrir_raised;
 	sc_boolean siCerrar_raised;
-	sc_boolean siTitilarLED_raised;
-	sc_boolean siNoTitilarLED_raised;
+	sc_boolean siLED_raised;
+	sc_boolean siNoLED_raised;
 	sc_integer viTecla;
 } PrefixInternal;
 
