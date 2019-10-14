@@ -49,6 +49,10 @@ PROJECT_SRC_FOLDERS := $(PROJECT)/src \
 #                     $(PROJECT)/SCT_3_1
 #                     $(PROJECT)/SCT_3_2
 #                     $(PROJECT)/GENERADOR_FRECUENCIA
+#                     $(PROJECT)/PUERTA_CORREDIZA
+#                     $(PROJECT)/PORTON_DE_COCHERA
+#                     $(PROJECT)/ESCALERA_MECANICA
+#                     $(PROJECT)/HORNO_MICROONDAS
 
 # header files folder
 PROJECT_INC_FOLDERS := $(PROJECT)/inc \
@@ -61,6 +65,10 @@ PROJECT_INC_FOLDERS := $(PROJECT)/inc \
 #                     $(PROJECT)/SCT_3_1
 #                     $(PROJECT)/SCT_3_2
 #                     $(PROJECT)/GENERADOR_FRECUENCIA
+#                     $(PROJECT)/PUERTA_CORREDIZA
+#                     $(PROJECT)/PORTON_DE_COCHERA
+#                     $(PROJECT)/ESCALERA_MECANICA
+#                     $(PROJECT)/HORNO_MICROONDAS
 
 # source files
 PROJECT_C_FILES := $(wildcard $(PROJECT)/src/*.c) \
@@ -73,5 +81,9 @@ PROJECT_C_FILES := $(wildcard $(PROJECT)/src/*.c) \
 #				   $(wildcard $(PROJECT)/SCT_3_1/*.c)
 #				   $(wildcard $(PROJECT)/SCT_3_2/*.c) 
 #				   $(wildcard $(PROJECT)/GENERADOR_FRECUENCIA/*.c) 
+#				   $(wildcard $(PROJECT)/PUERTA_CORREDIZA/*.c) 
+#				   $(wildcard $(PROJECT)/PORTON_DE_COCHERA/*.c) 
+#				   $(wildcard $(PROJECT)/ESCALERA_MECANICA/*.c) 
+#				   $(wildcard $(PROJECT)/HORNO_MICROONDAS/*.c) 
 				   
 PROJECT_ASM_FILES := $(wildcard $(PROJECT)/src/*.S)
