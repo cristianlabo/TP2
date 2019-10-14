@@ -41,34 +41,37 @@ PROJECT_MODULES := modules/$(TARGET)/sapi \
 # source files folder
 PROJECT_SRC_FOLDERS := $(PROJECT)/src \
                        $(PROJECT)/gen \
-                      $(PROJECT)/SCT_3_2
+                      $(PROJECT)/GENERADOR_FRECUENCIA
 #                     $(PROJECT)/SCT_1_1                      
 #                     $(PROJECT)/SCT_1_2
 #                     $(PROJECT)/SCT_2_1
 #                     $(PROJECT)/SCT_2_2
 #                     $(PROJECT)/SCT_3_1
 #                     $(PROJECT)/SCT_3_2
+#                     $(PROJECT)/GENERADOR_FRECUENCIA
 
 # header files folder
 PROJECT_INC_FOLDERS := $(PROJECT)/inc \
                        $(PROJECT)/gen \
-	                   $(PROJECT)/SCT_3_2
+	                   $(PROJECT)/GENERADOR_FRECUENCIA
 #                     $(PROJECT)/SCT_1_1                      
 #                     $(PROJECT)/SCT_1_2
 #                     $(PROJECT)/SCT_2_1
 #                     $(PROJECT)/SCT_2_2
 #                     $(PROJECT)/SCT_3_1
 #                     $(PROJECT)/SCT_3_2
+#                     $(PROJECT)/GENERADOR_FRECUENCIA
 
 # source files
 PROJECT_C_FILES := $(wildcard $(PROJECT)/src/*.c) \
                    $(wildcard $(PROJECT)/gen/*.c) \
-				   $(wildcard $(PROJECT)/SCT_3_2/*.c)
+				   $(wildcard $(PROJECT)/GENERADOR_FRECUENCIA/*.c)
 #				   $(wildcard $(PROJECT)/SCT_1_1/*.c)
 #				   $(wildcard $(PROJECT)/SCT_1_2/*.c)
 #				   $(wildcard $(PROJECT)/SCT_2_1/*.c)
 #				   $(wildcard $(PROJECT)/SCT_2_2/*.c)
 #				   $(wildcard $(PROJECT)/SCT_3_1/*.c)
 #				   $(wildcard $(PROJECT)/SCT_3_2/*.c) 
+#				   $(wildcard $(PROJECT)/GENERADOR_FRECUENCIA/*.c) 
 				   
 PROJECT_ASM_FILES := $(wildcard $(PROJECT)/src/*.S)
