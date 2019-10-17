@@ -204,8 +204,14 @@ Para este caso se puede ver el diagrama de estados  en la siguiente figura:
 
 Para este caso se puede ver el diagrama de estados  en la siguiente figura:
 
+![escalera_mecanica.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/escalera_mecanica.jpg)
+
 ## Horno microondas
 
 Para este caso se puede ver el diagrama de estados  en la siguiente figura:
+
+![Horno_microondas1.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/Horno_microondas1.jpg)
+![Horno_microondas2.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/Horno_microondas2.jpg)
+![Horno_microondas3.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/Horno_microondas3.jpg)
 
 # 8 Hoja de ruta
