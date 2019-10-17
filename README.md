@@ -187,9 +187,18 @@ Para este caso se puede ver el diagrama de estados  en la siguiente figura:
 
 Para este caso se puede ver el diagrama de estados  en la siguiente figura:
 
+![puerta_corrediza1.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/puerta_corrediza1.jpg)
+![puerta_corrediza2.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/puerta_corrediza2.jpg)
+
+
 ## Portón de cochera
 
 Para este caso se puede ver el diagrama de estados  en la siguiente figura:
+
+![porton_cochera1.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/porton_cochera1.jpg)
+![porton_cochera2.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/porton_cochera2.jpg)
+
+
 
 ## Escalera mecánica 
 
