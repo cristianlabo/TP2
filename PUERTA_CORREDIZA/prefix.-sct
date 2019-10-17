@@ -20,7 +20,7 @@
       </vertices>
     </regions>
     <regions xmi:id="_RRoUoLacEeef4KXvt0hZZQ" name="IDLE">
-      <vertices xsi:type="sgraph:State" xmi:id="_TVPLILacEeef4KXvt0hZZQ" name="ESPERA" incomingTransitions="_WhuVQLacEeef4KXvt0hZZQ _YvU1QLacEeef4KXvt0hZZQ">
+      <vertices xsi:type="sgraph:State" xmi:id="_TVPLILacEeef4KXvt0hZZQ" name="PRESENCIA" incomingTransitions="_WhuVQLacEeef4KXvt0hZZQ _YvU1QLacEeef4KXvt0hZZQ">
         <outgoingTransitions xmi:id="_YvU1QLacEeef4KXvt0hZZQ" specification="siTECXOK[viTecla == TEC1] / raise siAbrir" target="_TVPLILacEeef4KXvt0hZZQ"/>
       </vertices>
       <vertices xsi:type="sgraph:Entry" xmi:id="_V21lMLacEeef4KXvt0hZZQ">
@@ -156,7 +156,7 @@
         <layoutConstraint xsi:type="notation:Bounds" xmi:id="_SVZmJLaZEeef4KXvt0hZZQ"/>
       </children>
       <styles xsi:type="notation:ShapeStyle" xmi:id="_SVY_FLaZEeef4KXvt0hZZQ" fontName="Verdana" fillColor="15790320" lineColor="12632256"/>
-      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_SVZmJbaZEeef4KXvt0hZZQ" x="582" y="414" width="496" height="325"/>
+      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_SVZmJbaZEeef4KXvt0hZZQ" x="552" y="430" width="496" height="325"/>
     </children>
     <children xsi:type="notation:Shape" xmi:id="_SVd3l7aZEeef4KXvt0hZZQ" type="StatechartText" fontName="Verdana" lineColor="4210752">
       <children xsi:type="notation:DecorationNode" xmi:id="_SVeeoLaZEeef4KXvt0hZZQ" type="StatechartName">
@@ -279,7 +279,7 @@
         <layoutConstraint xsi:type="notation:Bounds" xmi:id="_Kw7dNLabEeef4KXvt0hZZQ"/>
       </children>
       <styles xsi:type="notation:ShapeStyle" xmi:id="_Kw6PELabEeef4KXvt0hZZQ" fontName="Verdana" fillColor="15790320" lineColor="12632256"/>
-      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_Kw6PEbabEeef4KXvt0hZZQ" x="1212" y="353" width="373" height="386"/>
+      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_Kw6PEbabEeef4KXvt0hZZQ" x="1243" y="369" width="373" height="386"/>
     </children>
     <children xmi:id="_RRo7sLacEeef4KXvt0hZZQ" type="Region" element="_RRoUoLacEeef4KXvt0hZZQ">
       <children xsi:type="notation:DecorationNode" xmi:id="_RRpiwLacEeef4KXvt0hZZQ" type="RegionName">
@@ -301,7 +301,7 @@
           <styles xsi:type="notation:ShapeStyle" xmi:id="_TVRAUbacEeef4KXvt0hZZQ" fontName="Verdana" fillColor="15981773" lineColor="12632256"/>
           <styles xsi:type="notation:FontStyle" xmi:id="_TVRAUracEeef4KXvt0hZZQ"/>
           <styles xsi:type="notation:BooleanValueStyle" xmi:id="_TVRnYbacEeef4KXvt0hZZQ" name="isHorizontal" booleanValue="true"/>
-          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_TVRAU7acEeef4KXvt0hZZQ" x="54" y="46" width="76" height="196"/>
+          <layoutConstraint xsi:type="notation:Bounds" xmi:id="_TVRAU7acEeef4KXvt0hZZQ" x="55" y="42" width="114" height="202"/>
         </children>
         <children xmi:id="_V22MQLacEeef4KXvt0hZZQ" type="Entry" element="_V21lMLacEeef4KXvt0hZZQ">
           <children xmi:id="_V22zULacEeef4KXvt0hZZQ" type="BorderItemLabelContainer">
@@ -319,7 +319,7 @@
         <layoutConstraint xsi:type="notation:Bounds" xmi:id="_RRpixLacEeef4KXvt0hZZQ"/>
       </children>
       <styles xsi:type="notation:ShapeStyle" xmi:id="_RRo7sbacEeef4KXvt0hZZQ" fontName="Verdana" fillColor="15790320" lineColor="12632256"/>
-      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_RRo7sracEeef4KXvt0hZZQ" x="1194" y="10" width="422" height="285"/>
+      <layoutConstraint xsi:type="notation:Bounds" xmi:id="_RRo7sracEeef4KXvt0hZZQ" x="1194" y="6" width="422" height="301"/>
     </children>
     <children xmi:id="_zBNNoLacEeef4KXvt0hZZQ" type="Region" element="_zBLYcLacEeef4KXvt0hZZQ">
       <children xsi:type="notation:DecorationNode" xmi:id="_zBN0sLacEeef4KXvt0hZZQ" type="RegionName">
