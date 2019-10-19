@@ -336,6 +336,11 @@ int main(void)
  	 	 	 	 	 	cp Porton.-sct prefix.sct 							 		*/
 
 
+/* The DEBUG* functions are sAPI debug print functions.
+   Code that uses the DEBUG* functions will have their I/O routed to
+   the sAPI DEBUG UART. */
+DEBUG_PRINT_ENABLE;
+
 uint32_t Buttons_GetStatus_(void) {
 	uint8_t ret = false;
 	uint32_t idx;
@@ -376,6 +381,13 @@ int main(void)
 	prefix_init(&statechart);
 	prefix_enter(&statechart);
 
+	/* UART for messages. */
+	debugPrintConfigUart( UART_USB, 115200 );
+	debugPrintString( "*************************************\r\n" );
+	debugPrintString( "* Hola!                             *\r\n" );
+	debugPrintString( "*************************************\r\n" );
+	int para_usart=0;
+
 	/* LEDs toggle in main */
 	while (1) {
 		__WFI();
@@ -403,6 +415,18 @@ int main(void)
 				prefixIface_raise_evTECXNoOprimido(&statechart);
 
 			prefix_runCycle(&statechart);							// Run Cycle of Statechart
+
+			if(prefixIface_get_flag_tecla(&statechart) == TRUE){
+				debugPrintString( "Tension = " );
+				para_usart = prefixIface_get_tension( &statechart );
+				debugPrintInt( para_usart );
+				debugPrintEnter( );
+				debugPrintString( "Frecuencia = " );
+				para_usart = prefixIface_get_frecuencia(&statechart);
+				debugPrintInt( para_usart );
+				debugPrintEnter( );
+			}
+
 		}
 	}
 }
