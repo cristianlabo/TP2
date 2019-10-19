@@ -17,23 +17,23 @@ static sc_boolean prefix_check_Application_ESPERA_tr0_tr0(const Prefix* handle);
 static sc_boolean prefix_check_Application_ESPERA_tr1_tr1(const Prefix* handle);
 static sc_boolean prefix_check_Application_ESPERA_tr2_tr2(const Prefix* handle);
 static sc_boolean prefix_check_Application_ESPERA_tr3_tr3(const Prefix* handle);
-static sc_boolean prefix_check_Forma_senoidal_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_Forma_cuadrada_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_Forma_triangular_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_Magnitud_FRECUENCIA_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr1_tr1(const Prefix* handle);
-static sc_boolean prefix_check_Magnitud_FRECUENCIA_r1_DISMINUYE_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_Magnitud_FRECUENCIA_r1_DELAY_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_Magnitud_FRECUENCIA_r1_AUMENTA_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_Magnitud_FRECUENCIA_r1_ESPERA_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_Magnitud_TENSION_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_Magnitud_TENSION_r1_TENSION_ACTUAL_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_Magnitud_TENSION_r1_TENSION_ACTUAL_tr1_tr1(const Prefix* handle);
-static sc_boolean prefix_check_Magnitud_TENSION_r1_DISMINUYE_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_Magnitud_TENSION_r1_DELAY_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_Magnitud_TENSION_r1_AUMENTA_tr0_tr0(const Prefix* handle);
-static sc_boolean prefix_check_Magnitud_TENSION_r1_ESPERA_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_eForma_senoidal_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_eForma_cuadrada_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_eForma_triangular_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_eMagn_FRECUENCIA_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr1_tr1(const Prefix* handle);
+static sc_boolean prefix_check_eMagn_FRECUENCIA_r1_DISMINUYE_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_eMagn_FRECUENCIA_r1_DELAY_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_eMagn_FRECUENCIA_r1_AUMENTA_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_eMagn_FRECUENCIA_r1_ESPERA_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_eMagn_TENSION_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_eMagn_TENSION_r1_TENSION_ACTUAL_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_eMagn_TENSION_r1_TENSION_ACTUAL_tr1_tr1(const Prefix* handle);
+static sc_boolean prefix_check_eMagn_TENSION_r1_DISMINUYE_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_eMagn_TENSION_r1_DELAY_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_eMagn_TENSION_r1_AUMENTA_tr0_tr0(const Prefix* handle);
+static sc_boolean prefix_check_eMagn_TENSION_r1_ESPERA_tr0_tr0(const Prefix* handle);
 static void prefix_effect_TECX_DEBOUNCE_tr0(Prefix* handle);
 static void prefix_effect_TECX_NO_OPRIMIDO_tr0(Prefix* handle);
 static void prefix_effect_TECX_OPRIMIDO_tr0(Prefix* handle);
@@ -43,125 +43,125 @@ static void prefix_effect_Application_ESPERA_tr0(Prefix* handle);
 static void prefix_effect_Application_ESPERA_tr1(Prefix* handle);
 static void prefix_effect_Application_ESPERA_tr2(Prefix* handle);
 static void prefix_effect_Application_ESPERA_tr3(Prefix* handle);
-static void prefix_effect_Forma_senoidal_tr0(Prefix* handle);
-static void prefix_effect_Forma_cuadrada_tr0(Prefix* handle);
-static void prefix_effect_Forma_triangular_tr0(Prefix* handle);
-static void prefix_effect_Magnitud_FRECUENCIA_tr0(Prefix* handle);
-static void prefix_effect_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr0(Prefix* handle);
-static void prefix_effect_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr1(Prefix* handle);
-static void prefix_effect_Magnitud_FRECUENCIA_r1_DISMINUYE_tr0(Prefix* handle);
-static void prefix_effect_Magnitud_FRECUENCIA_r1_DELAY_tr0(Prefix* handle);
-static void prefix_effect_Magnitud_FRECUENCIA_r1_AUMENTA_tr0(Prefix* handle);
-static void prefix_effect_Magnitud_FRECUENCIA_r1_ESPERA_tr0(Prefix* handle);
-static void prefix_effect_Magnitud_TENSION_tr0(Prefix* handle);
-static void prefix_effect_Magnitud_TENSION_r1_TENSION_ACTUAL_tr0(Prefix* handle);
-static void prefix_effect_Magnitud_TENSION_r1_TENSION_ACTUAL_tr1(Prefix* handle);
-static void prefix_effect_Magnitud_TENSION_r1_DISMINUYE_tr0(Prefix* handle);
-static void prefix_effect_Magnitud_TENSION_r1_DELAY_tr0(Prefix* handle);
-static void prefix_effect_Magnitud_TENSION_r1_AUMENTA_tr0(Prefix* handle);
-static void prefix_effect_Magnitud_TENSION_r1_ESPERA_tr0(Prefix* handle);
+static void prefix_effect_eForma_senoidal_tr0(Prefix* handle);
+static void prefix_effect_eForma_cuadrada_tr0(Prefix* handle);
+static void prefix_effect_eForma_triangular_tr0(Prefix* handle);
+static void prefix_effect_eMagn_FRECUENCIA_tr0(Prefix* handle);
+static void prefix_effect_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr0(Prefix* handle);
+static void prefix_effect_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr1(Prefix* handle);
+static void prefix_effect_eMagn_FRECUENCIA_r1_DISMINUYE_tr0(Prefix* handle);
+static void prefix_effect_eMagn_FRECUENCIA_r1_DELAY_tr0(Prefix* handle);
+static void prefix_effect_eMagn_FRECUENCIA_r1_AUMENTA_tr0(Prefix* handle);
+static void prefix_effect_eMagn_FRECUENCIA_r1_ESPERA_tr0(Prefix* handle);
+static void prefix_effect_eMagn_TENSION_tr0(Prefix* handle);
+static void prefix_effect_eMagn_TENSION_r1_TENSION_ACTUAL_tr0(Prefix* handle);
+static void prefix_effect_eMagn_TENSION_r1_TENSION_ACTUAL_tr1(Prefix* handle);
+static void prefix_effect_eMagn_TENSION_r1_DISMINUYE_tr0(Prefix* handle);
+static void prefix_effect_eMagn_TENSION_r1_DELAY_tr0(Prefix* handle);
+static void prefix_effect_eMagn_TENSION_r1_AUMENTA_tr0(Prefix* handle);
+static void prefix_effect_eMagn_TENSION_r1_ESPERA_tr0(Prefix* handle);
 static void prefix_enact_TECX_DEBOUNCE(Prefix* handle);
 static void prefix_enact_TECX_NO_OPRIMIDO(Prefix* handle);
 static void prefix_enact_TECX_OPRIMIDO(Prefix* handle);
 static void prefix_enact_TECX_VALIDACION(Prefix* handle);
-static void prefix_enact_Forma_senoidal(Prefix* handle);
-static void prefix_enact_Forma_cuadrada(Prefix* handle);
-static void prefix_enact_Forma_triangular(Prefix* handle);
-static void prefix_enact_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL(Prefix* handle);
-static void prefix_enact_Magnitud_FRECUENCIA_r1_DISMINUYE(Prefix* handle);
-static void prefix_enact_Magnitud_FRECUENCIA_r1_DELAY(Prefix* handle);
-static void prefix_enact_Magnitud_FRECUENCIA_r1_AUMENTA(Prefix* handle);
-static void prefix_enact_Magnitud_FRECUENCIA_r1_ESPERA(Prefix* handle);
-static void prefix_enact_Magnitud_TENSION_r1_TENSION_ACTUAL(Prefix* handle);
-static void prefix_enact_Magnitud_TENSION_r1_DISMINUYE(Prefix* handle);
-static void prefix_enact_Magnitud_TENSION_r1_DELAY(Prefix* handle);
-static void prefix_enact_Magnitud_TENSION_r1_AUMENTA(Prefix* handle);
-static void prefix_enact_Magnitud_TENSION_r1_ESPERA(Prefix* handle);
+static void prefix_enact_eForma_senoidal(Prefix* handle);
+static void prefix_enact_eForma_cuadrada(Prefix* handle);
+static void prefix_enact_eForma_triangular(Prefix* handle);
+static void prefix_enact_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL(Prefix* handle);
+static void prefix_enact_eMagn_FRECUENCIA_r1_DISMINUYE(Prefix* handle);
+static void prefix_enact_eMagn_FRECUENCIA_r1_DELAY(Prefix* handle);
+static void prefix_enact_eMagn_FRECUENCIA_r1_AUMENTA(Prefix* handle);
+static void prefix_enact_eMagn_FRECUENCIA_r1_ESPERA(Prefix* handle);
+static void prefix_enact_eMagn_TENSION_r1_TENSION_ACTUAL(Prefix* handle);
+static void prefix_enact_eMagn_TENSION_r1_DISMINUYE(Prefix* handle);
+static void prefix_enact_eMagn_TENSION_r1_DELAY(Prefix* handle);
+static void prefix_enact_eMagn_TENSION_r1_AUMENTA(Prefix* handle);
+static void prefix_enact_eMagn_TENSION_r1_ESPERA(Prefix* handle);
 static void prefix_exact_TECX_DEBOUNCE(Prefix* handle);
-static void prefix_exact_Magnitud_FRECUENCIA_r1_DISMINUYE(Prefix* handle);
-static void prefix_exact_Magnitud_FRECUENCIA_r1_DELAY(Prefix* handle);
-static void prefix_exact_Magnitud_FRECUENCIA_r1_AUMENTA(Prefix* handle);
-static void prefix_exact_Magnitud_FRECUENCIA_r1_ESPERA(Prefix* handle);
-static void prefix_exact_Magnitud_TENSION_r1_DISMINUYE(Prefix* handle);
-static void prefix_exact_Magnitud_TENSION_r1_DELAY(Prefix* handle);
-static void prefix_exact_Magnitud_TENSION_r1_AUMENTA(Prefix* handle);
-static void prefix_exact_Magnitud_TENSION_r1_ESPERA(Prefix* handle);
+static void prefix_exact_eMagn_FRECUENCIA_r1_DISMINUYE(Prefix* handle);
+static void prefix_exact_eMagn_FRECUENCIA_r1_DELAY(Prefix* handle);
+static void prefix_exact_eMagn_FRECUENCIA_r1_AUMENTA(Prefix* handle);
+static void prefix_exact_eMagn_FRECUENCIA_r1_ESPERA(Prefix* handle);
+static void prefix_exact_eMagn_TENSION_r1_DISMINUYE(Prefix* handle);
+static void prefix_exact_eMagn_TENSION_r1_DELAY(Prefix* handle);
+static void prefix_exact_eMagn_TENSION_r1_AUMENTA(Prefix* handle);
+static void prefix_exact_eMagn_TENSION_r1_ESPERA(Prefix* handle);
 static void prefix_enseq_TECX_DEBOUNCE_default(Prefix* handle);
 static void prefix_enseq_TECX_NO_OPRIMIDO_default(Prefix* handle);
 static void prefix_enseq_TECX_OPRIMIDO_default(Prefix* handle);
 static void prefix_enseq_TECX_VALIDACION_default(Prefix* handle);
 static void prefix_enseq_Application_ESPERA_default(Prefix* handle);
-static void prefix_enseq_Forma_senoidal_default(Prefix* handle);
-static void prefix_enseq_Forma_cuadrada_default(Prefix* handle);
-static void prefix_enseq_Forma_triangular_default(Prefix* handle);
-static void prefix_enseq_Magnitud_FRECUENCIA_default(Prefix* handle);
-static void prefix_enseq_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL_default(Prefix* handle);
-static void prefix_enseq_Magnitud_FRECUENCIA_r1_DISMINUYE_default(Prefix* handle);
-static void prefix_enseq_Magnitud_FRECUENCIA_r1_DELAY_default(Prefix* handle);
-static void prefix_enseq_Magnitud_FRECUENCIA_r1_AUMENTA_default(Prefix* handle);
-static void prefix_enseq_Magnitud_FRECUENCIA_r1_ESPERA_default(Prefix* handle);
-static void prefix_enseq_Magnitud_TENSION_default(Prefix* handle);
-static void prefix_enseq_Magnitud_TENSION_r1_TENSION_ACTUAL_default(Prefix* handle);
-static void prefix_enseq_Magnitud_TENSION_r1_DISMINUYE_default(Prefix* handle);
-static void prefix_enseq_Magnitud_TENSION_r1_DELAY_default(Prefix* handle);
-static void prefix_enseq_Magnitud_TENSION_r1_AUMENTA_default(Prefix* handle);
-static void prefix_enseq_Magnitud_TENSION_r1_ESPERA_default(Prefix* handle);
+static void prefix_enseq_eForma_senoidal_default(Prefix* handle);
+static void prefix_enseq_eForma_cuadrada_default(Prefix* handle);
+static void prefix_enseq_eForma_triangular_default(Prefix* handle);
+static void prefix_enseq_eMagn_FRECUENCIA_default(Prefix* handle);
+static void prefix_enseq_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL_default(Prefix* handle);
+static void prefix_enseq_eMagn_FRECUENCIA_r1_DISMINUYE_default(Prefix* handle);
+static void prefix_enseq_eMagn_FRECUENCIA_r1_DELAY_default(Prefix* handle);
+static void prefix_enseq_eMagn_FRECUENCIA_r1_AUMENTA_default(Prefix* handle);
+static void prefix_enseq_eMagn_FRECUENCIA_r1_ESPERA_default(Prefix* handle);
+static void prefix_enseq_eMagn_TENSION_default(Prefix* handle);
+static void prefix_enseq_eMagn_TENSION_r1_TENSION_ACTUAL_default(Prefix* handle);
+static void prefix_enseq_eMagn_TENSION_r1_DISMINUYE_default(Prefix* handle);
+static void prefix_enseq_eMagn_TENSION_r1_DELAY_default(Prefix* handle);
+static void prefix_enseq_eMagn_TENSION_r1_AUMENTA_default(Prefix* handle);
+static void prefix_enseq_eMagn_TENSION_r1_ESPERA_default(Prefix* handle);
 static void prefix_enseq_TECX_default(Prefix* handle);
 static void prefix_enseq_Application_default(Prefix* handle);
-static void prefix_enseq_Forma_default(Prefix* handle);
-static void prefix_enseq_Magnitud_default(Prefix* handle);
-static void prefix_enseq_Magnitud_FRECUENCIA_r1_default(Prefix* handle);
-static void prefix_enseq_Magnitud_TENSION_r1_default(Prefix* handle);
+static void prefix_enseq_eForma_default(Prefix* handle);
+static void prefix_enseq_eMagn_default(Prefix* handle);
+static void prefix_enseq_eMagn_FRECUENCIA_r1_default(Prefix* handle);
+static void prefix_enseq_eMagn_TENSION_r1_default(Prefix* handle);
 static void prefix_exseq_TECX_DEBOUNCE(Prefix* handle);
 static void prefix_exseq_TECX_NO_OPRIMIDO(Prefix* handle);
 static void prefix_exseq_TECX_OPRIMIDO(Prefix* handle);
 static void prefix_exseq_TECX_VALIDACION(Prefix* handle);
 static void prefix_exseq_Application_ESPERA(Prefix* handle);
-static void prefix_exseq_Forma_senoidal(Prefix* handle);
-static void prefix_exseq_Forma_cuadrada(Prefix* handle);
-static void prefix_exseq_Forma_triangular(Prefix* handle);
-static void prefix_exseq_Magnitud_FRECUENCIA(Prefix* handle);
-static void prefix_exseq_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL(Prefix* handle);
-static void prefix_exseq_Magnitud_FRECUENCIA_r1_DISMINUYE(Prefix* handle);
-static void prefix_exseq_Magnitud_FRECUENCIA_r1_DELAY(Prefix* handle);
-static void prefix_exseq_Magnitud_FRECUENCIA_r1_AUMENTA(Prefix* handle);
-static void prefix_exseq_Magnitud_FRECUENCIA_r1_ESPERA(Prefix* handle);
-static void prefix_exseq_Magnitud_TENSION(Prefix* handle);
-static void prefix_exseq_Magnitud_TENSION_r1_TENSION_ACTUAL(Prefix* handle);
-static void prefix_exseq_Magnitud_TENSION_r1_DISMINUYE(Prefix* handle);
-static void prefix_exseq_Magnitud_TENSION_r1_DELAY(Prefix* handle);
-static void prefix_exseq_Magnitud_TENSION_r1_AUMENTA(Prefix* handle);
-static void prefix_exseq_Magnitud_TENSION_r1_ESPERA(Prefix* handle);
+static void prefix_exseq_eForma_senoidal(Prefix* handle);
+static void prefix_exseq_eForma_cuadrada(Prefix* handle);
+static void prefix_exseq_eForma_triangular(Prefix* handle);
+static void prefix_exseq_eMagn_FRECUENCIA(Prefix* handle);
+static void prefix_exseq_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL(Prefix* handle);
+static void prefix_exseq_eMagn_FRECUENCIA_r1_DISMINUYE(Prefix* handle);
+static void prefix_exseq_eMagn_FRECUENCIA_r1_DELAY(Prefix* handle);
+static void prefix_exseq_eMagn_FRECUENCIA_r1_AUMENTA(Prefix* handle);
+static void prefix_exseq_eMagn_FRECUENCIA_r1_ESPERA(Prefix* handle);
+static void prefix_exseq_eMagn_TENSION(Prefix* handle);
+static void prefix_exseq_eMagn_TENSION_r1_TENSION_ACTUAL(Prefix* handle);
+static void prefix_exseq_eMagn_TENSION_r1_DISMINUYE(Prefix* handle);
+static void prefix_exseq_eMagn_TENSION_r1_DELAY(Prefix* handle);
+static void prefix_exseq_eMagn_TENSION_r1_AUMENTA(Prefix* handle);
+static void prefix_exseq_eMagn_TENSION_r1_ESPERA(Prefix* handle);
 static void prefix_exseq_TECX(Prefix* handle);
 static void prefix_exseq_Application(Prefix* handle);
-static void prefix_exseq_Forma(Prefix* handle);
-static void prefix_exseq_Magnitud(Prefix* handle);
-static void prefix_exseq_Magnitud_FRECUENCIA_r1(Prefix* handle);
-static void prefix_exseq_Magnitud_TENSION_r1(Prefix* handle);
+static void prefix_exseq_eForma(Prefix* handle);
+static void prefix_exseq_eMagn(Prefix* handle);
+static void prefix_exseq_eMagn_FRECUENCIA_r1(Prefix* handle);
+static void prefix_exseq_eMagn_TENSION_r1(Prefix* handle);
 static void prefix_react_TECX_DEBOUNCE(Prefix* handle);
 static void prefix_react_TECX_NO_OPRIMIDO(Prefix* handle);
 static void prefix_react_TECX_OPRIMIDO(Prefix* handle);
 static void prefix_react_TECX_VALIDACION(Prefix* handle);
 static void prefix_react_Application_ESPERA(Prefix* handle);
-static void prefix_react_Forma_senoidal(Prefix* handle);
-static void prefix_react_Forma_cuadrada(Prefix* handle);
-static void prefix_react_Forma_triangular(Prefix* handle);
-static void prefix_react_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL(Prefix* handle);
-static void prefix_react_Magnitud_FRECUENCIA_r1_DISMINUYE(Prefix* handle);
-static void prefix_react_Magnitud_FRECUENCIA_r1_DELAY(Prefix* handle);
-static void prefix_react_Magnitud_FRECUENCIA_r1_AUMENTA(Prefix* handle);
-static void prefix_react_Magnitud_FRECUENCIA_r1_ESPERA(Prefix* handle);
-static void prefix_react_Magnitud_TENSION_r1_TENSION_ACTUAL(Prefix* handle);
-static void prefix_react_Magnitud_TENSION_r1_DISMINUYE(Prefix* handle);
-static void prefix_react_Magnitud_TENSION_r1_DELAY(Prefix* handle);
-static void prefix_react_Magnitud_TENSION_r1_AUMENTA(Prefix* handle);
-static void prefix_react_Magnitud_TENSION_r1_ESPERA(Prefix* handle);
+static void prefix_react_eForma_senoidal(Prefix* handle);
+static void prefix_react_eForma_cuadrada(Prefix* handle);
+static void prefix_react_eForma_triangular(Prefix* handle);
+static void prefix_react_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL(Prefix* handle);
+static void prefix_react_eMagn_FRECUENCIA_r1_DISMINUYE(Prefix* handle);
+static void prefix_react_eMagn_FRECUENCIA_r1_DELAY(Prefix* handle);
+static void prefix_react_eMagn_FRECUENCIA_r1_AUMENTA(Prefix* handle);
+static void prefix_react_eMagn_FRECUENCIA_r1_ESPERA(Prefix* handle);
+static void prefix_react_eMagn_TENSION_r1_TENSION_ACTUAL(Prefix* handle);
+static void prefix_react_eMagn_TENSION_r1_DISMINUYE(Prefix* handle);
+static void prefix_react_eMagn_TENSION_r1_DELAY(Prefix* handle);
+static void prefix_react_eMagn_TENSION_r1_AUMENTA(Prefix* handle);
+static void prefix_react_eMagn_TENSION_r1_ESPERA(Prefix* handle);
 static void prefix_react_TECX__entry_Default(Prefix* handle);
 static void prefix_react_Application__entry_Default(Prefix* handle);
-static void prefix_react_Forma__entry_Default(Prefix* handle);
-static void prefix_react_Magnitud__entry_Default(Prefix* handle);
-static void prefix_react_Magnitud_FRECUENCIA_r1__entry_Default(Prefix* handle);
-static void prefix_react_Magnitud_TENSION_r1__entry_Default(Prefix* handle);
+static void prefix_react_eForma__entry_Default(Prefix* handle);
+static void prefix_react_eMagn__entry_Default(Prefix* handle);
+static void prefix_react_eMagn_FRECUENCIA_r1__entry_Default(Prefix* handle);
+static void prefix_react_eMagn_TENSION_r1__entry_Default(Prefix* handle);
 static void prefix_clearInEvents(Prefix* handle);
 static void prefix_clearOutEvents(Prefix* handle);
 
@@ -206,8 +206,8 @@ void prefix_enter(Prefix* handle)
 	/* Default enter sequence for statechart prefix */
 	prefix_enseq_TECX_default(handle);
 	prefix_enseq_Application_default(handle);
-	prefix_enseq_Forma_default(handle);
-	prefix_enseq_Magnitud_default(handle);
+	prefix_enseq_eForma_default(handle);
+	prefix_enseq_eMagn_default(handle);
 }
 
 void prefix_exit(Prefix* handle)
@@ -215,8 +215,8 @@ void prefix_exit(Prefix* handle)
 	/* Default exit sequence for statechart prefix */
 	prefix_exseq_TECX(handle);
 	prefix_exseq_Application(handle);
-	prefix_exseq_Forma(handle);
-	prefix_exseq_Magnitud(handle);
+	prefix_exseq_eForma(handle);
+	prefix_exseq_eMagn(handle);
 }
 
 sc_boolean prefix_isActive(const Prefix* handle)
@@ -251,14 +251,14 @@ static void prefix_clearInEvents(Prefix* handle)
 	handle->internal.eUp_raised = bool_false;
 	handle->internal.eDown_raised = bool_false;
 	handle->timeEvents.prefix_TECX_DEBOUNCE_tev0_raised = bool_false;
-	handle->timeEvents.prefix_Magnitud_FRECUENCIA_r1_DISMINUYE_tev0_raised = bool_false;
-	handle->timeEvents.prefix_Magnitud_FRECUENCIA_r1_DELAY_tev0_raised = bool_false;
-	handle->timeEvents.prefix_Magnitud_FRECUENCIA_r1_AUMENTA_tev0_raised = bool_false;
-	handle->timeEvents.prefix_Magnitud_FRECUENCIA_r1_ESPERA_tev0_raised = bool_false;
-	handle->timeEvents.prefix_Magnitud_TENSION_r1_DISMINUYE_tev0_raised = bool_false;
-	handle->timeEvents.prefix_Magnitud_TENSION_r1_DELAY_tev0_raised = bool_false;
-	handle->timeEvents.prefix_Magnitud_TENSION_r1_AUMENTA_tev0_raised = bool_false;
-	handle->timeEvents.prefix_Magnitud_TENSION_r1_ESPERA_tev0_raised = bool_false;
+	handle->timeEvents.prefix_eMagn_FRECUENCIA_r1_DISMINUYE_tev0_raised = bool_false;
+	handle->timeEvents.prefix_eMagn_FRECUENCIA_r1_DELAY_tev0_raised = bool_false;
+	handle->timeEvents.prefix_eMagn_FRECUENCIA_r1_AUMENTA_tev0_raised = bool_false;
+	handle->timeEvents.prefix_eMagn_FRECUENCIA_r1_ESPERA_tev0_raised = bool_false;
+	handle->timeEvents.prefix_eMagn_TENSION_r1_DISMINUYE_tev0_raised = bool_false;
+	handle->timeEvents.prefix_eMagn_TENSION_r1_DELAY_tev0_raised = bool_false;
+	handle->timeEvents.prefix_eMagn_TENSION_r1_AUMENTA_tev0_raised = bool_false;
+	handle->timeEvents.prefix_eMagn_TENSION_r1_ESPERA_tev0_raised = bool_false;
 }
 
 static void prefix_clearOutEvents(Prefix* handle)
@@ -302,69 +302,69 @@ void prefix_runCycle(Prefix* handle)
 			prefix_react_Application_ESPERA(handle);
 			break;
 		}
-		case Prefix_Forma_senoidal :
+		case Prefix_eForma_senoidal :
 		{
-			prefix_react_Forma_senoidal(handle);
+			prefix_react_eForma_senoidal(handle);
 			break;
 		}
-		case Prefix_Forma_cuadrada :
+		case Prefix_eForma_cuadrada :
 		{
-			prefix_react_Forma_cuadrada(handle);
+			prefix_react_eForma_cuadrada(handle);
 			break;
 		}
-		case Prefix_Forma_triangular :
+		case Prefix_eForma_triangular :
 		{
-			prefix_react_Forma_triangular(handle);
+			prefix_react_eForma_triangular(handle);
 			break;
 		}
-		case Prefix_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL :
+		case Prefix_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL :
 		{
-			prefix_react_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL(handle);
+			prefix_react_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL(handle);
 			break;
 		}
-		case Prefix_Magnitud_FRECUENCIA_r1_DISMINUYE :
+		case Prefix_eMagn_FRECUENCIA_r1_DISMINUYE :
 		{
-			prefix_react_Magnitud_FRECUENCIA_r1_DISMINUYE(handle);
+			prefix_react_eMagn_FRECUENCIA_r1_DISMINUYE(handle);
 			break;
 		}
-		case Prefix_Magnitud_FRECUENCIA_r1_DELAY :
+		case Prefix_eMagn_FRECUENCIA_r1_DELAY :
 		{
-			prefix_react_Magnitud_FRECUENCIA_r1_DELAY(handle);
+			prefix_react_eMagn_FRECUENCIA_r1_DELAY(handle);
 			break;
 		}
-		case Prefix_Magnitud_FRECUENCIA_r1_AUMENTA :
+		case Prefix_eMagn_FRECUENCIA_r1_AUMENTA :
 		{
-			prefix_react_Magnitud_FRECUENCIA_r1_AUMENTA(handle);
+			prefix_react_eMagn_FRECUENCIA_r1_AUMENTA(handle);
 			break;
 		}
-		case Prefix_Magnitud_FRECUENCIA_r1_ESPERA :
+		case Prefix_eMagn_FRECUENCIA_r1_ESPERA :
 		{
-			prefix_react_Magnitud_FRECUENCIA_r1_ESPERA(handle);
+			prefix_react_eMagn_FRECUENCIA_r1_ESPERA(handle);
 			break;
 		}
-		case Prefix_Magnitud_TENSION_r1_TENSION_ACTUAL :
+		case Prefix_eMagn_TENSION_r1_TENSION_ACTUAL :
 		{
-			prefix_react_Magnitud_TENSION_r1_TENSION_ACTUAL(handle);
+			prefix_react_eMagn_TENSION_r1_TENSION_ACTUAL(handle);
 			break;
 		}
-		case Prefix_Magnitud_TENSION_r1_DISMINUYE :
+		case Prefix_eMagn_TENSION_r1_DISMINUYE :
 		{
-			prefix_react_Magnitud_TENSION_r1_DISMINUYE(handle);
+			prefix_react_eMagn_TENSION_r1_DISMINUYE(handle);
 			break;
 		}
-		case Prefix_Magnitud_TENSION_r1_DELAY :
+		case Prefix_eMagn_TENSION_r1_DELAY :
 		{
-			prefix_react_Magnitud_TENSION_r1_DELAY(handle);
+			prefix_react_eMagn_TENSION_r1_DELAY(handle);
 			break;
 		}
-		case Prefix_Magnitud_TENSION_r1_AUMENTA :
+		case Prefix_eMagn_TENSION_r1_AUMENTA :
 		{
-			prefix_react_Magnitud_TENSION_r1_AUMENTA(handle);
+			prefix_react_eMagn_TENSION_r1_AUMENTA(handle);
 			break;
 		}
-		case Prefix_Magnitud_TENSION_r1_ESPERA :
+		case Prefix_eMagn_TENSION_r1_ESPERA :
 		{
-			prefix_react_Magnitud_TENSION_r1_ESPERA(handle);
+			prefix_react_eMagn_TENSION_r1_ESPERA(handle);
 			break;
 		}
 		default:
@@ -409,64 +409,64 @@ sc_boolean prefix_isStateActive(const Prefix* handle, PrefixStates state)
 			result = (sc_boolean) (handle->stateConfVector[1] == Prefix_Application_ESPERA
 			);
 			break;
-		case Prefix_Forma_senoidal :
-			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_Forma_senoidal
+		case Prefix_eForma_senoidal :
+			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_eForma_senoidal
 			);
 			break;
-		case Prefix_Forma_cuadrada :
-			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_Forma_cuadrada
+		case Prefix_eForma_cuadrada :
+			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_eForma_cuadrada
 			);
 			break;
-		case Prefix_Forma_triangular :
-			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_Forma_triangular
+		case Prefix_eForma_triangular :
+			result = (sc_boolean) (handle->stateConfVector[2] == Prefix_eForma_triangular
 			);
 			break;
-		case Prefix_Magnitud_FRECUENCIA :
-			result = (sc_boolean) (handle->stateConfVector[3] >= Prefix_Magnitud_FRECUENCIA
-				&& handle->stateConfVector[3] <= Prefix_Magnitud_FRECUENCIA_r1_ESPERA);
+		case Prefix_eMagn_FRECUENCIA :
+			result = (sc_boolean) (handle->stateConfVector[3] >= Prefix_eMagn_FRECUENCIA
+				&& handle->stateConfVector[3] <= Prefix_eMagn_FRECUENCIA_r1_ESPERA);
 			break;
-		case Prefix_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL :
-			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL
+		case Prefix_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL :
+			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL
 			);
 			break;
-		case Prefix_Magnitud_FRECUENCIA_r1_DISMINUYE :
-			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_Magnitud_FRECUENCIA_r1_DISMINUYE
+		case Prefix_eMagn_FRECUENCIA_r1_DISMINUYE :
+			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_eMagn_FRECUENCIA_r1_DISMINUYE
 			);
 			break;
-		case Prefix_Magnitud_FRECUENCIA_r1_DELAY :
-			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_Magnitud_FRECUENCIA_r1_DELAY
+		case Prefix_eMagn_FRECUENCIA_r1_DELAY :
+			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_eMagn_FRECUENCIA_r1_DELAY
 			);
 			break;
-		case Prefix_Magnitud_FRECUENCIA_r1_AUMENTA :
-			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_Magnitud_FRECUENCIA_r1_AUMENTA
+		case Prefix_eMagn_FRECUENCIA_r1_AUMENTA :
+			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_eMagn_FRECUENCIA_r1_AUMENTA
 			);
 			break;
-		case Prefix_Magnitud_FRECUENCIA_r1_ESPERA :
-			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_Magnitud_FRECUENCIA_r1_ESPERA
+		case Prefix_eMagn_FRECUENCIA_r1_ESPERA :
+			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_eMagn_FRECUENCIA_r1_ESPERA
 			);
 			break;
-		case Prefix_Magnitud_TENSION :
-			result = (sc_boolean) (handle->stateConfVector[3] >= Prefix_Magnitud_TENSION
-				&& handle->stateConfVector[3] <= Prefix_Magnitud_TENSION_r1_ESPERA);
+		case Prefix_eMagn_TENSION :
+			result = (sc_boolean) (handle->stateConfVector[3] >= Prefix_eMagn_TENSION
+				&& handle->stateConfVector[3] <= Prefix_eMagn_TENSION_r1_ESPERA);
 			break;
-		case Prefix_Magnitud_TENSION_r1_TENSION_ACTUAL :
-			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_Magnitud_TENSION_r1_TENSION_ACTUAL
+		case Prefix_eMagn_TENSION_r1_TENSION_ACTUAL :
+			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_eMagn_TENSION_r1_TENSION_ACTUAL
 			);
 			break;
-		case Prefix_Magnitud_TENSION_r1_DISMINUYE :
-			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_Magnitud_TENSION_r1_DISMINUYE
+		case Prefix_eMagn_TENSION_r1_DISMINUYE :
+			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_eMagn_TENSION_r1_DISMINUYE
 			);
 			break;
-		case Prefix_Magnitud_TENSION_r1_DELAY :
-			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_Magnitud_TENSION_r1_DELAY
+		case Prefix_eMagn_TENSION_r1_DELAY :
+			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_eMagn_TENSION_r1_DELAY
 			);
 			break;
-		case Prefix_Magnitud_TENSION_r1_AUMENTA :
-			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_Magnitud_TENSION_r1_AUMENTA
+		case Prefix_eMagn_TENSION_r1_AUMENTA :
+			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_eMagn_TENSION_r1_AUMENTA
 			);
 			break;
-		case Prefix_Magnitud_TENSION_r1_ESPERA :
-			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_Magnitud_TENSION_r1_ESPERA
+		case Prefix_eMagn_TENSION_r1_ESPERA :
+			result = (sc_boolean) (handle->stateConfVector[3] == Prefix_eMagn_TENSION_r1_ESPERA
 			);
 			break;
 		default:
@@ -607,89 +607,89 @@ static sc_boolean prefix_check_Application_ESPERA_tr3_tr3(const Prefix* handle)
 	return ((handle->internal.siTECXOK_raised) && (handle->internal.viTecla == PREFIX_PREFIXIFACE_TEC4)) ? bool_true : bool_false;
 }
 
-static sc_boolean prefix_check_Forma_senoidal_tr0_tr0(const Prefix* handle)
+static sc_boolean prefix_check_eForma_senoidal_tr0_tr0(const Prefix* handle)
 {
 	return handle->internal.eForma_raised;
 }
 
-static sc_boolean prefix_check_Forma_cuadrada_tr0_tr0(const Prefix* handle)
+static sc_boolean prefix_check_eForma_cuadrada_tr0_tr0(const Prefix* handle)
 {
 	return handle->internal.eForma_raised;
 }
 
-static sc_boolean prefix_check_Forma_triangular_tr0_tr0(const Prefix* handle)
+static sc_boolean prefix_check_eForma_triangular_tr0_tr0(const Prefix* handle)
 {
 	return handle->internal.eForma_raised;
 }
 
-static sc_boolean prefix_check_Magnitud_FRECUENCIA_tr0_tr0(const Prefix* handle)
+static sc_boolean prefix_check_eMagn_FRECUENCIA_tr0_tr0(const Prefix* handle)
 {
 	return handle->internal.eMagn_raised;
 }
 
-static sc_boolean prefix_check_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr0_tr0(const Prefix* handle)
+static sc_boolean prefix_check_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr0_tr0(const Prefix* handle)
 {
 	return handle->internal.eDown_raised;
 }
 
-static sc_boolean prefix_check_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr1_tr1(const Prefix* handle)
+static sc_boolean prefix_check_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr1_tr1(const Prefix* handle)
 {
 	return handle->internal.eUp_raised;
 }
 
-static sc_boolean prefix_check_Magnitud_FRECUENCIA_r1_DISMINUYE_tr0_tr0(const Prefix* handle)
+static sc_boolean prefix_check_eMagn_FRECUENCIA_r1_DISMINUYE_tr0_tr0(const Prefix* handle)
 {
-	return handle->timeEvents.prefix_Magnitud_FRECUENCIA_r1_DISMINUYE_tev0_raised;
+	return handle->timeEvents.prefix_eMagn_FRECUENCIA_r1_DISMINUYE_tev0_raised;
 }
 
-static sc_boolean prefix_check_Magnitud_FRECUENCIA_r1_DELAY_tr0_tr0(const Prefix* handle)
+static sc_boolean prefix_check_eMagn_FRECUENCIA_r1_DELAY_tr0_tr0(const Prefix* handle)
 {
-	return handle->timeEvents.prefix_Magnitud_FRECUENCIA_r1_DELAY_tev0_raised;
+	return handle->timeEvents.prefix_eMagn_FRECUENCIA_r1_DELAY_tev0_raised;
 }
 
-static sc_boolean prefix_check_Magnitud_FRECUENCIA_r1_AUMENTA_tr0_tr0(const Prefix* handle)
+static sc_boolean prefix_check_eMagn_FRECUENCIA_r1_AUMENTA_tr0_tr0(const Prefix* handle)
 {
-	return handle->timeEvents.prefix_Magnitud_FRECUENCIA_r1_AUMENTA_tev0_raised;
+	return handle->timeEvents.prefix_eMagn_FRECUENCIA_r1_AUMENTA_tev0_raised;
 }
 
-static sc_boolean prefix_check_Magnitud_FRECUENCIA_r1_ESPERA_tr0_tr0(const Prefix* handle)
+static sc_boolean prefix_check_eMagn_FRECUENCIA_r1_ESPERA_tr0_tr0(const Prefix* handle)
 {
-	return handle->timeEvents.prefix_Magnitud_FRECUENCIA_r1_ESPERA_tev0_raised;
+	return handle->timeEvents.prefix_eMagn_FRECUENCIA_r1_ESPERA_tev0_raised;
 }
 
-static sc_boolean prefix_check_Magnitud_TENSION_tr0_tr0(const Prefix* handle)
+static sc_boolean prefix_check_eMagn_TENSION_tr0_tr0(const Prefix* handle)
 {
 	return handle->internal.eMagn_raised;
 }
 
-static sc_boolean prefix_check_Magnitud_TENSION_r1_TENSION_ACTUAL_tr0_tr0(const Prefix* handle)
+static sc_boolean prefix_check_eMagn_TENSION_r1_TENSION_ACTUAL_tr0_tr0(const Prefix* handle)
 {
 	return handle->internal.eDown_raised;
 }
 
-static sc_boolean prefix_check_Magnitud_TENSION_r1_TENSION_ACTUAL_tr1_tr1(const Prefix* handle)
+static sc_boolean prefix_check_eMagn_TENSION_r1_TENSION_ACTUAL_tr1_tr1(const Prefix* handle)
 {
 	return handle->internal.eUp_raised;
 }
 
-static sc_boolean prefix_check_Magnitud_TENSION_r1_DISMINUYE_tr0_tr0(const Prefix* handle)
+static sc_boolean prefix_check_eMagn_TENSION_r1_DISMINUYE_tr0_tr0(const Prefix* handle)
 {
-	return handle->timeEvents.prefix_Magnitud_TENSION_r1_DISMINUYE_tev0_raised;
+	return handle->timeEvents.prefix_eMagn_TENSION_r1_DISMINUYE_tev0_raised;
 }
 
-static sc_boolean prefix_check_Magnitud_TENSION_r1_DELAY_tr0_tr0(const Prefix* handle)
+static sc_boolean prefix_check_eMagn_TENSION_r1_DELAY_tr0_tr0(const Prefix* handle)
 {
-	return handle->timeEvents.prefix_Magnitud_TENSION_r1_DELAY_tev0_raised;
+	return handle->timeEvents.prefix_eMagn_TENSION_r1_DELAY_tev0_raised;
 }
 
-static sc_boolean prefix_check_Magnitud_TENSION_r1_AUMENTA_tr0_tr0(const Prefix* handle)
+static sc_boolean prefix_check_eMagn_TENSION_r1_AUMENTA_tr0_tr0(const Prefix* handle)
 {
-	return handle->timeEvents.prefix_Magnitud_TENSION_r1_AUMENTA_tev0_raised;
+	return handle->timeEvents.prefix_eMagn_TENSION_r1_AUMENTA_tev0_raised;
 }
 
-static sc_boolean prefix_check_Magnitud_TENSION_r1_ESPERA_tr0_tr0(const Prefix* handle)
+static sc_boolean prefix_check_eMagn_TENSION_r1_ESPERA_tr0_tr0(const Prefix* handle)
 {
-	return handle->timeEvents.prefix_Magnitud_TENSION_r1_ESPERA_tev0_raised;
+	return handle->timeEvents.prefix_eMagn_TENSION_r1_ESPERA_tev0_raised;
 }
 
 static void prefix_effect_TECX_DEBOUNCE_tr0(Prefix* handle)
@@ -740,6 +740,7 @@ static void prefix_effect_Application_ESPERA_tr2(Prefix* handle)
 {
 	prefix_exseq_Application_ESPERA(handle);
 	handle->internal.eDown_raised = bool_true;
+	handle->iface.flag_tecla = bool_true;
 	prefix_enseq_Application_ESPERA_default(handle);
 }
 
@@ -747,109 +748,110 @@ static void prefix_effect_Application_ESPERA_tr3(Prefix* handle)
 {
 	prefix_exseq_Application_ESPERA(handle);
 	handle->internal.eUp_raised = bool_true;
+	handle->iface.flag_tecla = bool_true;
 	prefix_enseq_Application_ESPERA_default(handle);
 }
 
-static void prefix_effect_Forma_senoidal_tr0(Prefix* handle)
+static void prefix_effect_eForma_senoidal_tr0(Prefix* handle)
 {
-	prefix_exseq_Forma_senoidal(handle);
-	prefix_enseq_Forma_cuadrada_default(handle);
+	prefix_exseq_eForma_senoidal(handle);
+	prefix_enseq_eForma_cuadrada_default(handle);
 }
 
-static void prefix_effect_Forma_cuadrada_tr0(Prefix* handle)
+static void prefix_effect_eForma_cuadrada_tr0(Prefix* handle)
 {
-	prefix_exseq_Forma_cuadrada(handle);
-	prefix_enseq_Forma_triangular_default(handle);
+	prefix_exseq_eForma_cuadrada(handle);
+	prefix_enseq_eForma_triangular_default(handle);
 }
 
-static void prefix_effect_Forma_triangular_tr0(Prefix* handle)
+static void prefix_effect_eForma_triangular_tr0(Prefix* handle)
 {
-	prefix_exseq_Forma_triangular(handle);
-	prefix_enseq_Forma_senoidal_default(handle);
+	prefix_exseq_eForma_triangular(handle);
+	prefix_enseq_eForma_senoidal_default(handle);
 }
 
-static void prefix_effect_Magnitud_FRECUENCIA_tr0(Prefix* handle)
+static void prefix_effect_eMagn_FRECUENCIA_tr0(Prefix* handle)
 {
-	prefix_exseq_Magnitud_FRECUENCIA(handle);
-	prefix_enseq_Magnitud_TENSION_default(handle);
+	prefix_exseq_eMagn_FRECUENCIA(handle);
+	prefix_enseq_eMagn_TENSION_default(handle);
 }
 
-static void prefix_effect_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr0(Prefix* handle)
+static void prefix_effect_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr0(Prefix* handle)
 {
-	prefix_exseq_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL(handle);
-	prefix_enseq_Magnitud_FRECUENCIA_r1_DISMINUYE_default(handle);
+	prefix_exseq_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL(handle);
+	prefix_enseq_eMagn_FRECUENCIA_r1_DISMINUYE_default(handle);
 }
 
-static void prefix_effect_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr1(Prefix* handle)
+static void prefix_effect_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr1(Prefix* handle)
 {
-	prefix_exseq_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL(handle);
-	prefix_enseq_Magnitud_FRECUENCIA_r1_AUMENTA_default(handle);
+	prefix_exseq_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL(handle);
+	prefix_enseq_eMagn_FRECUENCIA_r1_AUMENTA_default(handle);
 }
 
-static void prefix_effect_Magnitud_FRECUENCIA_r1_DISMINUYE_tr0(Prefix* handle)
+static void prefix_effect_eMagn_FRECUENCIA_r1_DISMINUYE_tr0(Prefix* handle)
 {
-	prefix_exseq_Magnitud_FRECUENCIA_r1_DISMINUYE(handle);
-	prefix_enseq_Magnitud_FRECUENCIA_r1_DELAY_default(handle);
+	prefix_exseq_eMagn_FRECUENCIA_r1_DISMINUYE(handle);
+	prefix_enseq_eMagn_FRECUENCIA_r1_DELAY_default(handle);
 }
 
-static void prefix_effect_Magnitud_FRECUENCIA_r1_DELAY_tr0(Prefix* handle)
+static void prefix_effect_eMagn_FRECUENCIA_r1_DELAY_tr0(Prefix* handle)
 {
-	prefix_exseq_Magnitud_FRECUENCIA_r1_DELAY(handle);
-	prefix_enseq_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL_default(handle);
+	prefix_exseq_eMagn_FRECUENCIA_r1_DELAY(handle);
+	prefix_enseq_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL_default(handle);
 }
 
-static void prefix_effect_Magnitud_FRECUENCIA_r1_AUMENTA_tr0(Prefix* handle)
+static void prefix_effect_eMagn_FRECUENCIA_r1_AUMENTA_tr0(Prefix* handle)
 {
-	prefix_exseq_Magnitud_FRECUENCIA_r1_AUMENTA(handle);
-	prefix_enseq_Magnitud_FRECUENCIA_r1_ESPERA_default(handle);
+	prefix_exseq_eMagn_FRECUENCIA_r1_AUMENTA(handle);
+	prefix_enseq_eMagn_FRECUENCIA_r1_ESPERA_default(handle);
 }
 
-static void prefix_effect_Magnitud_FRECUENCIA_r1_ESPERA_tr0(Prefix* handle)
+static void prefix_effect_eMagn_FRECUENCIA_r1_ESPERA_tr0(Prefix* handle)
 {
-	prefix_exseq_Magnitud_FRECUENCIA_r1_ESPERA(handle);
-	prefix_enseq_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL_default(handle);
+	prefix_exseq_eMagn_FRECUENCIA_r1_ESPERA(handle);
+	prefix_enseq_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL_default(handle);
 }
 
-static void prefix_effect_Magnitud_TENSION_tr0(Prefix* handle)
+static void prefix_effect_eMagn_TENSION_tr0(Prefix* handle)
 {
-	prefix_exseq_Magnitud_TENSION(handle);
-	prefix_enseq_Magnitud_FRECUENCIA_default(handle);
+	prefix_exseq_eMagn_TENSION(handle);
+	prefix_enseq_eMagn_FRECUENCIA_default(handle);
 }
 
-static void prefix_effect_Magnitud_TENSION_r1_TENSION_ACTUAL_tr0(Prefix* handle)
+static void prefix_effect_eMagn_TENSION_r1_TENSION_ACTUAL_tr0(Prefix* handle)
 {
-	prefix_exseq_Magnitud_TENSION_r1_TENSION_ACTUAL(handle);
-	prefix_enseq_Magnitud_TENSION_r1_DISMINUYE_default(handle);
+	prefix_exseq_eMagn_TENSION_r1_TENSION_ACTUAL(handle);
+	prefix_enseq_eMagn_TENSION_r1_DISMINUYE_default(handle);
 }
 
-static void prefix_effect_Magnitud_TENSION_r1_TENSION_ACTUAL_tr1(Prefix* handle)
+static void prefix_effect_eMagn_TENSION_r1_TENSION_ACTUAL_tr1(Prefix* handle)
 {
-	prefix_exseq_Magnitud_TENSION_r1_TENSION_ACTUAL(handle);
-	prefix_enseq_Magnitud_TENSION_r1_AUMENTA_default(handle);
+	prefix_exseq_eMagn_TENSION_r1_TENSION_ACTUAL(handle);
+	prefix_enseq_eMagn_TENSION_r1_AUMENTA_default(handle);
 }
 
-static void prefix_effect_Magnitud_TENSION_r1_DISMINUYE_tr0(Prefix* handle)
+static void prefix_effect_eMagn_TENSION_r1_DISMINUYE_tr0(Prefix* handle)
 {
-	prefix_exseq_Magnitud_TENSION_r1_DISMINUYE(handle);
-	prefix_enseq_Magnitud_TENSION_r1_DELAY_default(handle);
+	prefix_exseq_eMagn_TENSION_r1_DISMINUYE(handle);
+	prefix_enseq_eMagn_TENSION_r1_DELAY_default(handle);
 }
 
-static void prefix_effect_Magnitud_TENSION_r1_DELAY_tr0(Prefix* handle)
+static void prefix_effect_eMagn_TENSION_r1_DELAY_tr0(Prefix* handle)
 {
-	prefix_exseq_Magnitud_TENSION_r1_DELAY(handle);
-	prefix_enseq_Magnitud_TENSION_r1_TENSION_ACTUAL_default(handle);
+	prefix_exseq_eMagn_TENSION_r1_DELAY(handle);
+	prefix_enseq_eMagn_TENSION_r1_TENSION_ACTUAL_default(handle);
 }
 
-static void prefix_effect_Magnitud_TENSION_r1_AUMENTA_tr0(Prefix* handle)
+static void prefix_effect_eMagn_TENSION_r1_AUMENTA_tr0(Prefix* handle)
 {
-	prefix_exseq_Magnitud_TENSION_r1_AUMENTA(handle);
-	prefix_enseq_Magnitud_TENSION_r1_ESPERA_default(handle);
+	prefix_exseq_eMagn_TENSION_r1_AUMENTA(handle);
+	prefix_enseq_eMagn_TENSION_r1_ESPERA_default(handle);
 }
 
-static void prefix_effect_Magnitud_TENSION_r1_ESPERA_tr0(Prefix* handle)
+static void prefix_effect_eMagn_TENSION_r1_ESPERA_tr0(Prefix* handle)
 {
-	prefix_exseq_Magnitud_TENSION_r1_ESPERA(handle);
-	prefix_enseq_Magnitud_TENSION_r1_TENSION_ACTUAL_default(handle);
+	prefix_exseq_eMagn_TENSION_r1_ESPERA(handle);
+	prefix_enseq_eMagn_TENSION_r1_TENSION_ACTUAL_default(handle);
 }
 
 /* Entry action for state 'DEBOUNCE'. */
@@ -872,18 +874,17 @@ static void prefix_enact_TECX_OPRIMIDO(Prefix* handle)
 	/* Entry action for state 'OPRIMIDO'. */
 	handle->internal.siTECXOK_raised = bool_true;
 	handle->internal.viTecla = handle->iface.evTECXOprimido_value;
-	handle->iface.flag_tecla = bool_false;
 }
 
 /* Entry action for state 'VALIDACION'. */
 static void prefix_enact_TECX_VALIDACION(Prefix* handle)
 {
 	/* Entry action for state 'VALIDACION'. */
-	handle->iface.flag_tecla = bool_true;
+	handle->iface.flag_tecla = bool_false;
 }
 
 /* Entry action for state 'senoidal'. */
-static void prefix_enact_Forma_senoidal(Prefix* handle)
+static void prefix_enact_eForma_senoidal(Prefix* handle)
 {
 	/* Entry action for state 'senoidal'. */
 	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LEDR, PREFIX_PREFIXIFACE_LED_ON);
@@ -892,7 +893,7 @@ static void prefix_enact_Forma_senoidal(Prefix* handle)
 }
 
 /* Entry action for state 'cuadrada'. */
-static void prefix_enact_Forma_cuadrada(Prefix* handle)
+static void prefix_enact_eForma_cuadrada(Prefix* handle)
 {
 	/* Entry action for state 'cuadrada'. */
 	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LEDR, PREFIX_PREFIXIFACE_LED_OFF);
@@ -901,7 +902,7 @@ static void prefix_enact_Forma_cuadrada(Prefix* handle)
 }
 
 /* Entry action for state 'triangular'. */
-static void prefix_enact_Forma_triangular(Prefix* handle)
+static void prefix_enact_eForma_triangular(Prefix* handle)
 {
 	/* Entry action for state 'triangular'. */
 	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LEDR, PREFIX_PREFIXIFACE_LED_OFF);
@@ -910,84 +911,84 @@ static void prefix_enact_Forma_triangular(Prefix* handle)
 }
 
 /* Entry action for state 'FRECUENCIA ACTUAL'. */
-static void prefix_enact_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL(Prefix* handle)
+static void prefix_enact_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL(Prefix* handle)
 {
 	/* Entry action for state 'FRECUENCIA ACTUAL'. */
 	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED1, PREFIX_PREFIXIFACE_LED_ON);
 }
 
 /* Entry action for state 'DISMINUYE'. */
-static void prefix_enact_Magnitud_FRECUENCIA_r1_DISMINUYE(Prefix* handle)
+static void prefix_enact_eMagn_FRECUENCIA_r1_DISMINUYE(Prefix* handle)
 {
 	/* Entry action for state 'DISMINUYE'. */
-	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_Magnitud_FRECUENCIA_r1_DISMINUYE_tev0_raised) , 500, bool_false);
+	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_eMagn_FRECUENCIA_r1_DISMINUYE_tev0_raised) , 1000, bool_false);
 	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED2, PREFIX_PREFIXIFACE_LED_ON);
 	handle->iface.frecuencia = handle->iface.frecuencia - 10;
 }
 
 /* Entry action for state 'DELAY'. */
-static void prefix_enact_Magnitud_FRECUENCIA_r1_DELAY(Prefix* handle)
+static void prefix_enact_eMagn_FRECUENCIA_r1_DELAY(Prefix* handle)
 {
 	/* Entry action for state 'DELAY'. */
-	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_Magnitud_FRECUENCIA_r1_DELAY_tev0_raised) , 50, bool_false);
+	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_eMagn_FRECUENCIA_r1_DELAY_tev0_raised) , 50, bool_false);
 	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED2, PREFIX_PREFIXIFACE_LED_OFF);
 }
 
 /* Entry action for state 'AUMENTA'. */
-static void prefix_enact_Magnitud_FRECUENCIA_r1_AUMENTA(Prefix* handle)
+static void prefix_enact_eMagn_FRECUENCIA_r1_AUMENTA(Prefix* handle)
 {
 	/* Entry action for state 'AUMENTA'. */
-	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_Magnitud_FRECUENCIA_r1_AUMENTA_tev0_raised) , 500, bool_false);
+	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_eMagn_FRECUENCIA_r1_AUMENTA_tev0_raised) , 1000, bool_false);
 	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED3, PREFIX_PREFIXIFACE_LED_ON);
 	handle->iface.frecuencia = handle->iface.frecuencia + 10;
 }
 
 /* Entry action for state 'ESPERA'. */
-static void prefix_enact_Magnitud_FRECUENCIA_r1_ESPERA(Prefix* handle)
+static void prefix_enact_eMagn_FRECUENCIA_r1_ESPERA(Prefix* handle)
 {
 	/* Entry action for state 'ESPERA'. */
-	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_Magnitud_FRECUENCIA_r1_ESPERA_tev0_raised) , 50, bool_false);
+	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_eMagn_FRECUENCIA_r1_ESPERA_tev0_raised) , 50, bool_false);
 	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED3, PREFIX_PREFIXIFACE_LED_OFF);
 }
 
 /* Entry action for state 'TENSION ACTUAL'. */
-static void prefix_enact_Magnitud_TENSION_r1_TENSION_ACTUAL(Prefix* handle)
+static void prefix_enact_eMagn_TENSION_r1_TENSION_ACTUAL(Prefix* handle)
 {
 	/* Entry action for state 'TENSION ACTUAL'. */
 	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED1, PREFIX_PREFIXIFACE_LED_OFF);
 }
 
 /* Entry action for state 'DISMINUYE'. */
-static void prefix_enact_Magnitud_TENSION_r1_DISMINUYE(Prefix* handle)
+static void prefix_enact_eMagn_TENSION_r1_DISMINUYE(Prefix* handle)
 {
 	/* Entry action for state 'DISMINUYE'. */
-	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_Magnitud_TENSION_r1_DISMINUYE_tev0_raised) , 500, bool_false);
+	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_eMagn_TENSION_r1_DISMINUYE_tev0_raised) , 1000, bool_false);
 	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED2, PREFIX_PREFIXIFACE_LED_ON);
 	handle->iface.tension = handle->iface.tension - 1;
 }
 
 /* Entry action for state 'DELAY'. */
-static void prefix_enact_Magnitud_TENSION_r1_DELAY(Prefix* handle)
+static void prefix_enact_eMagn_TENSION_r1_DELAY(Prefix* handle)
 {
 	/* Entry action for state 'DELAY'. */
-	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_Magnitud_TENSION_r1_DELAY_tev0_raised) , 50, bool_false);
+	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_eMagn_TENSION_r1_DELAY_tev0_raised) , 50, bool_false);
 	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED2, PREFIX_PREFIXIFACE_LED_OFF);
 }
 
 /* Entry action for state 'AUMENTA'. */
-static void prefix_enact_Magnitud_TENSION_r1_AUMENTA(Prefix* handle)
+static void prefix_enact_eMagn_TENSION_r1_AUMENTA(Prefix* handle)
 {
 	/* Entry action for state 'AUMENTA'. */
-	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_Magnitud_TENSION_r1_AUMENTA_tev0_raised) , 500, bool_false);
+	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_eMagn_TENSION_r1_AUMENTA_tev0_raised) , 1000, bool_false);
 	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED3, PREFIX_PREFIXIFACE_LED_ON);
 	handle->iface.tension = handle->iface.tension + 1;
 }
 
 /* Entry action for state 'ESPERA'. */
-static void prefix_enact_Magnitud_TENSION_r1_ESPERA(Prefix* handle)
+static void prefix_enact_eMagn_TENSION_r1_ESPERA(Prefix* handle)
 {
 	/* Entry action for state 'ESPERA'. */
-	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_Magnitud_TENSION_r1_ESPERA_tev0_raised) , 50, bool_false);
+	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_eMagn_TENSION_r1_ESPERA_tev0_raised) , 50, bool_false);
 	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED3, PREFIX_PREFIXIFACE_LED_OFF);
 }
 
@@ -999,59 +1000,59 @@ static void prefix_exact_TECX_DEBOUNCE(Prefix* handle)
 }
 
 /* Exit action for state 'DISMINUYE'. */
-static void prefix_exact_Magnitud_FRECUENCIA_r1_DISMINUYE(Prefix* handle)
+static void prefix_exact_eMagn_FRECUENCIA_r1_DISMINUYE(Prefix* handle)
 {
 	/* Exit action for state 'DISMINUYE'. */
-	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_Magnitud_FRECUENCIA_r1_DISMINUYE_tev0_raised) );		
+	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_eMagn_FRECUENCIA_r1_DISMINUYE_tev0_raised) );		
 }
 
 /* Exit action for state 'DELAY'. */
-static void prefix_exact_Magnitud_FRECUENCIA_r1_DELAY(Prefix* handle)
+static void prefix_exact_eMagn_FRECUENCIA_r1_DELAY(Prefix* handle)
 {
 	/* Exit action for state 'DELAY'. */
-	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_Magnitud_FRECUENCIA_r1_DELAY_tev0_raised) );		
+	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_eMagn_FRECUENCIA_r1_DELAY_tev0_raised) );		
 }
 
 /* Exit action for state 'AUMENTA'. */
-static void prefix_exact_Magnitud_FRECUENCIA_r1_AUMENTA(Prefix* handle)
+static void prefix_exact_eMagn_FRECUENCIA_r1_AUMENTA(Prefix* handle)
 {
 	/* Exit action for state 'AUMENTA'. */
-	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_Magnitud_FRECUENCIA_r1_AUMENTA_tev0_raised) );		
+	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_eMagn_FRECUENCIA_r1_AUMENTA_tev0_raised) );		
 }
 
 /* Exit action for state 'ESPERA'. */
-static void prefix_exact_Magnitud_FRECUENCIA_r1_ESPERA(Prefix* handle)
+static void prefix_exact_eMagn_FRECUENCIA_r1_ESPERA(Prefix* handle)
 {
 	/* Exit action for state 'ESPERA'. */
-	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_Magnitud_FRECUENCIA_r1_ESPERA_tev0_raised) );		
+	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_eMagn_FRECUENCIA_r1_ESPERA_tev0_raised) );		
 }
 
 /* Exit action for state 'DISMINUYE'. */
-static void prefix_exact_Magnitud_TENSION_r1_DISMINUYE(Prefix* handle)
+static void prefix_exact_eMagn_TENSION_r1_DISMINUYE(Prefix* handle)
 {
 	/* Exit action for state 'DISMINUYE'. */
-	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_Magnitud_TENSION_r1_DISMINUYE_tev0_raised) );		
+	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_eMagn_TENSION_r1_DISMINUYE_tev0_raised) );		
 }
 
 /* Exit action for state 'DELAY'. */
-static void prefix_exact_Magnitud_TENSION_r1_DELAY(Prefix* handle)
+static void prefix_exact_eMagn_TENSION_r1_DELAY(Prefix* handle)
 {
 	/* Exit action for state 'DELAY'. */
-	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_Magnitud_TENSION_r1_DELAY_tev0_raised) );		
+	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_eMagn_TENSION_r1_DELAY_tev0_raised) );		
 }
 
 /* Exit action for state 'AUMENTA'. */
-static void prefix_exact_Magnitud_TENSION_r1_AUMENTA(Prefix* handle)
+static void prefix_exact_eMagn_TENSION_r1_AUMENTA(Prefix* handle)
 {
 	/* Exit action for state 'AUMENTA'. */
-	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_Magnitud_TENSION_r1_AUMENTA_tev0_raised) );		
+	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_eMagn_TENSION_r1_AUMENTA_tev0_raised) );		
 }
 
 /* Exit action for state 'ESPERA'. */
-static void prefix_exact_Magnitud_TENSION_r1_ESPERA(Prefix* handle)
+static void prefix_exact_eMagn_TENSION_r1_ESPERA(Prefix* handle)
 {
 	/* Exit action for state 'ESPERA'. */
-	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_Magnitud_TENSION_r1_ESPERA_tev0_raised) );		
+	prefix_unsetTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_eMagn_TENSION_r1_ESPERA_tev0_raised) );		
 }
 
 /* 'default' enter sequence for state DEBOUNCE */
@@ -1099,133 +1100,133 @@ static void prefix_enseq_Application_ESPERA_default(Prefix* handle)
 }
 
 /* 'default' enter sequence for state senoidal */
-static void prefix_enseq_Forma_senoidal_default(Prefix* handle)
+static void prefix_enseq_eForma_senoidal_default(Prefix* handle)
 {
 	/* 'default' enter sequence for state senoidal */
-	prefix_enact_Forma_senoidal(handle);
-	handle->stateConfVector[2] = Prefix_Forma_senoidal;
+	prefix_enact_eForma_senoidal(handle);
+	handle->stateConfVector[2] = Prefix_eForma_senoidal;
 	handle->stateConfVectorPosition = 2;
 }
 
 /* 'default' enter sequence for state cuadrada */
-static void prefix_enseq_Forma_cuadrada_default(Prefix* handle)
+static void prefix_enseq_eForma_cuadrada_default(Prefix* handle)
 {
 	/* 'default' enter sequence for state cuadrada */
-	prefix_enact_Forma_cuadrada(handle);
-	handle->stateConfVector[2] = Prefix_Forma_cuadrada;
+	prefix_enact_eForma_cuadrada(handle);
+	handle->stateConfVector[2] = Prefix_eForma_cuadrada;
 	handle->stateConfVectorPosition = 2;
 }
 
 /* 'default' enter sequence for state triangular */
-static void prefix_enseq_Forma_triangular_default(Prefix* handle)
+static void prefix_enseq_eForma_triangular_default(Prefix* handle)
 {
 	/* 'default' enter sequence for state triangular */
-	prefix_enact_Forma_triangular(handle);
-	handle->stateConfVector[2] = Prefix_Forma_triangular;
+	prefix_enact_eForma_triangular(handle);
+	handle->stateConfVector[2] = Prefix_eForma_triangular;
 	handle->stateConfVectorPosition = 2;
 }
 
 /* 'default' enter sequence for state FRECUENCIA */
-static void prefix_enseq_Magnitud_FRECUENCIA_default(Prefix* handle)
+static void prefix_enseq_eMagn_FRECUENCIA_default(Prefix* handle)
 {
 	/* 'default' enter sequence for state FRECUENCIA */
-	prefix_enseq_Magnitud_FRECUENCIA_r1_default(handle);
+	prefix_enseq_eMagn_FRECUENCIA_r1_default(handle);
 }
 
 /* 'default' enter sequence for state FRECUENCIA ACTUAL */
-static void prefix_enseq_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL_default(Prefix* handle)
+static void prefix_enseq_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL_default(Prefix* handle)
 {
 	/* 'default' enter sequence for state FRECUENCIA ACTUAL */
-	prefix_enact_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL(handle);
-	handle->stateConfVector[3] = Prefix_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL;
+	prefix_enact_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL(handle);
+	handle->stateConfVector[3] = Prefix_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL;
 	handle->stateConfVectorPosition = 3;
 }
 
 /* 'default' enter sequence for state DISMINUYE */
-static void prefix_enseq_Magnitud_FRECUENCIA_r1_DISMINUYE_default(Prefix* handle)
+static void prefix_enseq_eMagn_FRECUENCIA_r1_DISMINUYE_default(Prefix* handle)
 {
 	/* 'default' enter sequence for state DISMINUYE */
-	prefix_enact_Magnitud_FRECUENCIA_r1_DISMINUYE(handle);
-	handle->stateConfVector[3] = Prefix_Magnitud_FRECUENCIA_r1_DISMINUYE;
+	prefix_enact_eMagn_FRECUENCIA_r1_DISMINUYE(handle);
+	handle->stateConfVector[3] = Prefix_eMagn_FRECUENCIA_r1_DISMINUYE;
 	handle->stateConfVectorPosition = 3;
 }
 
 /* 'default' enter sequence for state DELAY */
-static void prefix_enseq_Magnitud_FRECUENCIA_r1_DELAY_default(Prefix* handle)
+static void prefix_enseq_eMagn_FRECUENCIA_r1_DELAY_default(Prefix* handle)
 {
 	/* 'default' enter sequence for state DELAY */
-	prefix_enact_Magnitud_FRECUENCIA_r1_DELAY(handle);
-	handle->stateConfVector[3] = Prefix_Magnitud_FRECUENCIA_r1_DELAY;
+	prefix_enact_eMagn_FRECUENCIA_r1_DELAY(handle);
+	handle->stateConfVector[3] = Prefix_eMagn_FRECUENCIA_r1_DELAY;
 	handle->stateConfVectorPosition = 3;
 }
 
 /* 'default' enter sequence for state AUMENTA */
-static void prefix_enseq_Magnitud_FRECUENCIA_r1_AUMENTA_default(Prefix* handle)
+static void prefix_enseq_eMagn_FRECUENCIA_r1_AUMENTA_default(Prefix* handle)
 {
 	/* 'default' enter sequence for state AUMENTA */
-	prefix_enact_Magnitud_FRECUENCIA_r1_AUMENTA(handle);
-	handle->stateConfVector[3] = Prefix_Magnitud_FRECUENCIA_r1_AUMENTA;
+	prefix_enact_eMagn_FRECUENCIA_r1_AUMENTA(handle);
+	handle->stateConfVector[3] = Prefix_eMagn_FRECUENCIA_r1_AUMENTA;
 	handle->stateConfVectorPosition = 3;
 }
 
 /* 'default' enter sequence for state ESPERA */
-static void prefix_enseq_Magnitud_FRECUENCIA_r1_ESPERA_default(Prefix* handle)
+static void prefix_enseq_eMagn_FRECUENCIA_r1_ESPERA_default(Prefix* handle)
 {
 	/* 'default' enter sequence for state ESPERA */
-	prefix_enact_Magnitud_FRECUENCIA_r1_ESPERA(handle);
-	handle->stateConfVector[3] = Prefix_Magnitud_FRECUENCIA_r1_ESPERA;
+	prefix_enact_eMagn_FRECUENCIA_r1_ESPERA(handle);
+	handle->stateConfVector[3] = Prefix_eMagn_FRECUENCIA_r1_ESPERA;
 	handle->stateConfVectorPosition = 3;
 }
 
 /* 'default' enter sequence for state TENSION */
-static void prefix_enseq_Magnitud_TENSION_default(Prefix* handle)
+static void prefix_enseq_eMagn_TENSION_default(Prefix* handle)
 {
 	/* 'default' enter sequence for state TENSION */
-	prefix_enseq_Magnitud_TENSION_r1_default(handle);
+	prefix_enseq_eMagn_TENSION_r1_default(handle);
 }
 
 /* 'default' enter sequence for state TENSION ACTUAL */
-static void prefix_enseq_Magnitud_TENSION_r1_TENSION_ACTUAL_default(Prefix* handle)
+static void prefix_enseq_eMagn_TENSION_r1_TENSION_ACTUAL_default(Prefix* handle)
 {
 	/* 'default' enter sequence for state TENSION ACTUAL */
-	prefix_enact_Magnitud_TENSION_r1_TENSION_ACTUAL(handle);
-	handle->stateConfVector[3] = Prefix_Magnitud_TENSION_r1_TENSION_ACTUAL;
+	prefix_enact_eMagn_TENSION_r1_TENSION_ACTUAL(handle);
+	handle->stateConfVector[3] = Prefix_eMagn_TENSION_r1_TENSION_ACTUAL;
 	handle->stateConfVectorPosition = 3;
 }
 
 /* 'default' enter sequence for state DISMINUYE */
-static void prefix_enseq_Magnitud_TENSION_r1_DISMINUYE_default(Prefix* handle)
+static void prefix_enseq_eMagn_TENSION_r1_DISMINUYE_default(Prefix* handle)
 {
 	/* 'default' enter sequence for state DISMINUYE */
-	prefix_enact_Magnitud_TENSION_r1_DISMINUYE(handle);
-	handle->stateConfVector[3] = Prefix_Magnitud_TENSION_r1_DISMINUYE;
+	prefix_enact_eMagn_TENSION_r1_DISMINUYE(handle);
+	handle->stateConfVector[3] = Prefix_eMagn_TENSION_r1_DISMINUYE;
 	handle->stateConfVectorPosition = 3;
 }
 
 /* 'default' enter sequence for state DELAY */
-static void prefix_enseq_Magnitud_TENSION_r1_DELAY_default(Prefix* handle)
+static void prefix_enseq_eMagn_TENSION_r1_DELAY_default(Prefix* handle)
 {
 	/* 'default' enter sequence for state DELAY */
-	prefix_enact_Magnitud_TENSION_r1_DELAY(handle);
-	handle->stateConfVector[3] = Prefix_Magnitud_TENSION_r1_DELAY;
+	prefix_enact_eMagn_TENSION_r1_DELAY(handle);
+	handle->stateConfVector[3] = Prefix_eMagn_TENSION_r1_DELAY;
 	handle->stateConfVectorPosition = 3;
 }
 
 /* 'default' enter sequence for state AUMENTA */
-static void prefix_enseq_Magnitud_TENSION_r1_AUMENTA_default(Prefix* handle)
+static void prefix_enseq_eMagn_TENSION_r1_AUMENTA_default(Prefix* handle)
 {
 	/* 'default' enter sequence for state AUMENTA */
-	prefix_enact_Magnitud_TENSION_r1_AUMENTA(handle);
-	handle->stateConfVector[3] = Prefix_Magnitud_TENSION_r1_AUMENTA;
+	prefix_enact_eMagn_TENSION_r1_AUMENTA(handle);
+	handle->stateConfVector[3] = Prefix_eMagn_TENSION_r1_AUMENTA;
 	handle->stateConfVectorPosition = 3;
 }
 
 /* 'default' enter sequence for state ESPERA */
-static void prefix_enseq_Magnitud_TENSION_r1_ESPERA_default(Prefix* handle)
+static void prefix_enseq_eMagn_TENSION_r1_ESPERA_default(Prefix* handle)
 {
 	/* 'default' enter sequence for state ESPERA */
-	prefix_enact_Magnitud_TENSION_r1_ESPERA(handle);
-	handle->stateConfVector[3] = Prefix_Magnitud_TENSION_r1_ESPERA;
+	prefix_enact_eMagn_TENSION_r1_ESPERA(handle);
+	handle->stateConfVector[3] = Prefix_eMagn_TENSION_r1_ESPERA;
 	handle->stateConfVectorPosition = 3;
 }
 
@@ -1243,32 +1244,32 @@ static void prefix_enseq_Application_default(Prefix* handle)
 	prefix_react_Application__entry_Default(handle);
 }
 
-/* 'default' enter sequence for region Forma */
-static void prefix_enseq_Forma_default(Prefix* handle)
+/* 'default' enter sequence for region eForma */
+static void prefix_enseq_eForma_default(Prefix* handle)
 {
-	/* 'default' enter sequence for region Forma */
-	prefix_react_Forma__entry_Default(handle);
+	/* 'default' enter sequence for region eForma */
+	prefix_react_eForma__entry_Default(handle);
 }
 
-/* 'default' enter sequence for region Magnitud */
-static void prefix_enseq_Magnitud_default(Prefix* handle)
+/* 'default' enter sequence for region eMagn */
+static void prefix_enseq_eMagn_default(Prefix* handle)
 {
-	/* 'default' enter sequence for region Magnitud */
-	prefix_react_Magnitud__entry_Default(handle);
-}
-
-/* 'default' enter sequence for region r1 */
-static void prefix_enseq_Magnitud_FRECUENCIA_r1_default(Prefix* handle)
-{
-	/* 'default' enter sequence for region r1 */
-	prefix_react_Magnitud_FRECUENCIA_r1__entry_Default(handle);
+	/* 'default' enter sequence for region eMagn */
+	prefix_react_eMagn__entry_Default(handle);
 }
 
 /* 'default' enter sequence for region r1 */
-static void prefix_enseq_Magnitud_TENSION_r1_default(Prefix* handle)
+static void prefix_enseq_eMagn_FRECUENCIA_r1_default(Prefix* handle)
 {
 	/* 'default' enter sequence for region r1 */
-	prefix_react_Magnitud_TENSION_r1__entry_Default(handle);
+	prefix_react_eMagn_FRECUENCIA_r1__entry_Default(handle);
+}
+
+/* 'default' enter sequence for region r1 */
+static void prefix_enseq_eMagn_TENSION_r1_default(Prefix* handle)
+{
+	/* 'default' enter sequence for region r1 */
+	prefix_react_eMagn_TENSION_r1__entry_Default(handle);
 }
 
 /* Default exit sequence for state DEBOUNCE */
@@ -1313,7 +1314,7 @@ static void prefix_exseq_Application_ESPERA(Prefix* handle)
 }
 
 /* Default exit sequence for state senoidal */
-static void prefix_exseq_Forma_senoidal(Prefix* handle)
+static void prefix_exseq_eForma_senoidal(Prefix* handle)
 {
 	/* Default exit sequence for state senoidal */
 	handle->stateConfVector[2] = Prefix_last_state;
@@ -1321,7 +1322,7 @@ static void prefix_exseq_Forma_senoidal(Prefix* handle)
 }
 
 /* Default exit sequence for state cuadrada */
-static void prefix_exseq_Forma_cuadrada(Prefix* handle)
+static void prefix_exseq_eForma_cuadrada(Prefix* handle)
 {
 	/* Default exit sequence for state cuadrada */
 	handle->stateConfVector[2] = Prefix_last_state;
@@ -1329,7 +1330,7 @@ static void prefix_exseq_Forma_cuadrada(Prefix* handle)
 }
 
 /* Default exit sequence for state triangular */
-static void prefix_exseq_Forma_triangular(Prefix* handle)
+static void prefix_exseq_eForma_triangular(Prefix* handle)
 {
 	/* Default exit sequence for state triangular */
 	handle->stateConfVector[2] = Prefix_last_state;
@@ -1337,14 +1338,14 @@ static void prefix_exseq_Forma_triangular(Prefix* handle)
 }
 
 /* Default exit sequence for state FRECUENCIA */
-static void prefix_exseq_Magnitud_FRECUENCIA(Prefix* handle)
+static void prefix_exseq_eMagn_FRECUENCIA(Prefix* handle)
 {
 	/* Default exit sequence for state FRECUENCIA */
-	prefix_exseq_Magnitud_FRECUENCIA_r1(handle);
+	prefix_exseq_eMagn_FRECUENCIA_r1(handle);
 }
 
 /* Default exit sequence for state FRECUENCIA ACTUAL */
-static void prefix_exseq_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL(Prefix* handle)
+static void prefix_exseq_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL(Prefix* handle)
 {
 	/* Default exit sequence for state FRECUENCIA ACTUAL */
 	handle->stateConfVector[3] = Prefix_last_state;
@@ -1352,50 +1353,50 @@ static void prefix_exseq_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL(Prefix* handle
 }
 
 /* Default exit sequence for state DISMINUYE */
-static void prefix_exseq_Magnitud_FRECUENCIA_r1_DISMINUYE(Prefix* handle)
+static void prefix_exseq_eMagn_FRECUENCIA_r1_DISMINUYE(Prefix* handle)
 {
 	/* Default exit sequence for state DISMINUYE */
 	handle->stateConfVector[3] = Prefix_last_state;
 	handle->stateConfVectorPosition = 3;
-	prefix_exact_Magnitud_FRECUENCIA_r1_DISMINUYE(handle);
+	prefix_exact_eMagn_FRECUENCIA_r1_DISMINUYE(handle);
 }
 
 /* Default exit sequence for state DELAY */
-static void prefix_exseq_Magnitud_FRECUENCIA_r1_DELAY(Prefix* handle)
+static void prefix_exseq_eMagn_FRECUENCIA_r1_DELAY(Prefix* handle)
 {
 	/* Default exit sequence for state DELAY */
 	handle->stateConfVector[3] = Prefix_last_state;
 	handle->stateConfVectorPosition = 3;
-	prefix_exact_Magnitud_FRECUENCIA_r1_DELAY(handle);
+	prefix_exact_eMagn_FRECUENCIA_r1_DELAY(handle);
 }
 
 /* Default exit sequence for state AUMENTA */
-static void prefix_exseq_Magnitud_FRECUENCIA_r1_AUMENTA(Prefix* handle)
+static void prefix_exseq_eMagn_FRECUENCIA_r1_AUMENTA(Prefix* handle)
 {
 	/* Default exit sequence for state AUMENTA */
 	handle->stateConfVector[3] = Prefix_last_state;
 	handle->stateConfVectorPosition = 3;
-	prefix_exact_Magnitud_FRECUENCIA_r1_AUMENTA(handle);
+	prefix_exact_eMagn_FRECUENCIA_r1_AUMENTA(handle);
 }
 
 /* Default exit sequence for state ESPERA */
-static void prefix_exseq_Magnitud_FRECUENCIA_r1_ESPERA(Prefix* handle)
+static void prefix_exseq_eMagn_FRECUENCIA_r1_ESPERA(Prefix* handle)
 {
 	/* Default exit sequence for state ESPERA */
 	handle->stateConfVector[3] = Prefix_last_state;
 	handle->stateConfVectorPosition = 3;
-	prefix_exact_Magnitud_FRECUENCIA_r1_ESPERA(handle);
+	prefix_exact_eMagn_FRECUENCIA_r1_ESPERA(handle);
 }
 
 /* Default exit sequence for state TENSION */
-static void prefix_exseq_Magnitud_TENSION(Prefix* handle)
+static void prefix_exseq_eMagn_TENSION(Prefix* handle)
 {
 	/* Default exit sequence for state TENSION */
-	prefix_exseq_Magnitud_TENSION_r1(handle);
+	prefix_exseq_eMagn_TENSION_r1(handle);
 }
 
 /* Default exit sequence for state TENSION ACTUAL */
-static void prefix_exseq_Magnitud_TENSION_r1_TENSION_ACTUAL(Prefix* handle)
+static void prefix_exseq_eMagn_TENSION_r1_TENSION_ACTUAL(Prefix* handle)
 {
 	/* Default exit sequence for state TENSION ACTUAL */
 	handle->stateConfVector[3] = Prefix_last_state;
@@ -1403,39 +1404,39 @@ static void prefix_exseq_Magnitud_TENSION_r1_TENSION_ACTUAL(Prefix* handle)
 }
 
 /* Default exit sequence for state DISMINUYE */
-static void prefix_exseq_Magnitud_TENSION_r1_DISMINUYE(Prefix* handle)
+static void prefix_exseq_eMagn_TENSION_r1_DISMINUYE(Prefix* handle)
 {
 	/* Default exit sequence for state DISMINUYE */
 	handle->stateConfVector[3] = Prefix_last_state;
 	handle->stateConfVectorPosition = 3;
-	prefix_exact_Magnitud_TENSION_r1_DISMINUYE(handle);
+	prefix_exact_eMagn_TENSION_r1_DISMINUYE(handle);
 }
 
 /* Default exit sequence for state DELAY */
-static void prefix_exseq_Magnitud_TENSION_r1_DELAY(Prefix* handle)
+static void prefix_exseq_eMagn_TENSION_r1_DELAY(Prefix* handle)
 {
 	/* Default exit sequence for state DELAY */
 	handle->stateConfVector[3] = Prefix_last_state;
 	handle->stateConfVectorPosition = 3;
-	prefix_exact_Magnitud_TENSION_r1_DELAY(handle);
+	prefix_exact_eMagn_TENSION_r1_DELAY(handle);
 }
 
 /* Default exit sequence for state AUMENTA */
-static void prefix_exseq_Magnitud_TENSION_r1_AUMENTA(Prefix* handle)
+static void prefix_exseq_eMagn_TENSION_r1_AUMENTA(Prefix* handle)
 {
 	/* Default exit sequence for state AUMENTA */
 	handle->stateConfVector[3] = Prefix_last_state;
 	handle->stateConfVectorPosition = 3;
-	prefix_exact_Magnitud_TENSION_r1_AUMENTA(handle);
+	prefix_exact_eMagn_TENSION_r1_AUMENTA(handle);
 }
 
 /* Default exit sequence for state ESPERA */
-static void prefix_exseq_Magnitud_TENSION_r1_ESPERA(Prefix* handle)
+static void prefix_exseq_eMagn_TENSION_r1_ESPERA(Prefix* handle)
 {
 	/* Default exit sequence for state ESPERA */
 	handle->stateConfVector[3] = Prefix_last_state;
 	handle->stateConfVectorPosition = 3;
-	prefix_exact_Magnitud_TENSION_r1_ESPERA(handle);
+	prefix_exact_eMagn_TENSION_r1_ESPERA(handle);
 }
 
 /* Default exit sequence for region TECX */
@@ -1485,123 +1486,87 @@ static void prefix_exseq_Application(Prefix* handle)
 	}
 }
 
-/* Default exit sequence for region Forma */
-static void prefix_exseq_Forma(Prefix* handle)
+/* Default exit sequence for region eForma */
+static void prefix_exseq_eForma(Prefix* handle)
 {
-	/* Default exit sequence for region Forma */
-	/* Handle exit of all possible states (of prefix.Forma) at position 2... */
+	/* Default exit sequence for region eForma */
+	/* Handle exit of all possible states (of prefix.eForma) at position 2... */
 	switch(handle->stateConfVector[ 2 ])
 	{
-		case Prefix_Forma_senoidal :
+		case Prefix_eForma_senoidal :
 		{
-			prefix_exseq_Forma_senoidal(handle);
+			prefix_exseq_eForma_senoidal(handle);
 			break;
 		}
-		case Prefix_Forma_cuadrada :
+		case Prefix_eForma_cuadrada :
 		{
-			prefix_exseq_Forma_cuadrada(handle);
+			prefix_exseq_eForma_cuadrada(handle);
 			break;
 		}
-		case Prefix_Forma_triangular :
+		case Prefix_eForma_triangular :
 		{
-			prefix_exseq_Forma_triangular(handle);
-			break;
-		}
-		default: break;
-	}
-}
-
-/* Default exit sequence for region Magnitud */
-static void prefix_exseq_Magnitud(Prefix* handle)
-{
-	/* Default exit sequence for region Magnitud */
-	/* Handle exit of all possible states (of prefix.Magnitud) at position 3... */
-	switch(handle->stateConfVector[ 3 ])
-	{
-		case Prefix_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL :
-		{
-			prefix_exseq_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL(handle);
-			break;
-		}
-		case Prefix_Magnitud_FRECUENCIA_r1_DISMINUYE :
-		{
-			prefix_exseq_Magnitud_FRECUENCIA_r1_DISMINUYE(handle);
-			break;
-		}
-		case Prefix_Magnitud_FRECUENCIA_r1_DELAY :
-		{
-			prefix_exseq_Magnitud_FRECUENCIA_r1_DELAY(handle);
-			break;
-		}
-		case Prefix_Magnitud_FRECUENCIA_r1_AUMENTA :
-		{
-			prefix_exseq_Magnitud_FRECUENCIA_r1_AUMENTA(handle);
-			break;
-		}
-		case Prefix_Magnitud_FRECUENCIA_r1_ESPERA :
-		{
-			prefix_exseq_Magnitud_FRECUENCIA_r1_ESPERA(handle);
-			break;
-		}
-		case Prefix_Magnitud_TENSION_r1_TENSION_ACTUAL :
-		{
-			prefix_exseq_Magnitud_TENSION_r1_TENSION_ACTUAL(handle);
-			break;
-		}
-		case Prefix_Magnitud_TENSION_r1_DISMINUYE :
-		{
-			prefix_exseq_Magnitud_TENSION_r1_DISMINUYE(handle);
-			break;
-		}
-		case Prefix_Magnitud_TENSION_r1_DELAY :
-		{
-			prefix_exseq_Magnitud_TENSION_r1_DELAY(handle);
-			break;
-		}
-		case Prefix_Magnitud_TENSION_r1_AUMENTA :
-		{
-			prefix_exseq_Magnitud_TENSION_r1_AUMENTA(handle);
-			break;
-		}
-		case Prefix_Magnitud_TENSION_r1_ESPERA :
-		{
-			prefix_exseq_Magnitud_TENSION_r1_ESPERA(handle);
+			prefix_exseq_eForma_triangular(handle);
 			break;
 		}
 		default: break;
 	}
 }
 
-/* Default exit sequence for region r1 */
-static void prefix_exseq_Magnitud_FRECUENCIA_r1(Prefix* handle)
+/* Default exit sequence for region eMagn */
+static void prefix_exseq_eMagn(Prefix* handle)
 {
-	/* Default exit sequence for region r1 */
-	/* Handle exit of all possible states (of prefix.Magnitud.FRECUENCIA.r1) at position 3... */
+	/* Default exit sequence for region eMagn */
+	/* Handle exit of all possible states (of prefix.eMagn) at position 3... */
 	switch(handle->stateConfVector[ 3 ])
 	{
-		case Prefix_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL :
+		case Prefix_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL :
 		{
-			prefix_exseq_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL(handle);
+			prefix_exseq_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL(handle);
 			break;
 		}
-		case Prefix_Magnitud_FRECUENCIA_r1_DISMINUYE :
+		case Prefix_eMagn_FRECUENCIA_r1_DISMINUYE :
 		{
-			prefix_exseq_Magnitud_FRECUENCIA_r1_DISMINUYE(handle);
+			prefix_exseq_eMagn_FRECUENCIA_r1_DISMINUYE(handle);
 			break;
 		}
-		case Prefix_Magnitud_FRECUENCIA_r1_DELAY :
+		case Prefix_eMagn_FRECUENCIA_r1_DELAY :
 		{
-			prefix_exseq_Magnitud_FRECUENCIA_r1_DELAY(handle);
+			prefix_exseq_eMagn_FRECUENCIA_r1_DELAY(handle);
 			break;
 		}
-		case Prefix_Magnitud_FRECUENCIA_r1_AUMENTA :
+		case Prefix_eMagn_FRECUENCIA_r1_AUMENTA :
 		{
-			prefix_exseq_Magnitud_FRECUENCIA_r1_AUMENTA(handle);
+			prefix_exseq_eMagn_FRECUENCIA_r1_AUMENTA(handle);
 			break;
 		}
-		case Prefix_Magnitud_FRECUENCIA_r1_ESPERA :
+		case Prefix_eMagn_FRECUENCIA_r1_ESPERA :
 		{
-			prefix_exseq_Magnitud_FRECUENCIA_r1_ESPERA(handle);
+			prefix_exseq_eMagn_FRECUENCIA_r1_ESPERA(handle);
+			break;
+		}
+		case Prefix_eMagn_TENSION_r1_TENSION_ACTUAL :
+		{
+			prefix_exseq_eMagn_TENSION_r1_TENSION_ACTUAL(handle);
+			break;
+		}
+		case Prefix_eMagn_TENSION_r1_DISMINUYE :
+		{
+			prefix_exseq_eMagn_TENSION_r1_DISMINUYE(handle);
+			break;
+		}
+		case Prefix_eMagn_TENSION_r1_DELAY :
+		{
+			prefix_exseq_eMagn_TENSION_r1_DELAY(handle);
+			break;
+		}
+		case Prefix_eMagn_TENSION_r1_AUMENTA :
+		{
+			prefix_exseq_eMagn_TENSION_r1_AUMENTA(handle);
+			break;
+		}
+		case Prefix_eMagn_TENSION_r1_ESPERA :
+		{
+			prefix_exseq_eMagn_TENSION_r1_ESPERA(handle);
 			break;
 		}
 		default: break;
@@ -1609,35 +1574,71 @@ static void prefix_exseq_Magnitud_FRECUENCIA_r1(Prefix* handle)
 }
 
 /* Default exit sequence for region r1 */
-static void prefix_exseq_Magnitud_TENSION_r1(Prefix* handle)
+static void prefix_exseq_eMagn_FRECUENCIA_r1(Prefix* handle)
 {
 	/* Default exit sequence for region r1 */
-	/* Handle exit of all possible states (of prefix.Magnitud.TENSION.r1) at position 3... */
+	/* Handle exit of all possible states (of prefix.eMagn.FRECUENCIA.r1) at position 3... */
 	switch(handle->stateConfVector[ 3 ])
 	{
-		case Prefix_Magnitud_TENSION_r1_TENSION_ACTUAL :
+		case Prefix_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL :
 		{
-			prefix_exseq_Magnitud_TENSION_r1_TENSION_ACTUAL(handle);
+			prefix_exseq_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL(handle);
 			break;
 		}
-		case Prefix_Magnitud_TENSION_r1_DISMINUYE :
+		case Prefix_eMagn_FRECUENCIA_r1_DISMINUYE :
 		{
-			prefix_exseq_Magnitud_TENSION_r1_DISMINUYE(handle);
+			prefix_exseq_eMagn_FRECUENCIA_r1_DISMINUYE(handle);
 			break;
 		}
-		case Prefix_Magnitud_TENSION_r1_DELAY :
+		case Prefix_eMagn_FRECUENCIA_r1_DELAY :
 		{
-			prefix_exseq_Magnitud_TENSION_r1_DELAY(handle);
+			prefix_exseq_eMagn_FRECUENCIA_r1_DELAY(handle);
 			break;
 		}
-		case Prefix_Magnitud_TENSION_r1_AUMENTA :
+		case Prefix_eMagn_FRECUENCIA_r1_AUMENTA :
 		{
-			prefix_exseq_Magnitud_TENSION_r1_AUMENTA(handle);
+			prefix_exseq_eMagn_FRECUENCIA_r1_AUMENTA(handle);
 			break;
 		}
-		case Prefix_Magnitud_TENSION_r1_ESPERA :
+		case Prefix_eMagn_FRECUENCIA_r1_ESPERA :
 		{
-			prefix_exseq_Magnitud_TENSION_r1_ESPERA(handle);
+			prefix_exseq_eMagn_FRECUENCIA_r1_ESPERA(handle);
+			break;
+		}
+		default: break;
+	}
+}
+
+/* Default exit sequence for region r1 */
+static void prefix_exseq_eMagn_TENSION_r1(Prefix* handle)
+{
+	/* Default exit sequence for region r1 */
+	/* Handle exit of all possible states (of prefix.eMagn.TENSION.r1) at position 3... */
+	switch(handle->stateConfVector[ 3 ])
+	{
+		case Prefix_eMagn_TENSION_r1_TENSION_ACTUAL :
+		{
+			prefix_exseq_eMagn_TENSION_r1_TENSION_ACTUAL(handle);
+			break;
+		}
+		case Prefix_eMagn_TENSION_r1_DISMINUYE :
+		{
+			prefix_exseq_eMagn_TENSION_r1_DISMINUYE(handle);
+			break;
+		}
+		case Prefix_eMagn_TENSION_r1_DELAY :
+		{
+			prefix_exseq_eMagn_TENSION_r1_DELAY(handle);
+			break;
+		}
+		case Prefix_eMagn_TENSION_r1_AUMENTA :
+		{
+			prefix_exseq_eMagn_TENSION_r1_AUMENTA(handle);
+			break;
+		}
+		case Prefix_eMagn_TENSION_r1_ESPERA :
+		{
+			prefix_exseq_eMagn_TENSION_r1_ESPERA(handle);
 			break;
 		}
 		default: break;
@@ -1719,203 +1720,203 @@ static void prefix_react_Application_ESPERA(Prefix* handle)
 }
 
 /* The reactions of state senoidal. */
-static void prefix_react_Forma_senoidal(Prefix* handle)
+static void prefix_react_eForma_senoidal(Prefix* handle)
 {
 	/* The reactions of state senoidal. */
-	if (prefix_check_Forma_senoidal_tr0_tr0(handle) == bool_true)
+	if (prefix_check_eForma_senoidal_tr0_tr0(handle) == bool_true)
 	{ 
-		prefix_effect_Forma_senoidal_tr0(handle);
+		prefix_effect_eForma_senoidal_tr0(handle);
 	} 
 }
 
 /* The reactions of state cuadrada. */
-static void prefix_react_Forma_cuadrada(Prefix* handle)
+static void prefix_react_eForma_cuadrada(Prefix* handle)
 {
 	/* The reactions of state cuadrada. */
-	if (prefix_check_Forma_cuadrada_tr0_tr0(handle) == bool_true)
+	if (prefix_check_eForma_cuadrada_tr0_tr0(handle) == bool_true)
 	{ 
-		prefix_effect_Forma_cuadrada_tr0(handle);
+		prefix_effect_eForma_cuadrada_tr0(handle);
 	} 
 }
 
 /* The reactions of state triangular. */
-static void prefix_react_Forma_triangular(Prefix* handle)
+static void prefix_react_eForma_triangular(Prefix* handle)
 {
 	/* The reactions of state triangular. */
-	if (prefix_check_Forma_triangular_tr0_tr0(handle) == bool_true)
+	if (prefix_check_eForma_triangular_tr0_tr0(handle) == bool_true)
 	{ 
-		prefix_effect_Forma_triangular_tr0(handle);
+		prefix_effect_eForma_triangular_tr0(handle);
 	} 
 }
 
 /* The reactions of state FRECUENCIA ACTUAL. */
-static void prefix_react_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL(Prefix* handle)
+static void prefix_react_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL(Prefix* handle)
 {
 	/* The reactions of state FRECUENCIA ACTUAL. */
-	if (prefix_check_Magnitud_FRECUENCIA_tr0_tr0(handle) == bool_true)
+	if (prefix_check_eMagn_FRECUENCIA_tr0_tr0(handle) == bool_true)
 	{ 
-		prefix_effect_Magnitud_FRECUENCIA_tr0(handle);
+		prefix_effect_eMagn_FRECUENCIA_tr0(handle);
 	}  else
 	{
-		if (prefix_check_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr0_tr0(handle) == bool_true)
+		if (prefix_check_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr0_tr0(handle) == bool_true)
 		{ 
-			prefix_effect_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr0(handle);
+			prefix_effect_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr0(handle);
 		}  else
 		{
-			if (prefix_check_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr1_tr1(handle) == bool_true)
+			if (prefix_check_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr1_tr1(handle) == bool_true)
 			{ 
-				prefix_effect_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr1(handle);
+				prefix_effect_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL_tr1(handle);
 			} 
 		}
 	}
 }
 
 /* The reactions of state DISMINUYE. */
-static void prefix_react_Magnitud_FRECUENCIA_r1_DISMINUYE(Prefix* handle)
+static void prefix_react_eMagn_FRECUENCIA_r1_DISMINUYE(Prefix* handle)
 {
 	/* The reactions of state DISMINUYE. */
-	if (prefix_check_Magnitud_FRECUENCIA_tr0_tr0(handle) == bool_true)
+	if (prefix_check_eMagn_FRECUENCIA_tr0_tr0(handle) == bool_true)
 	{ 
-		prefix_effect_Magnitud_FRECUENCIA_tr0(handle);
+		prefix_effect_eMagn_FRECUENCIA_tr0(handle);
 	}  else
 	{
-		if (prefix_check_Magnitud_FRECUENCIA_r1_DISMINUYE_tr0_tr0(handle) == bool_true)
+		if (prefix_check_eMagn_FRECUENCIA_r1_DISMINUYE_tr0_tr0(handle) == bool_true)
 		{ 
-			prefix_effect_Magnitud_FRECUENCIA_r1_DISMINUYE_tr0(handle);
+			prefix_effect_eMagn_FRECUENCIA_r1_DISMINUYE_tr0(handle);
 		} 
 	}
 }
 
 /* The reactions of state DELAY. */
-static void prefix_react_Magnitud_FRECUENCIA_r1_DELAY(Prefix* handle)
+static void prefix_react_eMagn_FRECUENCIA_r1_DELAY(Prefix* handle)
 {
 	/* The reactions of state DELAY. */
-	if (prefix_check_Magnitud_FRECUENCIA_tr0_tr0(handle) == bool_true)
+	if (prefix_check_eMagn_FRECUENCIA_tr0_tr0(handle) == bool_true)
 	{ 
-		prefix_effect_Magnitud_FRECUENCIA_tr0(handle);
+		prefix_effect_eMagn_FRECUENCIA_tr0(handle);
 	}  else
 	{
-		if (prefix_check_Magnitud_FRECUENCIA_r1_DELAY_tr0_tr0(handle) == bool_true)
+		if (prefix_check_eMagn_FRECUENCIA_r1_DELAY_tr0_tr0(handle) == bool_true)
 		{ 
-			prefix_effect_Magnitud_FRECUENCIA_r1_DELAY_tr0(handle);
+			prefix_effect_eMagn_FRECUENCIA_r1_DELAY_tr0(handle);
 		} 
 	}
 }
 
 /* The reactions of state AUMENTA. */
-static void prefix_react_Magnitud_FRECUENCIA_r1_AUMENTA(Prefix* handle)
+static void prefix_react_eMagn_FRECUENCIA_r1_AUMENTA(Prefix* handle)
 {
 	/* The reactions of state AUMENTA. */
-	if (prefix_check_Magnitud_FRECUENCIA_tr0_tr0(handle) == bool_true)
+	if (prefix_check_eMagn_FRECUENCIA_tr0_tr0(handle) == bool_true)
 	{ 
-		prefix_effect_Magnitud_FRECUENCIA_tr0(handle);
+		prefix_effect_eMagn_FRECUENCIA_tr0(handle);
 	}  else
 	{
-		if (prefix_check_Magnitud_FRECUENCIA_r1_AUMENTA_tr0_tr0(handle) == bool_true)
+		if (prefix_check_eMagn_FRECUENCIA_r1_AUMENTA_tr0_tr0(handle) == bool_true)
 		{ 
-			prefix_effect_Magnitud_FRECUENCIA_r1_AUMENTA_tr0(handle);
+			prefix_effect_eMagn_FRECUENCIA_r1_AUMENTA_tr0(handle);
 		} 
 	}
 }
 
 /* The reactions of state ESPERA. */
-static void prefix_react_Magnitud_FRECUENCIA_r1_ESPERA(Prefix* handle)
+static void prefix_react_eMagn_FRECUENCIA_r1_ESPERA(Prefix* handle)
 {
 	/* The reactions of state ESPERA. */
-	if (prefix_check_Magnitud_FRECUENCIA_tr0_tr0(handle) == bool_true)
+	if (prefix_check_eMagn_FRECUENCIA_tr0_tr0(handle) == bool_true)
 	{ 
-		prefix_effect_Magnitud_FRECUENCIA_tr0(handle);
+		prefix_effect_eMagn_FRECUENCIA_tr0(handle);
 	}  else
 	{
-		if (prefix_check_Magnitud_FRECUENCIA_r1_ESPERA_tr0_tr0(handle) == bool_true)
+		if (prefix_check_eMagn_FRECUENCIA_r1_ESPERA_tr0_tr0(handle) == bool_true)
 		{ 
-			prefix_effect_Magnitud_FRECUENCIA_r1_ESPERA_tr0(handle);
+			prefix_effect_eMagn_FRECUENCIA_r1_ESPERA_tr0(handle);
 		} 
 	}
 }
 
 /* The reactions of state TENSION ACTUAL. */
-static void prefix_react_Magnitud_TENSION_r1_TENSION_ACTUAL(Prefix* handle)
+static void prefix_react_eMagn_TENSION_r1_TENSION_ACTUAL(Prefix* handle)
 {
 	/* The reactions of state TENSION ACTUAL. */
-	if (prefix_check_Magnitud_TENSION_tr0_tr0(handle) == bool_true)
+	if (prefix_check_eMagn_TENSION_tr0_tr0(handle) == bool_true)
 	{ 
-		prefix_effect_Magnitud_TENSION_tr0(handle);
+		prefix_effect_eMagn_TENSION_tr0(handle);
 	}  else
 	{
-		if (prefix_check_Magnitud_TENSION_r1_TENSION_ACTUAL_tr0_tr0(handle) == bool_true)
+		if (prefix_check_eMagn_TENSION_r1_TENSION_ACTUAL_tr0_tr0(handle) == bool_true)
 		{ 
-			prefix_effect_Magnitud_TENSION_r1_TENSION_ACTUAL_tr0(handle);
+			prefix_effect_eMagn_TENSION_r1_TENSION_ACTUAL_tr0(handle);
 		}  else
 		{
-			if (prefix_check_Magnitud_TENSION_r1_TENSION_ACTUAL_tr1_tr1(handle) == bool_true)
+			if (prefix_check_eMagn_TENSION_r1_TENSION_ACTUAL_tr1_tr1(handle) == bool_true)
 			{ 
-				prefix_effect_Magnitud_TENSION_r1_TENSION_ACTUAL_tr1(handle);
+				prefix_effect_eMagn_TENSION_r1_TENSION_ACTUAL_tr1(handle);
 			} 
 		}
 	}
 }
 
 /* The reactions of state DISMINUYE. */
-static void prefix_react_Magnitud_TENSION_r1_DISMINUYE(Prefix* handle)
+static void prefix_react_eMagn_TENSION_r1_DISMINUYE(Prefix* handle)
 {
 	/* The reactions of state DISMINUYE. */
-	if (prefix_check_Magnitud_TENSION_tr0_tr0(handle) == bool_true)
+	if (prefix_check_eMagn_TENSION_tr0_tr0(handle) == bool_true)
 	{ 
-		prefix_effect_Magnitud_TENSION_tr0(handle);
+		prefix_effect_eMagn_TENSION_tr0(handle);
 	}  else
 	{
-		if (prefix_check_Magnitud_TENSION_r1_DISMINUYE_tr0_tr0(handle) == bool_true)
+		if (prefix_check_eMagn_TENSION_r1_DISMINUYE_tr0_tr0(handle) == bool_true)
 		{ 
-			prefix_effect_Magnitud_TENSION_r1_DISMINUYE_tr0(handle);
+			prefix_effect_eMagn_TENSION_r1_DISMINUYE_tr0(handle);
 		} 
 	}
 }
 
 /* The reactions of state DELAY. */
-static void prefix_react_Magnitud_TENSION_r1_DELAY(Prefix* handle)
+static void prefix_react_eMagn_TENSION_r1_DELAY(Prefix* handle)
 {
 	/* The reactions of state DELAY. */
-	if (prefix_check_Magnitud_TENSION_tr0_tr0(handle) == bool_true)
+	if (prefix_check_eMagn_TENSION_tr0_tr0(handle) == bool_true)
 	{ 
-		prefix_effect_Magnitud_TENSION_tr0(handle);
+		prefix_effect_eMagn_TENSION_tr0(handle);
 	}  else
 	{
-		if (prefix_check_Magnitud_TENSION_r1_DELAY_tr0_tr0(handle) == bool_true)
+		if (prefix_check_eMagn_TENSION_r1_DELAY_tr0_tr0(handle) == bool_true)
 		{ 
-			prefix_effect_Magnitud_TENSION_r1_DELAY_tr0(handle);
+			prefix_effect_eMagn_TENSION_r1_DELAY_tr0(handle);
 		} 
 	}
 }
 
 /* The reactions of state AUMENTA. */
-static void prefix_react_Magnitud_TENSION_r1_AUMENTA(Prefix* handle)
+static void prefix_react_eMagn_TENSION_r1_AUMENTA(Prefix* handle)
 {
 	/* The reactions of state AUMENTA. */
-	if (prefix_check_Magnitud_TENSION_tr0_tr0(handle) == bool_true)
+	if (prefix_check_eMagn_TENSION_tr0_tr0(handle) == bool_true)
 	{ 
-		prefix_effect_Magnitud_TENSION_tr0(handle);
+		prefix_effect_eMagn_TENSION_tr0(handle);
 	}  else
 	{
-		if (prefix_check_Magnitud_TENSION_r1_AUMENTA_tr0_tr0(handle) == bool_true)
+		if (prefix_check_eMagn_TENSION_r1_AUMENTA_tr0_tr0(handle) == bool_true)
 		{ 
-			prefix_effect_Magnitud_TENSION_r1_AUMENTA_tr0(handle);
+			prefix_effect_eMagn_TENSION_r1_AUMENTA_tr0(handle);
 		} 
 	}
 }
 
 /* The reactions of state ESPERA. */
-static void prefix_react_Magnitud_TENSION_r1_ESPERA(Prefix* handle)
+static void prefix_react_eMagn_TENSION_r1_ESPERA(Prefix* handle)
 {
 	/* The reactions of state ESPERA. */
-	if (prefix_check_Magnitud_TENSION_tr0_tr0(handle) == bool_true)
+	if (prefix_check_eMagn_TENSION_tr0_tr0(handle) == bool_true)
 	{ 
-		prefix_effect_Magnitud_TENSION_tr0(handle);
+		prefix_effect_eMagn_TENSION_tr0(handle);
 	}  else
 	{
-		if (prefix_check_Magnitud_TENSION_r1_ESPERA_tr0_tr0(handle) == bool_true)
+		if (prefix_check_eMagn_TENSION_r1_ESPERA_tr0_tr0(handle) == bool_true)
 		{ 
-			prefix_effect_Magnitud_TENSION_r1_ESPERA_tr0(handle);
+			prefix_effect_eMagn_TENSION_r1_ESPERA_tr0(handle);
 		} 
 	}
 }
@@ -1935,31 +1936,31 @@ static void prefix_react_Application__entry_Default(Prefix* handle)
 }
 
 /* Default react sequence for initial entry  */
-static void prefix_react_Forma__entry_Default(Prefix* handle)
+static void prefix_react_eForma__entry_Default(Prefix* handle)
 {
 	/* Default react sequence for initial entry  */
-	prefix_enseq_Forma_senoidal_default(handle);
+	prefix_enseq_eForma_senoidal_default(handle);
 }
 
 /* Default react sequence for initial entry  */
-static void prefix_react_Magnitud__entry_Default(Prefix* handle)
+static void prefix_react_eMagn__entry_Default(Prefix* handle)
 {
 	/* Default react sequence for initial entry  */
-	prefix_enseq_Magnitud_FRECUENCIA_default(handle);
+	prefix_enseq_eMagn_FRECUENCIA_default(handle);
 }
 
 /* Default react sequence for initial entry  */
-static void prefix_react_Magnitud_FRECUENCIA_r1__entry_Default(Prefix* handle)
+static void prefix_react_eMagn_FRECUENCIA_r1__entry_Default(Prefix* handle)
 {
 	/* Default react sequence for initial entry  */
-	prefix_enseq_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL_default(handle);
+	prefix_enseq_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL_default(handle);
 }
 
 /* Default react sequence for initial entry  */
-static void prefix_react_Magnitud_TENSION_r1__entry_Default(Prefix* handle)
+static void prefix_react_eMagn_TENSION_r1__entry_Default(Prefix* handle)
 {
 	/* Default react sequence for initial entry  */
-	prefix_enseq_Magnitud_TENSION_r1_TENSION_ACTUAL_default(handle);
+	prefix_enseq_eMagn_TENSION_r1_TENSION_ACTUAL_default(handle);
 }
 
 

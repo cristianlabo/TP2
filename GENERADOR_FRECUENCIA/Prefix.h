@@ -19,21 +19,21 @@ typedef enum
 	Prefix_TECX_OPRIMIDO,
 	Prefix_TECX_VALIDACION,
 	Prefix_Application_ESPERA,
-	Prefix_Forma_senoidal,
-	Prefix_Forma_cuadrada,
-	Prefix_Forma_triangular,
-	Prefix_Magnitud_FRECUENCIA,
-	Prefix_Magnitud_FRECUENCIA_r1_FRECUENCIA_ACTUAL,
-	Prefix_Magnitud_FRECUENCIA_r1_DISMINUYE,
-	Prefix_Magnitud_FRECUENCIA_r1_DELAY,
-	Prefix_Magnitud_FRECUENCIA_r1_AUMENTA,
-	Prefix_Magnitud_FRECUENCIA_r1_ESPERA,
-	Prefix_Magnitud_TENSION,
-	Prefix_Magnitud_TENSION_r1_TENSION_ACTUAL,
-	Prefix_Magnitud_TENSION_r1_DISMINUYE,
-	Prefix_Magnitud_TENSION_r1_DELAY,
-	Prefix_Magnitud_TENSION_r1_AUMENTA,
-	Prefix_Magnitud_TENSION_r1_ESPERA,
+	Prefix_eForma_senoidal,
+	Prefix_eForma_cuadrada,
+	Prefix_eForma_triangular,
+	Prefix_eMagn_FRECUENCIA,
+	Prefix_eMagn_FRECUENCIA_r1_FRECUENCIA_ACTUAL,
+	Prefix_eMagn_FRECUENCIA_r1_DISMINUYE,
+	Prefix_eMagn_FRECUENCIA_r1_DELAY,
+	Prefix_eMagn_FRECUENCIA_r1_AUMENTA,
+	Prefix_eMagn_FRECUENCIA_r1_ESPERA,
+	Prefix_eMagn_TENSION,
+	Prefix_eMagn_TENSION_r1_TENSION_ACTUAL,
+	Prefix_eMagn_TENSION_r1_DISMINUYE,
+	Prefix_eMagn_TENSION_r1_DELAY,
+	Prefix_eMagn_TENSION_r1_AUMENTA,
+	Prefix_eMagn_TENSION_r1_ESPERA,
 	Prefix_last_state
 } PrefixStates;
 
@@ -77,14 +77,14 @@ typedef struct
 typedef struct
 {
 	sc_boolean prefix_TECX_DEBOUNCE_tev0_raised;
-	sc_boolean prefix_Magnitud_FRECUENCIA_r1_DISMINUYE_tev0_raised;
-	sc_boolean prefix_Magnitud_FRECUENCIA_r1_DELAY_tev0_raised;
-	sc_boolean prefix_Magnitud_FRECUENCIA_r1_AUMENTA_tev0_raised;
-	sc_boolean prefix_Magnitud_FRECUENCIA_r1_ESPERA_tev0_raised;
-	sc_boolean prefix_Magnitud_TENSION_r1_DISMINUYE_tev0_raised;
-	sc_boolean prefix_Magnitud_TENSION_r1_DELAY_tev0_raised;
-	sc_boolean prefix_Magnitud_TENSION_r1_AUMENTA_tev0_raised;
-	sc_boolean prefix_Magnitud_TENSION_r1_ESPERA_tev0_raised;
+	sc_boolean prefix_eMagn_FRECUENCIA_r1_DISMINUYE_tev0_raised;
+	sc_boolean prefix_eMagn_FRECUENCIA_r1_DELAY_tev0_raised;
+	sc_boolean prefix_eMagn_FRECUENCIA_r1_AUMENTA_tev0_raised;
+	sc_boolean prefix_eMagn_FRECUENCIA_r1_ESPERA_tev0_raised;
+	sc_boolean prefix_eMagn_TENSION_r1_DISMINUYE_tev0_raised;
+	sc_boolean prefix_eMagn_TENSION_r1_DELAY_tev0_raised;
+	sc_boolean prefix_eMagn_TENSION_r1_AUMENTA_tev0_raised;
+	sc_boolean prefix_eMagn_TENSION_r1_ESPERA_tev0_raised;
 } PrefixTimeEvents;
 
 

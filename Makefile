@@ -41,7 +41,7 @@ PROJECT_MODULES := modules/$(TARGET)/sapi \
 # source files folder
 PROJECT_SRC_FOLDERS := $(PROJECT)/src \
                        $(PROJECT)/gen \
-                      $(PROJECT)/PORTON_DE_COCHERA
+                      $(PROJECT)/GENERADOR_FRECUENCIA
 #                     $(PROJECT)/SCT_1_1                      
 #                     $(PROJECT)/SCT_1_2
 #                     $(PROJECT)/SCT_2_1
@@ -57,7 +57,7 @@ PROJECT_SRC_FOLDERS := $(PROJECT)/src \
 # header files folder
 PROJECT_INC_FOLDERS := $(PROJECT)/inc \
                        $(PROJECT)/gen \
-	                   $(PROJECT)/PORTON_DE_COCHERA
+	                   $(PROJECT)/GENERADOR_FRECUENCIA
 #                     $(PROJECT)/SCT_1_1                      
 #                     $(PROJECT)/SCT_1_2
 #                     $(PROJECT)/SCT_2_1
@@ -73,7 +73,7 @@ PROJECT_INC_FOLDERS := $(PROJECT)/inc \
 # source files
 PROJECT_C_FILES := $(wildcard $(PROJECT)/src/*.c) \
                    $(wildcard $(PROJECT)/gen/*.c) \
-				    $(wildcard $(PROJECT)/PORTON_DE_COCHERA/*.c)
+				   $(wildcard $(PROJECT)/GENERADOR_FRECUENCIA/*.c)
 #				   $(wildcard $(PROJECT)/SCT_1_1/*.c)
 #				   $(wildcard $(PROJECT)/SCT_1_2/*.c)
 #				   $(wildcard $(PROJECT)/SCT_2_1/*.c)
