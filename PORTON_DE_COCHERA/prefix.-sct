@@ -32,11 +32,11 @@
       <vertices xsi:type="sgraph:State" xmi:id="_0mV_cLacEeef4KXvt0hZZQ" specification="entry / raise siNoLED2;&#xD;&#xA;opLED(LEDB,LED_ON)&#xD;&#xA;" name="CERRADO" incomingTransitions="_EvLrQLadEeef4KXvt0hZZQ _tMMFkLadEeef4KXvt0hZZQ">
         <outgoingTransitions xmi:id="_Hg6zELadEeef4KXvt0hZZQ" specification="siAbrir" target="_3gjGwLacEeef4KXvt0hZZQ"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_2UgxcLacEeef4KXvt0hZZQ" specification="entry / raise siLED2;&#xD;&#xA;opLED(LED3,LED_OFF)" name="CERRANDO" incomingTransitions="_CJ0ykLadEeef4KXvt0hZZQ _VQ8NYLadEeef4KXvt0hZZQ">
+      <vertices xsi:type="sgraph:State" xmi:id="_2UgxcLacEeef4KXvt0hZZQ" specification="entry / raise siLED2;&#xD;&#xA;opLED(LED3,LED_OFF);&#xD;&#xA;raise siNoLED1" name="CERRANDO" incomingTransitions="_CJ0ykLadEeef4KXvt0hZZQ _VQ8NYLadEeef4KXvt0hZZQ">
         <outgoingTransitions xmi:id="_EvLrQLadEeef4KXvt0hZZQ" specification="after 1500 ms" target="_0mV_cLacEeef4KXvt0hZZQ"/>
         <outgoingTransitions xmi:id="_Tdf50LadEeef4KXvt0hZZQ" specification="siAbrir" target="_3gjGwLacEeef4KXvt0hZZQ"/>
       </vertices>
-      <vertices xsi:type="sgraph:State" xmi:id="_3gjGwLacEeef4KXvt0hZZQ" specification="entry / raise siLED1;&#xD;&#xA;opLED(LEDB,LED_OFF)" name="ABRIENDO" incomingTransitions="_Hg6zELadEeef4KXvt0hZZQ _Tdf50LadEeef4KXvt0hZZQ">
+      <vertices xsi:type="sgraph:State" xmi:id="_3gjGwLacEeef4KXvt0hZZQ" specification="entry / raise siLED1;&#xD;&#xA;opLED(LEDB,LED_OFF);&#xD;&#xA;raise siNoLED2" name="ABRIENDO" incomingTransitions="_Hg6zELadEeef4KXvt0hZZQ _Tdf50LadEeef4KXvt0hZZQ">
         <outgoingTransitions xmi:id="_MpG04LadEeef4KXvt0hZZQ" specification="after 1500 ms" target="_4vY4cLacEeef4KXvt0hZZQ"/>
         <outgoingTransitions xmi:id="_VQ8NYLadEeef4KXvt0hZZQ" specification="siCerrar" target="_2UgxcLacEeef4KXvt0hZZQ"/>
       </vertices>

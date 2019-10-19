@@ -618,6 +618,7 @@ static void prefix_enact_eMagn_ABIERTO_r1_PUERTA_ABIERTA(Prefix* handle)
 {
 	/* Entry action for state 'PUERTA_ABIERTA'. */
 	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED1, PREFIX_PREFIXIFACE_LED_OFF);
+	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED2, PREFIX_PREFIXIFACE_LED_OFF);
 }
 
 /* Entry action for state 'TERMINO'. */

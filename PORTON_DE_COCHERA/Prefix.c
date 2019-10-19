@@ -735,6 +735,7 @@ static void prefix_enact_PORTON_CERRANDO(Prefix* handle)
 	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_PORTON_CERRANDO_tev0_raised) , 1500, bool_false);
 	handle->internal.siLED2_raised = bool_true;
 	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LED3, PREFIX_PREFIXIFACE_LED_OFF);
+	handle->internal.siNoLED1_raised = bool_true;
 }
 
 /* Entry action for state 'ABRIENDO'. */
@@ -744,6 +745,7 @@ static void prefix_enact_PORTON_ABRIENDO(Prefix* handle)
 	prefix_setTimer(handle, (sc_eventid) &(handle->timeEvents.prefix_PORTON_ABRIENDO_tev0_raised) , 1500, bool_false);
 	handle->internal.siLED1_raised = bool_true;
 	prefixIface_opLED(handle, PREFIX_PREFIXIFACE_LEDB, PREFIX_PREFIXIFACE_LED_OFF);
+	handle->internal.siNoLED2_raised = bool_true;
 }
 
 /* Entry action for state 'ABIERTO'. */
