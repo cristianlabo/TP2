@@ -183,6 +183,11 @@ Para este caso se puede ver el diagrama de estados  en la siguiente figura:
 ![generador_frecuencia3.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/generador_frecuencia3.jpg)
 ![generador_frecuencia2.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/generador_frecuencia2.jpg)
 
+![generador_frecuencia_main1.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/generador_frecuencia_main1.jpg)
+![generador_frecuencia_main2.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/generador_frecuencia_main2.jpg)
+
+![generador_frecuencia_terminal.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/generador_frecuencia_terminal.jpg)
+
 ## Puerta corrediza
 
 Para este caso se puede ver el diagrama de estados  en la siguiente figura:
