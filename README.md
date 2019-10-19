@@ -215,3 +215,4 @@ Para este caso se puede ver el diagrama de estados  en la siguiente figura:
 ![Horno_microondas3.jpg](https://github.com/cristianlabo/TP2/blob/master/Imagenes/Horno_microondas3.jpg)
 
 # 8 Hoja de ruta
+![hoja_de_ruta_tp2.png](https://github.com/cristianlabo/TP2/blob/master/Imagenes/hoja_de_ruta_tp2.png)
